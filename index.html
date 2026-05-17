@@ -131,7 +131,15 @@
           </span>
         </a>
       </div>
-      <p id="versao-label" class="text-xs text-slate-600 mb-12">A carregar versão mais recente…</p>
+      <!-- Aviso quarentena macOS -->
+      <div class="mt-4 mb-8 flex items-start gap-3 bg-amber-950/40 border border-amber-700/50 rounded-xl px-4 py-3 text-left max-w-xl mx-auto">
+        <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.5L20.5 19h-17L12 5.5zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg>
+        <div>
+          <p class="text-amber-300 font-semibold text-sm">macOS: após instalar, execute no Terminal:</p>
+          <code class="block mt-1 text-amber-200 text-xs bg-black/30 px-3 py-1.5 rounded-lg font-mono select-all">xattr -d com.apple.quarantine /Applications/TrueContact.app</code>
+          <p class="text-amber-600 text-xs mt-1">O app ainda não está assinado pela Apple — este passo é necessário uma única vez.</p>
+        </div>
+      </div>
 
       <!-- Mini mock UI -->
       <div class="float relative max-w-2xl mx-auto bg-slate-900/80 border border-white/10 rounded-2xl overflow-hidden shadow-2xl backdrop-blur text-left">
@@ -634,7 +642,15 @@
           Windows
         </a>
       </div>
-      <p id="versao-label-2" class="text-xs text-slate-600 mt-4"></p>
+      <!-- Aviso quarentena macOS -->
+      <div class="mt-6 flex items-start gap-3 bg-amber-950/40 border border-amber-700/50 rounded-xl px-4 py-3 text-left max-w-xl mx-auto">
+        <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.5L20.5 19h-17L12 5.5zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg>
+        <div>
+          <p class="text-amber-300 font-semibold text-sm">macOS: após instalar, execute no Terminal:</p>
+          <code class="block mt-1 text-amber-200 text-xs bg-black/30 px-3 py-1.5 rounded-lg font-mono select-all">xattr -d com.apple.quarantine /Applications/TrueContact.app</code>
+          <p class="text-amber-600 text-xs mt-1">O app ainda não está assinado pela Apple — este passo é necessário uma única vez.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -646,46 +662,12 @@
   <script>
     document.getElementById('ano').textContent = new Date().getFullYear();
 
-    const RELEASES_REPO = 'osnipassos/truecontact-releases';
-    const FALLBACK = `https://github.com/${RELEASES_REPO}/releases`;
+    const BASE = 'https://github.com/osnipassos/truecontact-releases/releases/latest/download';
+    const setHref = (ids, url) => ids.forEach(id => { const el = document.getElementById(id); if (el) el.href = url; });
 
-    async function carregarRelease() {
-      try {
-        const r = await fetch(`https://api.github.com/repos/${RELEASES_REPO}/releases/latest`);
-        if (!r.ok) throw new Error();
-        const release = await r.json();
-        const assets = release.assets || [];
-
-        const macArm   = assets.find(a => a.name.includes('aarch64') && a.name.endsWith('.dmg'));
-        const macIntel = assets.find(a => (a.name.includes('x64') || a.name.includes('x86_64')) && a.name.endsWith('.dmg'));
-        const win      = assets.find(a => a.name.endsWith('.exe'));
-
-        const set = (id, asset) => {
-          const el = document.getElementById(id);
-          if (el) el.href = asset ? asset.browser_download_url : FALLBACK;
-        };
-
-        set('btn-mac-arm',    macArm);
-        set('btn-mac-intel',  macIntel);
-        set('btn-win',        win);
-        set('btn-mac-arm-2',  macArm);
-        set('btn-mac-intel-2',macIntel);
-        set('btn-win-2',      win);
-
-        const tag = `Versão atual: ${release.tag_name}`;
-        const l1 = document.getElementById('versao-label');
-        const l2 = document.getElementById('versao-label-2');
-        if (l1) l1.textContent = tag;
-        if (l2) l2.textContent = tag;
-      } catch {
-        ['btn-mac-arm','btn-mac-intel','btn-win','btn-mac-arm-2','btn-mac-intel-2','btn-win-2'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.href = FALLBACK;
-        });
-      }
-    }
-
-    carregarRelease();
+    setHref(['btn-mac-arm',   'btn-mac-arm-2'],   `${BASE}/TrueContact_aarch64.dmg`);
+    setHref(['btn-mac-intel', 'btn-mac-intel-2'], `${BASE}/TrueContact_x86_64.dmg`);
+    setHref(['btn-win',       'btn-win-2'],       `${BASE}/TrueContact_x64-setup.exe`);
   </script>
 </body>
 </html>
