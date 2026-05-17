@@ -28,9 +28,14 @@
   <nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur border-b border-white/5">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <span class="font-bold text-lg tracking-tight">TrueContact</span>
-      <a href="#download" class="text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
-        Download ↓
-      </a>
+      <div class="flex items-center gap-6">
+        <a href="help" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">
+          Ajuda
+        </a>
+        <a href="#download" class="text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+          Download ↓
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -51,8 +56,8 @@
     </p>
 
     <p class="text-slate-400 text-base max-w-lg mb-12 leading-relaxed">
-      Sincroniza, enriquece e organiza os teus contactos do iCloud, LinkedIn e mais.
-      Funciona em segundo plano — tu concentras-te nas relações.
+      Sincroniza, enriquece, organiza e manda mensagens automáticas para os seus contatos do iCloud, LinkedIn e mais.
+      Funciona em segundo plano — você se concentra nas relações.
     </p>
 
     <!-- DOWNLOAD BUTTONS -->
@@ -127,10 +132,12 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
-    <p>© 2025 TrueContact · <a href="https://github.com/osnipassos/truecontact-releases" class="hover:text-slate-400 transition-colors">Releases</a></p>
+    <p>© <span id="ano"></span> TrueContact · <a href="help" class="hover:text-slate-400 transition-colors">Ajuda</a></p>
   </footer>
 
   <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
     const RELEASES_REPO = 'osnipassos/truecontact-releases';
     const FALLBACK = `https://github.com/${RELEASES_REPO}/releases`;
 
