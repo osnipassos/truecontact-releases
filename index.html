@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TrueContact — O teu CRM Pessoal Automático</title>
-  <meta name="description" content="TrueContact sincroniza, enriquece e organiza os teus contatos automaticamente. iCloud, LinkedIn, aniversários, merge inteligente e muito mais." />
+  <meta name="description" content="TrueContact sincroniza, enriquece e organiza os contatos automaticamente. iCloud, Google Contacts, LinkedIn, WhatsApp, aniversários, merge inteligente e muito mais." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -82,7 +82,7 @@
     <div class="relative z-10 max-w-4xl mx-auto">
       <div class="inline-flex items-center gap-2 bg-indigo-950/80 border border-indigo-700/50 rounded-full px-4 py-1.5 text-xs font-semibold text-indigo-300 mb-8 backdrop-blur">
         <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-        iCloud · LinkedIn · WhatsApp · Aniversários · Muito mais
+        iCloud · Google Contacts · LinkedIn · WhatsApp · Aniversários · Muito mais
       </div>
 
       <h1 class="text-5xl sm:text-7xl font-black tracking-tight leading-none mb-6">
@@ -94,7 +94,7 @@
       </p>
 
       <p class="text-slate-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-        Sincroniza, enriquece, organiza e manda mensagens automáticas para os seus contatos do iCloud, LinkedIn e mais.
+        Sincroniza, enriquece, organiza e manda mensagens automáticas para os seus contatos do iCloud, Google Contacts, LinkedIn e mais.
         Funciona em segundo plano — você se concentra nas relações.
       </p>
 
@@ -148,7 +148,14 @@
           <div class="w-2.5 h-2.5 rounded-full bg-green-500/70"></div>
           <span class="ml-2 text-[11px] text-slate-500 font-medium">TrueContact</span>
           <div class="ml-auto flex items-center gap-1.5">
-            <div class="px-2 py-0.5 bg-orange-900/40 rounded-full text-[10px] text-orange-400 font-medium">3 Pendentes</div>
+            <div class="px-2 py-0.5 bg-[#0A66C2]/20 rounded-full text-[10px] text-[#5B9BD5] font-medium flex items-center gap-1">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              3
+            </div>
+            <div class="px-2 py-0.5 bg-[#4285F4]/20 rounded-full text-[10px] text-[#7BAAF7] font-medium flex items-center gap-1">
+              <svg width="8" height="8" viewBox="0 0 24 24"><path fill="#7BAAF7" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#7BAAF7" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#7BAAF7" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#7BAAF7" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+              7
+            </div>
           </div>
         </div>
         <!-- Conteúdo mock -->
@@ -221,8 +228,8 @@
         <p class="text-sm text-slate-400 mt-1">Dados locais — sem cloud própria</p>
       </div>
       <div>
-        <p class="text-3xl font-black gradient-text">iCloud</p>
-        <p class="text-sm text-slate-400 mt-1">Sincronização bidirecional</p>
+        <p class="text-3xl font-black gradient-text">Multi</p>
+        <p class="text-sm text-slate-400 mt-1">iCloud + Google — sincronização bidirecional</p>
       </div>
       <div>
         <p class="text-3xl font-black gradient-text">Auto</p>
@@ -254,7 +261,7 @@
           </li>
           <li class="flex items-start gap-3 text-sm text-slate-300">
             <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            Suporte a grupos do iCloud
+            Grupos sincronizados com iCloud e Google
           </li>
           <li class="flex items-start gap-3 text-sm text-slate-300">
             <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
@@ -294,6 +301,64 @@
             <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Feature 1b: Google Contacts sync -->
+    <div class="grid sm:grid-cols-2 gap-12 items-center">
+      <div class="order-2 sm:order-1 bg-slate-900/60 border border-white/5 rounded-2xl p-6 card-glow">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 rounded-xl bg-blue-950 flex items-center justify-center">
+            <svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-white">Google Contacts</p>
+            <p class="text-[10px] text-green-400">● Conectado via OAuth</p>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex items-center gap-3 bg-slate-800/50 rounded-xl px-3 py-2.5">
+            <img src="https://i.pravatar.cc/80?img=22" alt="" class="w-7 h-7 rounded-full object-cover shrink-0">
+            <div class="flex-1 min-w-0"><p class="text-xs font-semibold text-slate-200">Amanda Ferreira</p><p class="text-[10px] text-blue-400">→ Criado no Google</p></div>
+            <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-800/50 rounded-xl px-3 py-2.5">
+            <img src="https://i.pravatar.cc/80?img=33" alt="" class="w-7 h-7 rounded-full object-cover shrink-0">
+            <div class="flex-1 min-w-0"><p class="text-xs font-semibold text-slate-200">Bruno Teixeira</p><p class="text-[10px] text-blue-400">→ Foto + cargo atualizados</p></div>
+            <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-800/50 rounded-xl px-3 py-2.5">
+            <img src="https://i.pravatar.cc/80?img=41" alt="" class="w-7 h-7 rounded-full object-cover shrink-0">
+            <div class="flex-1 min-w-0"><p class="text-xs font-semibold text-slate-200">Grupo: Clientes VIP</p><p class="text-[10px] text-blue-400">→ Grupo sincronizado</p></div>
+            <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 sm:order-2">
+        <div class="inline-flex items-center gap-2 bg-blue-950/50 border border-blue-800/40 rounded-full px-3 py-1 text-xs font-semibold text-blue-300 mb-5">
+          <svg class="w-3 h-3" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/></svg>
+          Google Contacts
+        </div>
+        <h2 class="text-3xl font-extrabold mb-4">Google em <span class="gradient-text">sincronismo total</span></h2>
+        <p class="text-slate-400 leading-relaxed mb-6">Conecta o teu Google Contacts via OAuth e todos os teus contatos existentes são propagados automaticamente — em ambos os sentidos. Grupos, fotos, telefones: tudo espelhado.</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            Sincronização bidirecional via Google People API
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            Grupos sincronizados entre iCloud e Google
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            Renomeação de contatos propaga para ambos os lados
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            Contatos vazios removidos automaticamente
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -547,7 +612,7 @@
             <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
           </div>
           <p class="text-sm font-semibold text-white mb-1">Redes Sociais</p>
-          <p class="text-xs text-slate-500">Normalização de LinkedIn, Instagram, Twitter, GitHub, TikTok e mais</p>
+          <p class="text-xs text-slate-500">Normalização de LinkedIn, Instagram, Threads, Twitter, GitHub, TikTok e mais</p>
         </div>
 
         <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
@@ -563,7 +628,7 @@
             <svg class="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
           <p class="text-sm font-semibold text-white mb-1">Grupos</p>
-          <p class="text-xs text-slate-500">Organize por grupos — sincronizados com o iCloud</p>
+          <p class="text-xs text-slate-500">Organize por grupos — sincronizados com iCloud e Google Contacts</p>
         </div>
 
         <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
@@ -598,6 +663,22 @@
           <p class="text-xs text-slate-500">Monitoramento de novas conexões e mudanças de contatos</p>
         </div>
 
+        <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
+          <div class="w-9 h-9 bg-indigo-950 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-white mb-1">Setup Assistido</p>
+          <p class="text-xs text-slate-500">Assistente de configuração passo a passo na primeira abertura</p>
+        </div>
+
+        <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
+          <div class="w-9 h-9 bg-red-950 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-white mb-1">Operações em Lote</p>
+          <p class="text-xs text-slate-500">Selecione e exclua múltiplos contatos de uma vez na sidebar</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -612,7 +693,7 @@
       </div>
       <h2 class="text-2xl font-extrabold mb-3">Os seus dados são seus</h2>
       <p class="text-slate-400 max-w-md mx-auto leading-relaxed">
-        O TrueContact funciona completamente offline. A base de dados SQLite fica no seu computador — nenhum contato, foto ou nota é enviado para servidores externos. A única conexão com a internet é para sincronizar com o <em>seu</em> iCloud, verificar atualizações no LinkedIn e enviar mensagens pelo WhatsApp.
+        O TrueContact funciona completamente offline. A base de dados SQLite fica no seu computador — nenhum contato, foto ou nota é enviado para servidores externos. A única conexão com a internet é para sincronizar com o <em>seu</em> iCloud e Google Contacts, verificar atualizações no LinkedIn e enviar mensagens pelo WhatsApp.
       </p>
     </div>
   </section>
