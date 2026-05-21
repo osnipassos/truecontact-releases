@@ -108,6 +108,7 @@
           <span>
             <span class="block text-xs font-normal opacity-75">macOS Apple Silicon</span>
             Download .dmg
+            <span class="block text-[10px] font-mono font-normal opacity-50 mt-0.5" id="dl-version-arm">v1.0.34</span>
           </span>
         </a>
         <span class="flex items-center gap-3 bg-slate-800/50 text-slate-600 font-semibold px-7 py-3.5 rounded-2xl text-sm border border-slate-800 cursor-not-allowed select-none">
@@ -744,6 +745,16 @@
     const setHref = (ids, url) => ids.forEach(id => { const el = document.getElementById(id); if (el) el.href = url; });
 
     setHref(['btn-mac-arm', 'btn-mac-arm-2'], `${BASE}/TrueContact_aarch64.dmg`);
+
+    // Versão dinâmica: busca a tag do último release e exibe embaixo do botão
+    fetch('https://api.github.com/repos/osnipassos/truecontact-releases/releases/latest')
+      .then(r => r.json())
+      .then(d => {
+        if (!d.tag_name) return;
+        const els = document.querySelectorAll('#dl-version-arm');
+        els.forEach(el => { el.textContent = d.tag_name; });
+      })
+      .catch(() => {});
   </script>
 </body>
 </html>
