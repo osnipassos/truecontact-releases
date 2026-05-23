@@ -124,36 +124,32 @@
       </p>
 
       <!-- DOWNLOAD BUTTONS -->
-      <div id="download" class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
-        <a id="btn-mac-arm" href="#"
-          class="btn-pulse flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all duration-200 text-sm shadow-lg shadow-indigo-900/60">
-          <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-          <span>
-            <span class="block text-xs font-normal opacity-75">macOS Apple Silicon</span>
-            Download .dmg
-            <span class="block text-[10px] font-mono font-normal opacity-50 mt-0.5" id="dl-version-arm">v1.0.34</span>
-          </span>
-        </a>
-        <span class="flex items-center gap-3 bg-slate-800/50 text-slate-600 font-semibold px-7 py-3.5 rounded-2xl text-sm border border-slate-800 cursor-not-allowed select-none">
-          <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-          <span>
-            <span class="block text-xs font-normal">macOS Intel</span>
-            Em breve
-          </span>
-        </span>
-        <span class="flex items-center gap-3 bg-slate-800/50 text-slate-600 font-semibold px-7 py-3.5 rounded-2xl text-sm border border-slate-800 cursor-not-allowed select-none">
+      <div id="download" class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-2">
+        <div class="flex flex-col items-center gap-1.5">
+          <a id="btn-mac-arm" href="#"
+            class="btn-pulse flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all duration-200 text-sm shadow-lg shadow-indigo-900/60">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span>
+              <span class="block text-xs font-normal opacity-75">macOS Apple Silicon (M1/M2/M3/M4)</span>
+              Download .dmg
+              <span class="block text-[10px] font-mono font-normal opacity-50 mt-0.5" id="dl-version-arm">…</span>
+            </span>
+          </a>
+          <a id="btn-mac-x64" href="#" class="text-xs text-slate-500 hover:text-indigo-400 transition-colors underline underline-offset-2">Tem Mac Intel? Baixar aqui</a>
+        </div>
+        <a id="btn-win" href="#"
+          class="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 text-white font-semibold px-7 py-3.5 rounded-2xl transition-all duration-200 text-sm">
           <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 12V6.75l6-1.32v6.57H3zm17 0v6.93l-10 1.38V12h10zm0-8.93V12H10V3.07l10-1.4zM3 6.75V12H9V5.43L3 6.75z"/>
           </svg>
           <span>
-            <span class="block text-xs font-normal">Windows 10/11 x64</span>
-            Em breve
+            <span class="block text-xs font-normal opacity-75">Windows 10/11 x64</span>
+            Download .exe
+            <span class="block text-[10px] font-mono font-normal opacity-50 mt-0.5" id="dl-version-win">…</span>
           </span>
-        </span>
+        </a>
       </div>
       <!-- Aviso quarentena macOS -->
       <div class="mt-4 mb-8 flex items-start gap-3 bg-amber-950/40 border border-amber-700/50 rounded-xl px-4 py-3 text-left max-w-xl mx-auto">
@@ -731,20 +727,20 @@
       <h2 class="text-4xl font-black mb-4">Pronto para começar?</h2>
       <p class="text-slate-400 mb-2 max-w-md mx-auto">Sem conta. Sem subscrição. Os seus dados ficam consigo.</p>
       <p class="text-slate-500 text-sm mb-8 max-w-md mx-auto">Gratuito por enquanto — estamos em fase inicial e adoramos receber feedback. <a href="mailto:96.lustre.capas@icloud.com" class="text-indigo-400 hover:text-indigo-300 underline underline-offset-2 transition-colors">Fale conosco</a>.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a id="btn-mac-arm-2" href="#"
-          class="btn-pulse flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 text-sm shadow-xl shadow-indigo-900/50">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          macOS Apple Silicon
-        </a>
-        <span class="flex items-center justify-center gap-3 bg-slate-800/50 text-slate-600 font-semibold px-8 py-4 rounded-2xl text-sm border border-slate-800 cursor-not-allowed select-none">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          macOS Intel — Em breve
-        </span>
-        <span class="flex items-center justify-center gap-3 bg-slate-800/50 text-slate-600 font-semibold px-8 py-4 rounded-2xl text-sm border border-slate-800 cursor-not-allowed select-none">
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <div class="flex flex-col items-center gap-1.5">
+          <a id="btn-mac-arm-2" href="#"
+            class="btn-pulse flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 text-sm shadow-xl shadow-indigo-900/50">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            macOS Apple Silicon (M1/M2/M3/M4)
+          </a>
+          <a id="btn-mac-x64-2" href="#" class="text-xs text-slate-500 hover:text-indigo-400 transition-colors underline underline-offset-2">Tem Mac Intel? Baixar aqui</a>
+        </div>
+        <a id="btn-win-2" href="#"
+          class="flex items-center justify-center gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 text-sm">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.57H3zm17 0v6.93l-10 1.38V12h10zm0-8.93V12H10V3.07l10-1.4zM3 6.75V12H9V5.43L3 6.75z"/></svg>
-          Windows — Em breve
-        </span>
+          Windows 10/11 x64
+        </a>
       </div>
       <!-- Aviso quarentena macOS -->
       <div class="mt-6 flex items-start gap-3 bg-amber-950/40 border border-amber-700/50 rounded-xl px-4 py-3 text-left max-w-xl mx-auto">
@@ -770,14 +766,15 @@
     const setHref = (ids, url) => ids.forEach(id => { const el = document.getElementById(id); if (el) el.href = url; });
 
     setHref(['btn-mac-arm', 'btn-mac-arm-2'], `${BASE}/TrueContact_aarch64.dmg`);
+    setHref(['btn-mac-x64', 'btn-mac-x64-2'], `${BASE}/TrueContact_x86_64.dmg`);
+    setHref(['btn-win', 'btn-win-2'], `${BASE}/TrueContact_x64-setup.exe`);
 
     // Versão dinâmica: busca a tag do último release e exibe embaixo do botão
     fetch('https://api.github.com/repos/osnipassos/truecontact-releases/releases/latest')
       .then(r => r.json())
       .then(d => {
         if (!d.tag_name) return;
-        const els = document.querySelectorAll('#dl-version-arm');
-        els.forEach(el => { el.textContent = d.tag_name; });
+        document.querySelectorAll('#dl-version-arm, #dl-version-win').forEach(el => { el.textContent = d.tag_name; });
       })
       .catch(() => {});
   </script>
