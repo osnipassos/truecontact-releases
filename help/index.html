@@ -28,6 +28,9 @@
     code { background: rgba(99,102,241,0.12); color: #a5b4fc; padding: 1px 6px; border-radius: 4px; font-size: 0.82em; font-family: 'JetBrains Mono', 'Fira Code', monospace; }
     .callout { background: rgba(99,102,241,0.08); border-left: 3px solid #6366f1; padding: 12px 16px; border-radius: 0 8px 8px 0; }
     .callout-warn { background: rgba(245,158,11,0.08); border-left: 3px solid #f59e0b; }
+    #lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 4px 10px; cursor: pointer; transition: background 0.2s; }
+    #lang-toggle:hover { background: rgba(255,255,255,0.1); }
+    .lpt, .len { }
   </style>
 </head>
 <body class="bg-slate-950 text-white antialiased">
@@ -43,8 +46,12 @@
         </div>
         <span class="font-bold text-base tracking-tight">TrueContact</span>
       </a>
-      <div class="flex items-center gap-6">
-        <a href="." class="text-sm font-medium text-white transition-colors">Ajuda</a>
+      <div class="flex items-center gap-4">
+        <button id="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+          <span id="lang-flag">🇧🇷</span>
+          <span id="lang-label" class="text-xs font-bold text-slate-300">PT</span>
+        </button>
+        <a href="." class="text-sm font-medium text-white transition-colors" data-pt="Ajuda" data-en="Help">Ajuda</a>
         <a href="https://osnipassos.github.io/truecontact-releases/#download" class="text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded-lg transition-colors">
           Download ↓
         </a>
@@ -56,12 +63,12 @@
   <section class="pt-32 pb-12 text-center px-6">
     <div class="inline-flex items-center gap-2 bg-indigo-950/60 border border-indigo-800/50 rounded-full px-4 py-1.5 text-xs font-medium text-indigo-300 mb-8">
       <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-      Manual do Usuário
+      <span data-pt="Manual do Usuário" data-en="User Manual">Manual do Usuário</span>
     </div>
     <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
-      <span class="gradient-text">Ajuda & FAQ</span>
+      <span class="gradient-text" data-pt="Ajuda &amp; FAQ" data-en="Help &amp; FAQ">Ajuda &amp; FAQ</span>
     </h1>
-    <p class="text-slate-400 text-base max-w-xl mx-auto leading-relaxed">
+    <p class="text-slate-400 text-base max-w-xl mx-auto leading-relaxed" data-pt="Tudo o que precisas de saber para tirar o máximo partido do TrueContact." data-en="Everything you need to know to get the most out of TrueContact.">
       Tudo o que precisas de saber para tirar o máximo partido do TrueContact.
     </p>
   </section>
@@ -69,35 +76,35 @@
   <!-- TABLE OF CONTENTS -->
   <div class="max-w-4xl mx-auto px-6 pb-10">
     <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6">
-      <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Índice</p>
+      <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4" data-pt="Índice" data-en="Contents">Índice</p>
       <div class="grid sm:grid-cols-2 gap-2">
         <a href="#primeiros-passos" class="toc-link flex items-center gap-3 text-sm text-slate-300 py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-colors">
           <span class="w-6 h-6 bg-indigo-950 rounded-md flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0">1</span>
-          Primeiros Passos
+          <span data-pt="Primeiros Passos" data-en="Getting Started">Primeiros Passos</span>
         </a>
         <a href="#seguranca" class="toc-link flex items-center gap-3 text-sm text-slate-300 py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-colors">
           <span class="w-6 h-6 bg-indigo-950 rounded-md flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0">2</span>
-          Segurança e Privacidade
+          <span data-pt="Segurança e Privacidade" data-en="Security &amp; Privacy">Segurança e Privacidade</span>
         </a>
         <a href="#sincronizacao" class="toc-link flex items-center gap-3 text-sm text-slate-300 py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-colors">
           <span class="w-6 h-6 bg-indigo-950 rounded-md flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0">3</span>
-          Sincronização de Contatos
+          <span data-pt="Sincronização de Contatos" data-en="Contact Sync">Sincronização de Contatos</span>
         </a>
         <a href="#google" class="toc-link flex items-center gap-3 text-sm text-slate-300 py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-colors">
           <span class="w-6 h-6 bg-indigo-950 rounded-md flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0">4</span>
-          Conectar o Google Contacts
+          <span data-pt="Conectar o Google Contacts" data-en="Connect Google Contacts">Conectar o Google Contacts</span>
         </a>
         <a href="#whatsapp" class="toc-link flex items-center gap-3 text-sm text-slate-300 py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-colors">
           <span class="w-6 h-6 bg-indigo-950 rounded-md flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0">5</span>
-          Conectar o WhatsApp
+          <span data-pt="Conectar o WhatsApp" data-en="Connect WhatsApp">Conectar o WhatsApp</span>
         </a>
         <a href="#templates" class="toc-link flex items-center gap-3 text-sm text-slate-300 py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-colors">
           <span class="w-6 h-6 bg-indigo-950 rounded-md flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0">6</span>
-          Templates e Automações
+          <span data-pt="Templates e Automações" data-en="Templates &amp; Automations">Templates e Automações</span>
         </a>
         <a href="#atualizacoes" class="toc-link flex items-center gap-3 text-sm text-slate-300 py-2 px-3 rounded-lg hover:bg-slate-800/60 transition-colors">
           <span class="w-6 h-6 bg-indigo-950 rounded-md flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0">7</span>
-          Atualizações
+          <span data-pt="Atualizações" data-en="Updates">Atualizações</span>
         </a>
       </div>
     </div>
@@ -113,91 +120,149 @@
           <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">Secção 1</p>
-          <h2 class="text-xl font-bold text-white">Primeiros Passos</h2>
+          <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest" data-pt="Secção 1" data-en="Section 1">Secção 1</p>
+          <h2 class="text-xl font-bold text-white" data-pt="Primeiros Passos" data-en="Getting Started">Primeiros Passos</h2>
         </div>
       </div>
       <div class="space-y-2">
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            O que é o TrueContact?
+            <span data-pt="O que é o TrueContact?" data-en="What is TrueContact?">O que é o TrueContact?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>O <strong class="text-slate-200">TrueContact</strong> é um CRM pessoal automático para Mac e Windows. Liga-se ao iCloud, ao Google Contacts, ao LinkedIn e ao WhatsApp para <strong class="text-slate-200">sincronizar, enriquecer e organizar</strong> os teus contatos — e envia mensagens de aniversário automaticamente, em segundo plano.</p>
-            <p>Ao contrário das soluções cloud (HubSpot, Salesforce, etc.), o TrueContact corre <strong class="text-slate-200">100% no teu computador</strong>. Não há subscrição, não há conta, não há servidor a salvar os seus dados.</p>
-            <p class="text-slate-500 text-xs font-medium">Para quem é:</p>
-            <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
-              <li>Profissionais de networking que querem manter contatos sempre atualizados</li>
-              <li>Quem usa iPhone/Mac e quer tirar o máximo partido do iCloud Contacts</li>
-              <li>Quem usa o Gmail e quer manter o Google Contacts em sincronia com o iCloud</li>
-              <li>Quem quer enviar parabéns automáticos sem parecer um bot</li>
-              <li>Quem valoriza a privacidade total dos seus dados de contato</li>
-            </ul>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O <strong class="text-slate-200">TrueContact</strong> é um CRM pessoal automático para Mac e Windows. Liga-se ao iCloud, ao Google Contacts, ao LinkedIn e ao WhatsApp para <strong class="text-slate-200">sincronizar, enriquecer e organizar</strong> os teus contatos — e envia mensagens de aniversário automaticamente, em segundo plano.</p>
+              <p>Ao contrário das soluções cloud (HubSpot, Salesforce, etc.), o TrueContact corre <strong class="text-slate-200">100% no teu computador</strong>. Não há subscrição, não há conta, não há servidor a salvar os seus dados.</p>
+              <p class="text-slate-500 text-xs font-medium">Para quem é:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li>Profissionais de networking que querem manter contatos sempre atualizados</li>
+                <li>Quem usa iPhone/Mac e quer tirar o máximo partido do iCloud Contacts</li>
+                <li>Quem usa o Gmail e quer manter o Google Contacts em sincronia com o iCloud</li>
+                <li>Quem quer enviar parabéns automáticos sem parecer um bot</li>
+                <li>Quem valoriza a privacidade total dos seus dados de contato</li>
+              </ul>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p><strong class="text-slate-200">TrueContact</strong> is an automatic personal CRM for Mac and Windows. It connects to iCloud, Google Contacts, LinkedIn and WhatsApp to <strong class="text-slate-200">sync, enrich and organize</strong> your contacts — and automatically sends birthday messages in the background.</p>
+              <p>Unlike cloud solutions (HubSpot, Salesforce, etc.), TrueContact runs <strong class="text-slate-200">100% on your computer</strong>. No subscription, no account, no server storing your data.</p>
+              <p class="text-slate-500 text-xs font-medium">Who it's for:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li>Networking professionals who want to keep contacts always up to date</li>
+                <li>iPhone/Mac users who want to get the most out of iCloud Contacts</li>
+                <li>Gmail users who want to keep Google Contacts in sync with iCloud</li>
+                <li>Anyone who wants to send automatic birthday greetings without seeming like a bot</li>
+                <li>Anyone who values total privacy of their contact data</li>
+              </ul>
+            </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Requisitos do sistema e como instalar
+            <span data-pt="Requisitos do sistema e como instalar" data-en="System requirements and installation">Requisitos do sistema e como instalar</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
-            <div class="grid grid-cols-2 gap-3">
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-xs font-bold text-slate-300 mb-1">macOS</p>
-                <p class="text-xs text-slate-500">Ventura 13 ou superior</p>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-xs font-bold text-slate-300 mb-1">macOS</p>
+                  <p class="text-xs text-slate-500">Ventura 13 ou superior</p>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-xs font-bold text-slate-300 mb-1">Windows</p>
+                  <p class="text-xs text-slate-500">Windows 10 (64-bit) ou superior</p>
+                </div>
               </div>
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-xs font-bold text-slate-300 mb-1">Windows</p>
-                <p class="text-xs text-slate-500">Windows 10 (64-bit) ou superior</p>
+              <div>
+                <p class="font-medium text-slate-300 mb-2">Passos de instalação:</p>
+                <ol class="space-y-2 list-decimal list-inside">
+                  <li>Acesse a <a href="https://osnipassos.github.io/truecontact-releases/#download" class="text-indigo-400 hover:text-indigo-300">página de download</a> e baixe o arquivo para o seu sistema</li>
+                  <li><strong class="text-slate-200">macOS:</strong> Abre o <code>.dmg</code> e arrasta o TrueContact para Aplicações</li>
+                  <li><strong class="text-slate-200">Windows:</strong> Executa o instalador <code>.exe</code> e segue os passos</li>
+                  <li>Na primeira abertura, o <strong class="text-slate-200">Assistente de Configuração</strong> guia-te por todas as integrações</li>
+                </ol>
+              </div>
+              <div class="callout text-xs text-slate-400">
+                <strong class="text-amber-400">macOS:</strong> Se aparecer o aviso "app de desenvolvedor desconhecido", vai a <strong class="text-slate-300">Configurações do Sistema → Privacidade e Segurança</strong> e clica em "Abrir na mesma". O TrueContact não está na App Store por opção — isso é intencional para manter a app gratuita.
               </div>
             </div>
-            <div>
-              <p class="font-medium text-slate-300 mb-2">Passos de instalação:</p>
-              <ol class="space-y-2 list-decimal list-inside">
-                <li>Acesse a <a href="https://osnipassos.github.io/truecontact-releases/#download" class="text-indigo-400 hover:text-indigo-300">página de download</a> e baixe o arquivo para o seu sistema</li>
-                <li><strong class="text-slate-200">macOS:</strong> Abre o <code>.dmg</code> e arrasta o TrueContact para Aplicações</li>
-                <li><strong class="text-slate-200">Windows:</strong> Executa o instalador <code>.exe</code> e segue os passos</li>
-                <li>Na primeira abertura, o <strong class="text-slate-200">Assistente de Configuração</strong> guia-te por todas as integrações</li>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-xs font-bold text-slate-300 mb-1">macOS</p>
+                  <p class="text-xs text-slate-500">Ventura 13 or higher</p>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-xs font-bold text-slate-300 mb-1">Windows</p>
+                  <p class="text-xs text-slate-500">Windows 10 (64-bit) or higher</p>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium text-slate-300 mb-2">Installation steps:</p>
+                <ol class="space-y-2 list-decimal list-inside">
+                  <li>Go to the <a href="https://osnipassos.github.io/truecontact-releases/#download" class="text-indigo-400 hover:text-indigo-300">download page</a> and download the file for your system</li>
+                  <li><strong class="text-slate-200">macOS:</strong> Open the <code>.dmg</code> and drag TrueContact to Applications</li>
+                  <li><strong class="text-slate-200">Windows:</strong> Run the <code>.exe</code> installer and follow the steps</li>
+                  <li>On first launch, the <strong class="text-slate-200">Setup Wizard</strong> guides you through all integrations</li>
+                </ol>
+              </div>
+              <div class="callout text-xs text-slate-400">
+                <strong class="text-amber-400">macOS:</strong> If you see the "unknown developer" warning, go to <strong class="text-slate-300">System Settings → Privacy &amp; Security</strong> and click "Open Anyway". TrueContact is not on the App Store by choice — this is intentional to keep the app free.
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Qual é a sequência de configuração recomendada?" data-en="What is the recommended setup sequence?">Qual é a sequência de configuração recomendada?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4">
+              <p class="text-xs text-indigo-300 font-medium mb-2">Na primeira abertura, o Assistente de Configuração guia-te automaticamente por todos estes passos:</p>
+              <ol class="space-y-3">
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">1</span>
+                  <span><strong class="text-slate-200">Configurar o iCloud</strong> — introduz o Apple ID e a App-Specific Password para importar os teus contatos</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">2</span>
+                  <span><strong class="text-slate-200">Conectar o Google Contacts</strong> — autoriza via OAuth para sincronização bidirecional com o Google</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">3</span>
+                  <span><strong class="text-slate-200">Conectar o WhatsApp</strong> — lê o QR Code nas Configurações para ativar o envio de mensagens</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">4</span>
+                  <span><strong class="text-slate-200">Criar templates de aniversário</strong> — define as mensagens automáticas que o sistema vai enviar</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">5</span>
+                  <span><strong class="text-slate-200">Deixar correr</strong> — o TrueContact faz tudo o resto em segundo plano</span>
+                </li>
               </ol>
             </div>
-            <div class="callout text-xs text-slate-400">
-              <strong class="text-amber-400">macOS:</strong> Se aparecer o aviso "app de desenvolvedor desconhecido", vai a <strong class="text-slate-300">Configurações do Sistema → Privacidade e Segurança</strong> e clica em "Abrir na mesma". O TrueContact não está na App Store por opção — isso é intencional para manter a app gratuita.
-            </div>
           </div>
-        </details>
-
-        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
-          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Qual é a sequência de configuração recomendada?
-            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4">
-            <p class="text-xs text-indigo-300 font-medium mb-2">Na primeira abertura, o Assistente de Configuração guia-te automaticamente por todos estes passos:</p>
-            <ol class="space-y-3">
-              <li class="flex gap-3">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">1</span>
-                <span><strong class="text-slate-200">Configurar o iCloud</strong> — introduz o Apple ID e a App-Specific Password para importar os teus contatos</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">2</span>
-                <span><strong class="text-slate-200">Conectar o Google Contacts</strong> — autoriza via OAuth para sincronização bidirecional com o Google</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">3</span>
-                <span><strong class="text-slate-200">Conectar o WhatsApp</strong> — lê o QR Code nas Configurações para ativar o envio de mensagens</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">4</span>
-                <span><strong class="text-slate-200">Criar templates de aniversário</strong> — define as mensagens automáticas que o sistema vai enviar</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">5</span>
-                <span><strong class="text-slate-200">Deixar correr</strong> — o TrueContact faz tudo o resto em segundo plano</span>
-              </li>
-            </ol>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4">
+              <p class="text-xs text-indigo-300 font-medium mb-2">On first launch, the Setup Wizard automatically guides you through all these steps:</p>
+              <ol class="space-y-3">
+                <li class="flex gap-3"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">1</span><span><strong class="text-slate-200">Configure iCloud</strong> — enter your Apple ID and App-Specific Password to import your contacts</span></li>
+                <li class="flex gap-3"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">2</span><span><strong class="text-slate-200">Connect Google Contacts</strong> — authorize via OAuth for two-way sync with Google</span></li>
+                <li class="flex gap-3"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">3</span><span><strong class="text-slate-200">Connect WhatsApp</strong> — scan the QR Code in Settings to enable message sending</span></li>
+                <li class="flex gap-3"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">4</span><span><strong class="text-slate-200">Create birthday templates</strong> — define the automatic messages the system will send</span></li>
+                <li class="flex gap-3"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">5</span><span><strong class="text-slate-200">Let it run</strong> — TrueContact does the rest in the background</span></li>
+              </ol>
+            </div>
           </div>
         </details>
 
@@ -211,102 +276,141 @@
           <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-green-400 uppercase tracking-widest">Secção 2</p>
-          <h2 class="text-xl font-bold text-white">Segurança e Privacidade</h2>
+          <p class="text-[10px] font-bold text-green-400 uppercase tracking-widest" data-pt="Secção 2" data-en="Section 2">Secção 2</p>
+          <h2 class="text-xl font-bold text-white" data-pt="Segurança e Privacidade" data-en="Security &amp; Privacy">Segurança e Privacidade</h2>
         </div>
       </div>
       <div class="space-y-2">
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Onde ficam armazenados os meus dados?
+            <span data-pt="Onde ficam armazenados os meus dados?" data-en="Where is my data stored?">Onde ficam armazenados os meus dados?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p><strong class="text-slate-200">100% no teu próprio computador.</strong> O TrueContact usa uma base de dados SQLite local — nenhum contato, foto, nota ou histórico de mensagens é enviado para servidores externos. Não existem servidores TrueContact.</p>
-            <div class="grid sm:grid-cols-2 gap-2">
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-[10px] font-bold text-slate-400 mb-1">macOS</p>
-                <code class="text-[10px]">~/Library/Application Support/truecontact/database.sqlite</code>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p><strong class="text-slate-200">100% no teu próprio computador.</strong> O TrueContact usa uma base de dados SQLite local — nenhum contato, foto, nota ou histórico de mensagens é enviado para servidores externos. Não existem servidores TrueContact.</p>
+              <div class="grid sm:grid-cols-2 gap-2">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-[10px] font-bold text-slate-400 mb-1">macOS</p>
+                  <code class="text-[10px]">~/Library/Application Support/truecontact/database.sqlite</code>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-[10px] font-bold text-slate-400 mb-1">Windows</p>
+                  <code class="text-[10px]">%APPDATA%\truecontact\database.sqlite</code>
+                </div>
               </div>
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-[10px] font-bold text-slate-400 mb-1">Windows</p>
-                <code class="text-[10px]">%APPDATA%\truecontact\database.sqlite</code>
-              </div>
+              <p class="text-xs text-slate-500">Podes abrir, copiar ou fazer backup deste ficheiro com ferramentas como o <a href="https://sqlitebrowser.org/" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">DB Browser for SQLite</a>.</p>
             </div>
-            <p class="text-xs text-slate-500">Podes abrir, copiar ou fazer backup deste ficheiro com ferramentas como o <a href="https://sqlitebrowser.org/" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">DB Browser for SQLite</a>.</p>
           </div>
-        </details>
-
-        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
-          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            O TrueContact envia algum dado para a internet?
-            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>O TrueContact apenas faz conexões <strong class="text-slate-200">diretamente</strong> com os serviços que já usas — nada passa por servidores TrueContact:</p>
-            <div class="space-y-2">
-              <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3">
-                <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <div><p class="text-xs font-semibold text-slate-200">iCloud CardDAV</p><p class="text-xs text-slate-500">Conexão direta aos servidores da Apple — as tuas credenciais nunca passam pelo TrueContact</p></div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p><strong class="text-slate-200">100% on your own computer.</strong> TrueContact uses a local SQLite database — no contact, photo, note or message history is sent to external servers. There are no TrueContact servers.</p>
+              <div class="grid sm:grid-cols-2 gap-2">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-[10px] font-bold text-slate-400 mb-1">macOS</p><code class="text-[10px]">~/Library/Application Support/truecontact/database.sqlite</code></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-[10px] font-bold text-slate-400 mb-1">Windows</p><code class="text-[10px]">%APPDATA%\truecontact\database.sqlite</code></div>
               </div>
-              <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3">
-                <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <div><p class="text-xs font-semibold text-slate-200">Google People API</p><p class="text-xs text-slate-500">Autenticação via OAuth 2.0 — o token fica local e nunca passa por servidores TrueContact</p></div>
-              </div>
-              <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3">
-                <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <div><p class="text-xs font-semibold text-slate-200">LinkedIn</p><p class="text-xs text-slate-500">Lê perfis públicos como um browser normal — só leitura, nenhum dado teu é enviado</p></div>
-              </div>
-              <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3">
-                <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <div><p class="text-xs font-semibold text-slate-200">WhatsApp Web</p><p class="text-xs text-slate-500">Conexão direta aos servidores do WhatsApp — sessão autenticada localmente</p></div>
-              </div>
-              <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3">
-                <svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <div><p class="text-xs font-semibold text-slate-200">GitHub Releases</p><p class="text-xs text-slate-500">Apenas verifica um número de versão — nenhum dado pessoal envolvido</p></div>
-              </div>
+              <p class="text-xs text-slate-500">You can open, copy or back up this file with tools like <a href="https://sqlitebrowser.org/" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">DB Browser for SQLite</a>.</p>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como funciona a sessão do WhatsApp — é segura?
+            <span data-pt="O TrueContact envia algum dado para a internet?" data-en="Does TrueContact send any data to the internet?">O TrueContact envia algum dado para a internet?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>Quando ligas o WhatsApp através do QR Code, é gerado um <strong class="text-slate-200">ficheiro de sessão local</strong> no teu computador. Este ficheiro mantém a autenticação sem necessidade de introduzir credenciais repetidamente.</p>
-            <div class="grid sm:grid-cols-2 gap-2">
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-[10px] font-bold text-slate-400 mb-1">macOS</p>
-                <code class="text-[10px]">~/Library/Application Support/truecontact/whatsapp-session/</code>
-              </div>
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-[10px] font-bold text-slate-400 mb-1">Windows</p>
-                <code class="text-[10px]">%APPDATA%\truecontact\whatsapp-session\</code>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O TrueContact apenas faz conexões <strong class="text-slate-200">diretamente</strong> com os serviços que já usas — nada passa por servidores TrueContact:</p>
+              <div class="space-y-2">
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">iCloud CardDAV</p><p class="text-xs text-slate-500">Conexão direta aos servidores da Apple — as tuas credenciais nunca passam pelo TrueContact</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">Google People API</p><p class="text-xs text-slate-500">Autenticação via OAuth 2.0 — o token fica local e nunca passa por servidores TrueContact</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">LinkedIn</p><p class="text-xs text-slate-500">Lê perfis públicos como um browser normal — só leitura, nenhum dado teu é enviado</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">WhatsApp Web</p><p class="text-xs text-slate-500">Conexão direta aos servidores do WhatsApp — sessão autenticada localmente</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">GitHub Releases</p><p class="text-xs text-slate-500">Apenas verifica um número de versão — nenhum dado pessoal envolvido</p></div></div>
               </div>
             </div>
-            <div class="callout callout-warn text-xs text-slate-400">
-              <strong class="text-amber-400">Aviso:</strong> Nunca compartilhes esta pasta com ninguém. Quem tiver acesso a estes ficheiros pode enviar mensagens em teu nome. Se suspeitas de comprometimento, vai a <strong class="text-slate-300">WhatsApp → Configurações → Dispositivos conectados</strong> e remove a sessão TrueContact.
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>TrueContact only makes connections <strong class="text-slate-200">directly</strong> to the services you already use — nothing passes through TrueContact servers:</p>
+              <div class="space-y-2">
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">iCloud CardDAV</p><p class="text-xs text-slate-500">Direct connection to Apple's servers — your credentials never pass through TrueContact</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">Google People API</p><p class="text-xs text-slate-500">Authentication via OAuth 2.0 — the token stays local and never passes through TrueContact servers</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">LinkedIn</p><p class="text-xs text-slate-500">Reads public profiles like a normal browser — read-only, none of your data is sent</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">WhatsApp Web</p><p class="text-xs text-slate-500">Direct connection to WhatsApp's servers — session authenticated locally</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/40 rounded-lg px-4 py-3"><svg class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><p class="text-xs font-semibold text-slate-200">GitHub Releases</p><p class="text-xs text-slate-500">Only checks a version number — no personal data involved</p></div></div>
+              </div>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            O que é a App-Specific Password do iCloud?
+            <span data-pt="Como funciona a sessão do WhatsApp — é segura?" data-en="How does the WhatsApp session work — is it secure?">Como funciona a sessão do WhatsApp — é segura?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>O TrueContact usa uma <strong class="text-slate-200">App-Specific Password</strong> para aceder ao iCloud Contacts — <strong class="text-red-400">nunca</strong> a tua password principal do Apple ID. É uma password de uso único gerada pela Apple especificamente para esta app.</p>
-            <p>Vantagens:</p>
-            <ul class="space-y-1 list-disc list-inside text-xs text-slate-500">
-              <li>Se for comprometida, podes revogá-la sem alterar o teu Apple ID</li>
-              <li>Dá acesso apenas ao CardDAV (Contatos), não ao restante do iCloud</li>
-              <li>A Apple permite revogar individualmente por app</li>
-            </ul>
-            <p>Para gerar, vai a <a href="https://appleid.apple.com" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">appleid.apple.com</a> → <strong class="text-slate-300">Iniciar sessão e segurança → Senhas específicas de app</strong>.</p>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Quando ligas o WhatsApp através do QR Code, é gerado um <strong class="text-slate-200">ficheiro de sessão local</strong> no teu computador. Este ficheiro mantém a autenticação sem necessidade de introduzir credenciais repetidamente.</p>
+              <div class="grid sm:grid-cols-2 gap-2">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-[10px] font-bold text-slate-400 mb-1">macOS</p>
+                  <code class="text-[10px]">~/Library/Application Support/truecontact/whatsapp-session/</code>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
+                  <p class="text-[10px] font-bold text-slate-400 mb-1">Windows</p>
+                  <code class="text-[10px]">%APPDATA%\truecontact\whatsapp-session\</code>
+                </div>
+              </div>
+              <div class="callout callout-warn text-xs text-slate-400">
+                <strong class="text-amber-400">Aviso:</strong> Nunca compartilhes esta pasta com ninguém. Quem tiver acesso a estes ficheiros pode enviar mensagens em teu nome. Se suspeitas de comprometimento, vai a <strong class="text-slate-300">WhatsApp → Configurações → Dispositivos conectados</strong> e remove a sessão TrueContact.
+              </div>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>When you connect WhatsApp through the QR Code, a <strong class="text-slate-200">local session file</strong> is generated on your computer. This file keeps the authentication without needing to enter credentials repeatedly.</p>
+              <div class="grid sm:grid-cols-2 gap-2">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-[10px] font-bold text-slate-400 mb-1">macOS</p><code class="text-[10px]">~/Library/Application Support/truecontact/whatsapp-session/</code></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-[10px] font-bold text-slate-400 mb-1">Windows</p><code class="text-[10px]">%APPDATA%\truecontact\whatsapp-session\</code></div>
+              </div>
+              <div class="callout callout-warn text-xs text-slate-400">
+                <strong class="text-amber-400">Warning:</strong> Never share this folder with anyone. Anyone with access to these files can send messages in your name. If you suspect compromise, go to <strong class="text-slate-300">WhatsApp → Settings → Linked Devices</strong> and remove the TrueContact session.
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O que é a App-Specific Password do iCloud?" data-en="What is the iCloud App-Specific Password?">O que é a App-Specific Password do iCloud?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O TrueContact usa uma <strong class="text-slate-200">App-Specific Password</strong> para aceder ao iCloud Contacts — <strong class="text-red-400">nunca</strong> a tua password principal do Apple ID. É uma password de uso único gerada pela Apple especificamente para esta app.</p>
+              <p>Vantagens:</p>
+              <ul class="space-y-1 list-disc list-inside text-xs text-slate-500">
+                <li>Se for comprometida, podes revogá-la sem alterar o teu Apple ID</li>
+                <li>Dá acesso apenas ao CardDAV (Contatos), não ao restante do iCloud</li>
+                <li>A Apple permite revogar individualmente por app</li>
+              </ul>
+              <p>Para gerar, vai a <a href="https://appleid.apple.com" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">appleid.apple.com</a> → <strong class="text-slate-300">Iniciar sessão e segurança → Senhas específicas de app</strong>.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>TrueContact uses an <strong class="text-slate-200">App-Specific Password</strong> to access iCloud Contacts — <strong class="text-red-400">never</strong> your main Apple ID password. It's a one-time password generated by Apple specifically for this app.</p>
+              <p>Benefits:</p>
+              <ul class="space-y-1 list-disc list-inside text-xs text-slate-500">
+                <li>If compromised, you can revoke it without changing your Apple ID</li>
+                <li>Gives access only to CardDAV (Contacts), not the rest of iCloud</li>
+                <li>Apple allows individual revocation per app</li>
+              </ul>
+              <p>To generate, go to <a href="https://appleid.apple.com" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">appleid.apple.com</a> → <strong class="text-slate-300">Sign In and Security → App-Specific Passwords</strong>.</p>
+            </div>
           </div>
         </details>
 
@@ -320,111 +424,135 @@
           <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Secção 3</p>
-          <h2 class="text-xl font-bold text-white">Sincronização de Contatos</h2>
+          <p class="text-[10px] font-bold text-blue-400 uppercase tracking-widest" data-pt="Secção 3" data-en="Section 3">Secção 3</p>
+          <h2 class="text-xl font-bold text-white" data-pt="Sincronização de Contatos" data-en="Contact Sync">Sincronização de Contatos</h2>
         </div>
       </div>
       <div class="space-y-2">
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como o TrueContact une dados do iCloud, LinkedIn e WhatsApp?
+            <span data-pt="Como o TrueContact une dados do iCloud, LinkedIn e WhatsApp?" data-en="How does TrueContact combine data from iCloud, LinkedIn and WhatsApp?">Como o TrueContact une dados do iCloud, LinkedIn e WhatsApp?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>O TrueContact funciona como um <strong class="text-slate-200">Hub central</strong>: a base de dados local é a fonte de verdade, e os provedores bidirecionais (iCloud, Google Contacts) lêem e escrevem contatos, enquanto LinkedIn e WhatsApp apenas enriquecem.</p>
-            <ol class="space-y-2">
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">1</span>
-                <span><strong class="text-slate-200">Pull do iCloud</strong> — lê todos os contatos e grupos via CardDAV, preservando ETags para detetar alterações</span>
-              </li>
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">2</span>
-                <span><strong class="text-slate-200">Pull do Google</strong> — lê alterações desde o último sync via SyncToken, bidirecional</span>
-              </li>
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">3</span>
-                <span><strong class="text-slate-200">Enriquecimento LinkedIn</strong> — importa cargo, empresa, foto e redes sociais automaticamente</span>
-              </li>
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">4</span>
-                <span><strong class="text-slate-200">Enriquecimento WhatsApp</strong> — verifica a foto de perfil de cada contato (se autorizado)</span>
-              </li>
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">5</span>
-                <span><strong class="text-slate-200">Push para iCloud e Google</strong> — escreve as alterações de volta em ambos, ficando disponíveis em todos os dispositivos</span>
-              </li>
-            </ol>
-            <div class="callout text-xs text-slate-400">
-              <strong class="text-indigo-300">Regra fundamental:</strong> O TrueContact <strong class="text-slate-200">nunca apaga dados manuais</strong>. Se adicionares uma nota ou email a um contato no iPhone, essa informação é preservada mesmo que o LinkedIn devolva um campo vazio.
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O TrueContact funciona como um <strong class="text-slate-200">Hub central</strong>: a base de dados local é a fonte de verdade, e os provedores bidirecionais (iCloud, Google Contacts) lêem e escrevem contatos, enquanto LinkedIn e WhatsApp apenas enriquecem.</p>
+              <ol class="space-y-2">
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">1</span><span><strong class="text-slate-200">Pull do iCloud</strong> — lê todos os contatos e grupos via CardDAV, preservando ETags para detetar alterações</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">2</span><span><strong class="text-slate-200">Pull do Google</strong> — lê alterações desde o último sync via SyncToken, bidirecional</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">3</span><span><strong class="text-slate-200">Enriquecimento LinkedIn</strong> — importa cargo, empresa, foto e redes sociais automaticamente</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">4</span><span><strong class="text-slate-200">Enriquecimento WhatsApp</strong> — verifica a foto de perfil de cada contato (se autorizado)</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">5</span><span><strong class="text-slate-200">Push para iCloud e Google</strong> — escreve as alterações de volta em ambos, ficando disponíveis em todos os dispositivos</span></li>
+              </ol>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Regra fundamental:</strong> O TrueContact <strong class="text-slate-200">nunca apaga dados manuais</strong>. Se adicionares uma nota ou email a um contato no iPhone, essa informação é preservada mesmo que o LinkedIn devolva um campo vazio.</div>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>TrueContact works as a <strong class="text-slate-200">central Hub</strong>: the local database is the source of truth, and bidirectional providers (iCloud, Google Contacts) read and write contacts, while LinkedIn and WhatsApp only enrich.</p>
+              <ol class="space-y-2">
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">1</span><span><strong class="text-slate-200">Pull from iCloud</strong> — reads all contacts and groups via CardDAV, preserving ETags to detect changes</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">2</span><span><strong class="text-slate-200">Pull from Google</strong> — reads changes since last sync via SyncToken, bidirectional</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">3</span><span><strong class="text-slate-200">LinkedIn enrichment</strong> — automatically imports job title, company, photo and social networks</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">4</span><span><strong class="text-slate-200">WhatsApp enrichment</strong> — checks each contact's profile picture (if authorized)</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-blue-950 rounded-full flex items-center justify-center text-[9px] font-black text-blue-400 shrink-0 mt-0.5">5</span><span><strong class="text-slate-200">Push to iCloud and Google</strong> — writes changes back to both, available on all devices</span></li>
+              </ol>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Key rule:</strong> TrueContact <strong class="text-slate-200">never deletes manual data</strong>. If you add a note or email to a contact on iPhone, that information is preserved even if LinkedIn returns an empty field.</div>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como funciona a normalização de números de telefone?
+            <span data-pt="Como funciona a normalização de números de telefone?" data-en="How does phone number normalization work?">Como funciona a normalização de números de telefone?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>O mesmo número pode estar guardado de formas completamente diferentes no iCloud e no WhatsApp. O TrueContact normaliza-os automaticamente para fazer a correspondência:</p>
-            <div class="space-y-1.5">
-              <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs">
-                <code>(11) 98765-4321</code>
-                <span class="text-slate-500 text-[10px]">→ normalizado →</span>
-                <code>5511987654321</code>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O mesmo número pode estar guardado de formas completamente diferentes no iCloud e no WhatsApp. O TrueContact normaliza-os automaticamente para fazer a correspondência:</p>
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs"><code>(11) 98765-4321</code><span class="text-slate-500 text-[10px]">→ normalizado →</span><code>5511987654321</code></div>
+                <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs"><code>+55 11 9 8765-4321</code><span class="text-slate-500 text-[10px]">→ normalizado →</span><code>5511987654321</code></div>
+                <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs"><code>11 8765-4321</code><span class="text-slate-500 text-[10px]">→ + 9º dígito →</span><code>5511987654321</code></div>
               </div>
-              <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs">
-                <code>+55 11 9 8765-4321</code>
-                <span class="text-slate-500 text-[10px]">→ normalizado →</span>
-                <code>5511987654321</code>
-              </div>
-              <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs">
-                <code>11 8765-4321</code>
-                <span class="text-slate-500 text-[10px]">→ + 9º dígito →</span>
-                <code>5511987654321</code>
-              </div>
+              <p class="text-xs text-slate-500">Inclui suporte ao <strong class="text-slate-300">9º dígito brasileiro</strong> para números de DDDs onde a transição ocorreu depois de 2012 — sem que precises de atualizar os teus contatos manualmente.</p>
             </div>
-            <p class="text-xs text-slate-500">Inclui suporte ao <strong class="text-slate-300">9º dígito brasileiro</strong> para números de DDDs onde a transição ocorreu depois de 2012 — sem que precises de atualizar os teus contatos manualmente.</p>
           </div>
-        </details>
-
-        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
-          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Porque não vejo a foto de alguns contatos do WhatsApp?
-            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>Esta é uma das perguntas mais frequentes. A resposta é simples: <strong class="text-slate-200">o WhatsApp respeita as configurações de privacidade de cada utilizador</strong>.</p>
-            <p>Se um contato configurou a sua foto de perfil para ser visível apenas para os seus próprios contatos (ou para ninguém), o WhatsApp não disponibiliza essa foto a nenhuma aplicação — incluindo o TrueContact. Quando isso acontece, o TrueContact mostra um <strong class="text-slate-200">ícone de privacidade</strong> em vez da foto, sinalizando que o contato existe no WhatsApp mas optou por restringir a sua imagem.</p>
-            <div class="bg-green-950/30 border border-green-900/50 rounded-lg px-4 py-3 text-xs text-green-300">
-              <strong>Isto é um comportamento correto, não um bug.</strong> O TrueContact respeita as escolhas de privacidade dos teus contatos da mesma forma que o próprio WhatsApp faz.
-            </div>
-            <div class="callout text-xs text-slate-400">
-              <strong class="text-indigo-300">Dica:</strong> Se quiseres ver a foto de um contato específico, pede-lhe que abra <strong class="text-slate-300">WhatsApp → Configurações → Privacidade → Foto de perfil → "Todos os Meus Contatos"</strong>.
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>The same number can be stored in completely different formats in iCloud and WhatsApp. TrueContact normalizes them automatically to make the match:</p>
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs"><code>(11) 98765-4321</code><span class="text-slate-500 text-[10px]">→ normalized →</span><code>5511987654321</code></div>
+                <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs"><code>+55 11 9 8765-4321</code><span class="text-slate-500 text-[10px]">→ normalized →</span><code>5511987654321</code></div>
+                <div class="flex items-center justify-between bg-slate-800/50 rounded-lg px-4 py-2.5 text-xs"><code>11 8765-4321</code><span class="text-slate-500 text-[10px]">→ + 9th digit →</span><code>5511987654321</code></div>
+              </div>
+              <p class="text-xs text-slate-500">Includes support for the <strong class="text-slate-300">Brazilian 9th digit</strong> for area codes where the transition occurred after 2012 — without needing to manually update your contacts.</p>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como o TrueContact deteta e resolve contatos duplicados?
+            <span data-pt="Porque não vejo a foto de alguns contatos do WhatsApp?" data-en="Why can't I see some WhatsApp contacts' photos?">Porque não vejo a foto de alguns contatos do WhatsApp?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>O TrueContact analisa automaticamente a tua base de dados em busca de contatos com nome, email, telefone ou perfil social semelhantes.</p>
-            <p class="font-medium text-slate-300 text-xs">Quando encontra sugestões:</p>
-            <ul class="space-y-1 list-disc list-inside text-xs">
-              <li>Na sidebar, aparece o bloco <strong class="text-slate-200">Sugestões de Merge</strong></li>
-              <li>Clica em <strong class="text-slate-200">Rever</strong> para comparar os dois contatos lado a lado</li>
-              <li>Escolhe quais os campos a manter de cada lado</li>
-            </ul>
-            <p class="font-medium text-slate-300 text-xs">Para fazer merge manual:</p>
-            <ol class="space-y-1 list-decimal list-inside text-xs">
-              <li>Passa o cursor sobre um contato → aparece um ✓ no avatar</li>
-              <li>Seleciona 2 ou mais contatos</li>
-              <li>Clica em <strong class="text-slate-200">Merge</strong> na barra inferior</li>
-            </ol>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Esta é uma das perguntas mais frequentes. A resposta é simples: <strong class="text-slate-200">o WhatsApp respeita as configurações de privacidade de cada utilizador</strong>.</p>
+              <p>Se um contato configurou a sua foto de perfil para ser visível apenas para os seus próprios contatos (ou para ninguém), o WhatsApp não disponibiliza essa foto a nenhuma aplicação — incluindo o TrueContact. Quando isso acontece, o TrueContact mostra um <strong class="text-slate-200">ícone de privacidade</strong> em vez da foto, sinalizando que o contato existe no WhatsApp mas optou por restringir a sua imagem.</p>
+              <div class="bg-green-950/30 border border-green-900/50 rounded-lg px-4 py-3 text-xs text-green-300"><strong>Isto é um comportamento correto, não um bug.</strong> O TrueContact respeita as escolhas de privacidade dos teus contatos da mesma forma que o próprio WhatsApp faz.</div>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Dica:</strong> Se quiseres ver a foto de um contato específico, pede-lhe que abra <strong class="text-slate-300">WhatsApp → Configurações → Privacidade → Foto de perfil → "Todos os Meus Contatos"</strong>.</div>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>This is one of the most frequent questions. The answer is simple: <strong class="text-slate-200">WhatsApp respects each user's privacy settings</strong>.</p>
+              <p>If a contact has set their profile photo to be visible only to their own contacts (or no one), WhatsApp does not make that photo available to any application — including TrueContact. When this happens, TrueContact shows a <strong class="text-slate-200">privacy icon</strong> instead of the photo, signaling that the contact exists on WhatsApp but chose to restrict their image.</p>
+              <div class="bg-green-950/30 border border-green-900/50 rounded-lg px-4 py-3 text-xs text-green-300"><strong>This is correct behavior, not a bug.</strong> TrueContact respects your contacts' privacy choices the same way WhatsApp does.</div>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Tip:</strong> If you want to see a specific contact's photo, ask them to open <strong class="text-slate-300">WhatsApp → Settings → Privacy → Profile Photo → "My Contacts"</strong>.</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Como o TrueContact deteta e resolve contatos duplicados?" data-en="How does TrueContact detect and resolve duplicate contacts?">Como o TrueContact deteta e resolve contatos duplicados?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O TrueContact analisa automaticamente a tua base de dados em busca de contatos com nome, email, telefone ou perfil social semelhantes.</p>
+              <p class="font-medium text-slate-300 text-xs">Quando encontra sugestões:</p>
+              <ul class="space-y-1 list-disc list-inside text-xs">
+                <li>Na sidebar, aparece o bloco <strong class="text-slate-200">Sugestões de Merge</strong></li>
+                <li>Clica em <strong class="text-slate-200">Rever</strong> para comparar os dois contatos lado a lado</li>
+                <li>Escolhe quais os campos a manter de cada lado</li>
+              </ul>
+              <p class="font-medium text-slate-300 text-xs">Para fazer merge manual:</p>
+              <ol class="space-y-1 list-decimal list-inside text-xs">
+                <li>Passa o cursor sobre um contato → aparece um ✓ no avatar</li>
+                <li>Seleciona 2 ou mais contatos</li>
+                <li>Clica em <strong class="text-slate-200">Merge</strong> na barra inferior</li>
+              </ol>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>TrueContact automatically analyzes your database for contacts with similar name, email, phone or social profile.</p>
+              <p class="font-medium text-slate-300 text-xs">When it finds suggestions:</p>
+              <ul class="space-y-1 list-disc list-inside text-xs">
+                <li>In the sidebar, the <strong class="text-slate-200">Merge Suggestions</strong> block appears</li>
+                <li>Click <strong class="text-slate-200">Review</strong> to compare the two contacts side by side</li>
+                <li>Choose which fields to keep from each side</li>
+              </ul>
+              <p class="font-medium text-slate-300 text-xs">For manual merge:</p>
+              <ol class="space-y-1 list-decimal list-inside text-xs">
+                <li>Hover over a contact → a ✓ appears on the avatar</li>
+                <li>Select 2 or more contacts</li>
+                <li>Click <strong class="text-slate-200">Merge</strong> in the bottom bar</li>
+              </ol>
+            </div>
           </div>
         </details>
 
@@ -438,62 +566,98 @@
           <svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Secção 4</p>
-          <h2 class="text-xl font-bold text-white">Conectar o Google Contacts</h2>
+          <p class="text-[10px] font-bold text-blue-400 uppercase tracking-widest" data-pt="Secção 4" data-en="Section 4">Secção 4</p>
+          <h2 class="text-xl font-bold text-white" data-pt="Conectar o Google Contacts" data-en="Connect Google Contacts">Conectar o Google Contacts</h2>
         </div>
       </div>
       <div class="space-y-2">
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden" open>
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Passo a passo: autorização OAuth
+            <span data-pt="Passo a passo: autorização OAuth" data-en="Step by step: OAuth authorization">Passo a passo: autorização OAuth</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <ol class="space-y-2 list-decimal list-inside text-xs">
-              <li>Abra o <strong class="text-slate-200">Assistente de Configuração</strong> (na primeira abertura) ou vá a <strong class="text-slate-200">Configurações → Google Contacts</strong></li>
-              <li>Clique em <strong class="text-slate-200">"Conectar Google Contacts"</strong></li>
-              <li>Uma janela de autenticação do Google será aberta no seu navegador</li>
-              <li>Faça login com a sua conta Google e conceda as permissões solicitadas</li>
-              <li>O TrueContact receberá o token automaticamente e iniciará a sincronização inicial</li>
-            </ol>
-            <div class="callout text-xs text-slate-400">
-              O TrueContact usa <strong class="text-slate-200">OAuth 2.0</strong> — você nunca insere a sua senha do Google no app. O token fica armazenado localmente e pode ser revogado a qualquer momento em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">myaccount.google.com/permissions</a>.
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ol class="space-y-2 list-decimal list-inside text-xs">
+                <li>Abra o <strong class="text-slate-200">Assistente de Configuração</strong> (na primeira abertura) ou vá a <strong class="text-slate-200">Configurações → Google Contacts</strong></li>
+                <li>Clique em <strong class="text-slate-200">"Conectar Google Contacts"</strong></li>
+                <li>Uma janela de autenticação do Google será aberta no seu navegador</li>
+                <li>Faça login com a sua conta Google e conceda as permissões solicitadas</li>
+                <li>O TrueContact receberá o token automaticamente e iniciará a sincronização inicial</li>
+              </ol>
+              <div class="callout text-xs text-slate-400">O TrueContact usa <strong class="text-slate-200">OAuth 2.0</strong> — você nunca insere a sua senha do Google no app. O token fica armazenado localmente e pode ser revogado a qualquer momento em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">myaccount.google.com/permissions</a>.</div>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ol class="space-y-2 list-decimal list-inside text-xs">
+                <li>Open the <strong class="text-slate-200">Setup Wizard</strong> (on first launch) or go to <strong class="text-slate-200">Settings → Google Contacts</strong></li>
+                <li>Click <strong class="text-slate-200">"Connect Google Contacts"</strong></li>
+                <li>A Google authentication window will open in your browser</li>
+                <li>Log in with your Google account and grant the requested permissions</li>
+                <li>TrueContact will receive the token automatically and start the initial sync</li>
+              </ol>
+              <div class="callout text-xs text-slate-400">TrueContact uses <strong class="text-slate-200">OAuth 2.0</strong> — you never enter your Google password in the app. The token is stored locally and can be revoked at any time at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">myaccount.google.com/permissions</a>.</div>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            O que acontece na primeira conexão?
+            <span data-pt="O que acontece na primeira conexão?" data-en="What happens on first connection?">O que acontece na primeira conexão?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>Quando você conecta o Google Contacts pela primeira vez:</p>
-            <ol class="space-y-2 text-xs">
-              <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">1.</span> O TrueContact lê todos os contatos existentes no Google</li>
-              <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">2.</span> Todos os contatos locais que ainda não estão no Google são <strong class="text-slate-200">enfileirados para criação</strong> (propagação total automática)</li>
-              <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">3.</span> A sincronização ocorre gradualmente para respeitar os limites da API Google</li>
-              <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">4.</span> Um <strong class="text-slate-200">badge azul Google</strong> no cabeçalho indica quantos contatos ainda estão a ser processados</li>
-            </ol>
-            <div class="callout text-xs text-slate-400">
-              <strong class="text-indigo-300">Grupos:</strong> Os grupos de contatos também são sincronizados. Um grupo criado no iCloud aparece automaticamente no Google Contacts, e vice-versa.
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Quando você conecta o Google Contacts pela primeira vez:</p>
+              <ol class="space-y-2 text-xs">
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">1.</span> O TrueContact lê todos os contatos existentes no Google</li>
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">2.</span> Todos os contatos locais que ainda não estão no Google são <strong class="text-slate-200">enfileirados para criação</strong> (propagação total automática)</li>
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">3.</span> A sincronização ocorre gradualmente para respeitar os limites da API Google</li>
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">4.</span> Um <strong class="text-slate-200">badge azul Google</strong> no cabeçalho indica quantos contatos ainda estão a ser processados</li>
+              </ol>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Grupos:</strong> Os grupos de contatos também são sincronizados. Um grupo criado no iCloud aparece automaticamente no Google Contacts, e vice-versa.</div>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>When you connect Google Contacts for the first time:</p>
+              <ol class="space-y-2 text-xs">
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">1.</span> TrueContact reads all existing contacts in Google</li>
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">2.</span> All local contacts not yet in Google are <strong class="text-slate-200">queued for creation</strong> (automatic full propagation)</li>
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">3.</span> Sync occurs gradually to respect Google API rate limits</li>
+                <li class="flex gap-3"><span class="text-blue-400 font-bold shrink-0">4.</span> A <strong class="text-slate-200">blue Google badge</strong> in the header indicates how many contacts are still being processed</li>
+              </ol>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Groups:</strong> Contact groups are also synced. A group created in iCloud automatically appears in Google Contacts, and vice versa.</div>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como revogar o acesso ao Google?
+            <span data-pt="Como revogar o acesso ao Google?" data-en="How to revoke Google access?">Como revogar o acesso ao Google?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <ol class="space-y-2 list-decimal list-inside text-xs">
-              <li>Vá a <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">myaccount.google.com/permissions</a></li>
-              <li>Localize "TrueContact" na lista</li>
-              <li>Clique em <strong class="text-slate-200">"Revogar acesso"</strong></li>
-            </ol>
-            <p class="text-xs text-slate-500">Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincronização futura.</p>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ol class="space-y-2 list-decimal list-inside text-xs">
+                <li>Vá a <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">myaccount.google.com/permissions</a></li>
+                <li>Localize "TrueContact" na lista</li>
+                <li>Clique em <strong class="text-slate-200">"Revogar acesso"</strong></li>
+              </ol>
+              <p class="text-xs text-slate-500">Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincronização futura.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ol class="space-y-2 list-decimal list-inside text-xs">
+                <li>Go to <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300">myaccount.google.com/permissions</a></li>
+                <li>Find "TrueContact" in the list</li>
+                <li>Click <strong class="text-slate-200">"Revoke access"</strong></li>
+              </ol>
+              <p class="text-xs text-slate-500">This does not delete your contacts from Google Contacts — it only stops future synchronization.</p>
+            </div>
           </div>
         </details>
 
@@ -507,66 +671,91 @@
           <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Secção 5</p>
-          <h2 class="text-xl font-bold text-white">Conectar o WhatsApp</h2>
+          <p class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest" data-pt="Secção 5" data-en="Section 5">Secção 5</p>
+          <h2 class="text-xl font-bold text-white" data-pt="Conectar o WhatsApp" data-en="Connect WhatsApp">Conectar o WhatsApp</h2>
         </div>
       </div>
       <div class="space-y-2">
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden" open>
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Passo a passo: como ler o QR Code
+            <span data-pt="Passo a passo: como ler o QR Code" data-en="Step by step: how to scan the QR Code">Passo a passo: como ler o QR Code</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <p class="text-xs font-bold text-slate-300 mb-2">No TrueContact:</p>
-                <ol class="space-y-2 text-xs">
-                  <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">1.</span> Abre as <strong class="text-slate-200">Configurações</strong> (ícone ⚙️)</li>
-                  <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">2.</span> Vai à secção <strong class="text-slate-200">WhatsApp</strong></li>
-                  <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">3.</span> Clica em <strong class="text-slate-200">"Conectar WhatsApp"</strong></li>
-                  <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">4.</span> Aparece um QR Code — tens 60 segundos</li>
-                </ol>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <p class="text-xs font-bold text-slate-300 mb-2">No TrueContact:</p>
+                  <ol class="space-y-2 text-xs">
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">1.</span> Abre as <strong class="text-slate-200">Configurações</strong> (ícone ⚙️)</li>
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">2.</span> Vai à secção <strong class="text-slate-200">WhatsApp</strong></li>
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">3.</span> Clica em <strong class="text-slate-200">"Conectar WhatsApp"</strong></li>
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">4.</span> Aparece um QR Code — tens 60 segundos</li>
+                  </ol>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-slate-300 mb-2">No teu celular:</p>
+                  <ol class="space-y-2 text-xs">
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">1.</span> Abre o <strong class="text-slate-200">WhatsApp</strong></li>
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">2.</span> Vai a <strong class="text-slate-200">Definições → Dispositivos conectados</strong></li>
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">3.</span> Toca em <strong class="text-slate-200">"Conectar um dispositivo"</strong></li>
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">4.</span> Aponta a câmara para o QR Code</li>
+                  </ol>
+                </div>
               </div>
-              <div>
-                <p class="text-xs font-bold text-slate-300 mb-2">No teu celular:</p>
-                <ol class="space-y-2 text-xs">
-                  <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">1.</span> Abre o <strong class="text-slate-200">WhatsApp</strong></li>
-                  <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">2.</span> Vai a <strong class="text-slate-200">Definições → Dispositivos conectados</strong></li>
-                  <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">3.</span> Toca em <strong class="text-slate-200">"Conectar um dispositivo"</strong></li>
-                  <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">4.</span> Aponta a câmara para o QR Code</li>
-                </ol>
-              </div>
+              <div class="callout text-xs text-slate-400">O TrueContact aparece como <strong class="text-slate-300">"Chrome em [nome do computador]"</strong> na lista de dispositivos conectados. O WhatsApp permite até 4 dispositivos ao mesmo tempo.</div>
             </div>
-            <div class="callout text-xs text-slate-400">
-              O TrueContact aparece como <strong class="text-slate-300">"Chrome em [nome do computador]"</strong> na lista de dispositivos conectados. O WhatsApp permite até 4 dispositivos ao mesmo tempo.
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <p class="text-xs font-bold text-slate-300 mb-2">In TrueContact:</p>
+                  <ol class="space-y-2 text-xs">
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">1.</span> Open <strong class="text-slate-200">Settings</strong> (⚙️ icon)</li>
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">2.</span> Go to the <strong class="text-slate-200">WhatsApp</strong> section</li>
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">3.</span> Click <strong class="text-slate-200">"Connect WhatsApp"</strong></li>
+                    <li class="flex gap-2"><span class="text-indigo-400 font-bold shrink-0">4.</span> A QR Code appears — you have 60 seconds</li>
+                  </ol>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-slate-300 mb-2">On your phone:</p>
+                  <ol class="space-y-2 text-xs">
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">1.</span> Open <strong class="text-slate-200">WhatsApp</strong></li>
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">2.</span> Go to <strong class="text-slate-200">Settings → Linked Devices</strong></li>
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">3.</span> Tap <strong class="text-slate-200">"Link a Device"</strong></li>
+                    <li class="flex gap-2"><span class="text-emerald-400 font-bold shrink-0">4.</span> Point the camera at the QR Code</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="callout text-xs text-slate-400">TrueContact appears as <strong class="text-slate-300">"Chrome on [computer name]"</strong> in the linked devices list. WhatsApp allows up to 4 devices at the same time.</div>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Resolver problemas de conexão
+            <span data-pt="Resolver problemas de conexão" data-en="Troubleshooting connection issues">Resolver problemas de conexão</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <div class="space-y-3">
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-xs font-bold text-slate-200 mb-1">O QR Code expira antes de conseguir ler</p>
-                <p class="text-xs text-slate-500">Clica em "Atualizar QR Code" nas Configurações. O código é regenerado instantaneamente.</p>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <div class="space-y-3">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">O QR Code expira antes de conseguir ler</p><p class="text-xs text-slate-500">Clica em "Atualizar QR Code" nas Configurações. O código é regenerado instantaneamente.</p></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">"Sessão desligada" aparece nas Configurações</p><p class="text-xs text-slate-500">O WhatsApp desliga dispositivos inativos por mais de 14 dias. Repete o processo de conexão com o QR Code.</p></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">O WhatsApp diz "Número de aparelhos atingido"</p><p class="text-xs text-slate-500">Remove um dispositivo existente em <strong class="text-slate-300">WhatsApp → Configurações → Dispositivos conectados</strong> e tenta novamente.</p></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">As mensagens não estão a ser enviadas</p><p class="text-xs text-slate-500">Verifica em <strong class="text-slate-300">Configurações → WhatsApp</strong> se o estado mostra "Conectado". Se não, reconecta através do QR Code.</p></div>
               </div>
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-xs font-bold text-slate-200 mb-1">"Sessão desligada" aparece nas Configurações</p>
-                <p class="text-xs text-slate-500">O WhatsApp desliga dispositivos inativos por mais de 14 dias. Repete o processo de conexão com o QR Code.</p>
-              </div>
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-xs font-bold text-slate-200 mb-1">O WhatsApp diz "Número de aparelhos atingido"</p>
-                <p class="text-xs text-slate-500">Remove um dispositivo existente em <strong class="text-slate-300">WhatsApp → Configurações → Dispositivos conectados</strong> e tenta novamente.</p>
-              </div>
-              <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5">
-                <p class="text-xs font-bold text-slate-200 mb-1">As mensagens não estão a ser enviadas</p>
-                <p class="text-xs text-slate-500">Verifica em <strong class="text-slate-300">Configurações → WhatsApp</strong> se o estado mostra "Conectado". Se não, reconecta através do QR Code.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <div class="space-y-3">
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">QR Code expires before you can scan it</p><p class="text-xs text-slate-500">Click "Refresh QR Code" in Settings. The code is regenerated instantly.</p></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">"Session disconnected" appears in Settings</p><p class="text-xs text-slate-500">WhatsApp disconnects devices inactive for more than 14 days. Repeat the QR Code connection process.</p></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">WhatsApp says "Device limit reached"</p><p class="text-xs text-slate-500">Remove an existing device in <strong class="text-slate-300">WhatsApp → Settings → Linked Devices</strong> and try again.</p></div>
+                <div class="bg-slate-800/50 rounded-lg p-3 border border-white/5"><p class="text-xs font-bold text-slate-200 mb-1">Messages not being sent</p><p class="text-xs text-slate-500">Check in <strong class="text-slate-300">Settings → WhatsApp</strong> if the status shows "Connected". If not, reconnect via QR Code.</p></div>
               </div>
             </div>
           </div>
@@ -582,109 +771,133 @@
           <svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-pink-400 uppercase tracking-widest">Secção 6</p>
-          <h2 class="text-xl font-bold text-white">Templates e Automações</h2>
+          <p class="text-[10px] font-bold text-pink-400 uppercase tracking-widest" data-pt="Secção 6" data-en="Section 6">Secção 6</p>
+          <h2 class="text-xl font-bold text-white" data-pt="Templates e Automações" data-en="Templates &amp; Automations">Templates e Automações</h2>
         </div>
       </div>
       <div class="space-y-2">
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como criar templates de mensagem de aniversário?
+            <span data-pt="Como criar templates de mensagem de aniversário?" data-en="How to create birthday message templates?">Como criar templates de mensagem de aniversário?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <ol class="space-y-2 list-decimal list-inside text-sm">
-              <li>Abre as <strong class="text-slate-200">Configurações</strong></li>
-              <li>Vai à secção <strong class="text-slate-200">Templates de Aniversário</strong></li>
-              <li>Clica em <strong class="text-slate-200">"Adicionar Template"</strong></li>
-              <li>Escreve a mensagem, usando <code>{{nome_amigavel}}</code> para o nome do contato</li>
-              <li>Clica em <strong class="text-slate-200">"Salvar"</strong></li>
-            </ol>
-            <p class="text-xs font-medium text-slate-400">Exemplos de templates:</p>
-            <div class="space-y-2">
-              <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">
-                Olá {{nome_amigavel}}! 🎂 Hoje é o teu dia especial — muitas felicidades e que este novo ano traga tudo o que mereces! 🥳
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ol class="space-y-2 list-decimal list-inside text-sm">
+                <li>Abre as <strong class="text-slate-200">Configurações</strong></li>
+                <li>Vai à secção <strong class="text-slate-200">Templates de Aniversário</strong></li>
+                <li>Clica em <strong class="text-slate-200">"Adicionar Template"</strong></li>
+                <li>Escreve a mensagem, usando <code>{{nome_amigavel}}</code> para o nome do contato</li>
+                <li>Clica em <strong class="text-slate-200">"Salvar"</strong></li>
+              </ol>
+              <p class="text-xs font-medium text-slate-400">Exemplos de templates:</p>
+              <div class="space-y-2">
+                <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">Olá {{nome_amigavel}}! 🎂 Hoje é o teu dia especial — muitas felicidades e que este novo ano traga tudo o que mereces! 🥳</div>
+                <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">{{nome_amigavel}}, parabéns pelo teu dia! 🎉 Que seja um ano cheio de conquistas e momentos especiais.</div>
+                <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">Feliz aniversário, {{nome_amigavel}}! 🎈 Que a vida te sorria sempre.</div>
               </div>
-              <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">
-                {{nome_amigavel}}, parabéns pelo teu dia! 🎉 Que seja um ano cheio de conquistas e momentos especiais.
-              </div>
-              <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">
-                Feliz aniversário, {{nome_amigavel}}! 🎈 Que a vida te sorria sempre.
-              </div>
+              <div class="callout text-xs text-slate-400">Cria 3 a 6 variações diferentes. O sistema garante que não envia a mesma mensagem duas vezes seguidas ao mesmo contato.</div>
             </div>
-            <div class="callout text-xs text-slate-400">
-              Cria 3 a 6 variações diferentes. O sistema garante que não envia a mesma mensagem duas vezes seguidas ao mesmo contato.
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ol class="space-y-2 list-decimal list-inside text-sm">
+                <li>Open <strong class="text-slate-200">Settings</strong></li>
+                <li>Go to the <strong class="text-slate-200">Birthday Templates</strong> section</li>
+                <li>Click <strong class="text-slate-200">"Add Template"</strong></li>
+                <li>Write the message, using <code>{{nome_amigavel}}</code> for the contact's name</li>
+                <li>Click <strong class="text-slate-200">"Save"</strong></li>
+              </ol>
+              <p class="text-xs font-medium text-slate-400">Template examples:</p>
+              <div class="space-y-2">
+                <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">Hi {{nome_amigavel}}! 🎂 Today is your special day — wishing you all the happiness and may this new year bring everything you deserve! 🥳</div>
+                <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">{{nome_amigavel}}, happy birthday! 🎉 May it be a year full of achievements and special moments.</div>
+                <div class="bg-slate-800/60 rounded-lg px-4 py-3 text-xs text-slate-300 font-mono leading-relaxed border border-white/5">Happy birthday, {{nome_amigavel}}! 🎈 May life always smile on you.</div>
+              </div>
+              <div class="callout text-xs text-slate-400">Create 3 to 6 different variations. The system ensures it never sends the same message twice in a row to the same contact.</div>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            O que é a variável <code>{{nome_amigavel}}</code> e como funciona?
+            <span data-pt="O que é a variável {{nome_amigavel}} e como funciona?" data-en="What is the {{nome_amigavel}} variable and how does it work?">O que é a variável <code>{{nome_amigavel}}</code> e como funciona?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>A variável <code>{{nome_amigavel}}</code> é substituída automaticamente pelo nome mais natural do contato. O sistema segue esta ordem de prioridade:</p>
-            <div class="space-y-2">
-              <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">1</span>
-                <div>
-                  <p class="text-xs font-bold text-slate-200">Apelido (Nickname)</p>
-                  <p class="text-xs text-slate-500">Se o contato tiver um apelido definido no iCloud (ex: <strong class="text-slate-300">Zé</strong>), usa esse</p>
-                </div>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>A variável <code>{{nome_amigavel}}</code> é substituída automaticamente pelo nome mais natural do contato. O sistema segue esta ordem de prioridade:</p>
+              <div class="space-y-2">
+                <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">1</span><div><p class="text-xs font-bold text-slate-200">Apelido (Nickname)</p><p class="text-xs text-slate-500">Se o contato tiver um apelido definido no iCloud (ex: <strong class="text-slate-300">Zé</strong>), usa esse</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">2</span><div><p class="text-xs font-bold text-slate-200">Primeiro nome</p><p class="text-xs text-slate-500">Se não tiver apelido, usa o primeiro nome (ex: <strong class="text-slate-300">José</strong>)</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">3</span><div><p class="text-xs font-bold text-slate-200">Nome completo</p><p class="text-xs text-slate-500">Apenas como último recurso</p></div></div>
               </div>
-              <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">2</span>
-                <div>
-                  <p class="text-xs font-bold text-slate-200">Primeiro nome</p>
-                  <p class="text-xs text-slate-500">Se não tiver apelido, usa o primeiro nome (ex: <strong class="text-slate-300">José</strong>)</p>
-                </div>
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-white/5">
+                <p class="text-xs font-bold text-slate-300 mb-2">Exemplo prático:</p>
+                <p class="text-xs text-slate-500">O teu contato está guardado como <strong class="text-slate-300">"José Manuel Ferreira da Silva"</strong> no iCloud, mas toda a gente o chama de <strong class="text-slate-300">"Zé"</strong>. Com o apelido definido, a mensagem será:</p>
+                <p class="text-xs text-indigo-300 font-mono mt-2">"Olá Zé! 🎂..."</p>
+                <p class="text-xs text-slate-600 mt-1">em vez de: "Olá José Manuel Ferreira da Silva! 🎂..."</p>
               </div>
-              <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5">
-                <span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">3</span>
-                <div>
-                  <p class="text-xs font-bold text-slate-200">Nome completo</p>
-                  <p class="text-xs text-slate-500">Apenas como último recurso</p>
-                </div>
-              </div>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Dica:</strong> Para adicionar um apelido no iPhone, abre o contato → "Editar" → "adicionar campo" → <strong class="text-slate-300">"Apelido"</strong>.</div>
             </div>
-            <div class="bg-slate-800/60 rounded-xl p-4 border border-white/5">
-              <p class="text-xs font-bold text-slate-300 mb-2">Exemplo prático:</p>
-              <p class="text-xs text-slate-500">O teu contato está guardado como <strong class="text-slate-300">"José Manuel Ferreira da Silva"</strong> no iCloud, mas toda a gente o chama de <strong class="text-slate-300">"Zé"</strong>. Com o apelido definido, a mensagem será:</p>
-              <p class="text-xs text-indigo-300 font-mono mt-2">"Olá Zé! 🎂..."</p>
-              <p class="text-xs text-slate-600 mt-1">em vez de: "Olá José Manuel Ferreira da Silva! 🎂..."</p>
-            </div>
-            <div class="callout text-xs text-slate-400">
-              <strong class="text-indigo-300">Dica:</strong> Para adicionar um apelido no iPhone, abre o contato → "Editar" → "adicionar campo" → <strong class="text-slate-300">"Apelido"</strong>.
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>The <code>{{nome_amigavel}}</code> variable is automatically replaced by the contact's most natural name. The system follows this priority order:</p>
+              <div class="space-y-2">
+                <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">1</span><div><p class="text-xs font-bold text-slate-200">Nickname</p><p class="text-xs text-slate-500">If the contact has a nickname set in iCloud (e.g., <strong class="text-slate-300">Joe</strong>), uses that</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">2</span><div><p class="text-xs font-bold text-slate-200">First name</p><p class="text-xs text-slate-500">If no nickname, uses the first name (e.g., <strong class="text-slate-300">Joseph</strong>)</p></div></div>
+                <div class="flex items-start gap-3 bg-slate-800/50 rounded-lg px-4 py-2.5"><span class="w-5 h-5 bg-indigo-950 rounded-full flex items-center justify-center text-[9px] font-black text-indigo-400 shrink-0 mt-0.5">3</span><div><p class="text-xs font-bold text-slate-200">Full name</p><p class="text-xs text-slate-500">Only as a last resort</p></div></div>
+              </div>
+              <div class="bg-slate-800/60 rounded-xl p-4 border border-white/5">
+                <p class="text-xs font-bold text-slate-300 mb-2">Practical example:</p>
+                <p class="text-xs text-slate-500">Your contact is stored as <strong class="text-slate-300">"José Manuel Ferreira da Silva"</strong> in iCloud, but everyone calls him <strong class="text-slate-300">"Zé"</strong>. With the nickname set, the message will be:</p>
+                <p class="text-xs text-indigo-300 font-mono mt-2">"Hi Zé! 🎂..."</p>
+                <p class="text-xs text-slate-600 mt-1">instead of: "Hi José Manuel Ferreira da Silva! 🎂..."</p>
+              </div>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Tip:</strong> To add a nickname on iPhone, open the contact → "Edit" → "add field" → <strong class="text-slate-300">"Nickname"</strong>.</div>
             </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como funcionam o sorteio de mensagens e o delay de digitação?
+            <span data-pt="Como funcionam o sorteio de mensagens e o delay de digitação?" data-en="How do message randomization and typing delay work?">Como funcionam o sorteio de mensagens e o delay de digitação?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
-            <div class="grid sm:grid-cols-2 gap-3">
-              <div class="bg-slate-800/50 rounded-xl p-4 border border-white/5">
-                <div class="w-8 h-8 bg-indigo-950 rounded-lg flex items-center justify-center mb-3">
-                  <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
+              <div class="grid sm:grid-cols-2 gap-3">
+                <div class="bg-slate-800/50 rounded-xl p-4 border border-white/5">
+                  <div class="w-8 h-8 bg-indigo-950 rounded-lg flex items-center justify-center mb-3"><svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
+                  <p class="text-xs font-bold text-slate-200 mb-1">Sorteio Aleatório</p>
+                  <p class="text-xs text-slate-500">Quando há múltiplos templates, o sistema escolhe um aleatoriamente. O mesmo contato receberá uma mensagem diferente a cada aniversário.</p>
                 </div>
-                <p class="text-xs font-bold text-slate-200 mb-1">Sorteio Aleatório</p>
-                <p class="text-xs text-slate-500">Quando há múltiplos templates, o sistema escolhe um aleatoriamente. O mesmo contato receberá uma mensagem diferente a cada aniversário.</p>
-              </div>
-              <div class="bg-slate-800/50 rounded-xl p-4 border border-white/5">
-                <div class="w-8 h-8 bg-emerald-950 rounded-lg flex items-center justify-center mb-3">
-                  <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div class="bg-slate-800/50 rounded-xl p-4 border border-white/5">
+                  <div class="w-8 h-8 bg-emerald-950 rounded-lg flex items-center justify-center mb-3"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                  <p class="text-xs font-bold text-slate-200 mb-1">Delay de Digitação</p>
+                  <p class="text-xs text-slate-500">Antes de enviar, ativa o indicador "a escrever..." e aguarda um tempo proporcional ao comprimento da mensagem — como se fosses tu a escrever.</p>
                 </div>
-                <p class="text-xs font-bold text-slate-200 mb-1">Delay de Digitação</p>
-                <p class="text-xs text-slate-500">Antes de enviar, ativa o indicador "a escrever..." e aguarda um tempo proporcional ao comprimento da mensagem — como se fosses tu a escrever.</p>
               </div>
+              <div class="callout callout-warn text-xs text-slate-400"><strong class="text-amber-400">Aviso:</strong> Não configures templates com linguagem de marketing ou links promocionais. O WhatsApp pode suspender contas que enviam mensagens em massa com conteúdo publicitário. Os templates devem ser mensagens genuínas e pessoais.</div>
             </div>
-            <div class="callout callout-warn text-xs text-slate-400">
-              <strong class="text-amber-400">Aviso:</strong> Não configures templates com linguagem de marketing ou links promocionais. O WhatsApp pode suspender contas que enviam mensagens em massa com conteúdo publicitário. Os templates devem ser mensagens genuínas e pessoais.
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-4">
+              <div class="grid sm:grid-cols-2 gap-3">
+                <div class="bg-slate-800/50 rounded-xl p-4 border border-white/5">
+                  <div class="w-8 h-8 bg-indigo-950 rounded-lg flex items-center justify-center mb-3"><svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
+                  <p class="text-xs font-bold text-slate-200 mb-1">Random Draw</p>
+                  <p class="text-xs text-slate-500">When there are multiple templates, the system picks one at random. The same contact will receive a different message every birthday.</p>
+                </div>
+                <div class="bg-slate-800/50 rounded-xl p-4 border border-white/5">
+                  <div class="w-8 h-8 bg-emerald-950 rounded-lg flex items-center justify-center mb-3"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                  <p class="text-xs font-bold text-slate-200 mb-1">Typing Delay</p>
+                  <p class="text-xs text-slate-500">Before sending, activates the "typing..." indicator and waits a time proportional to the message length — as if you were typing it yourself.</p>
+                </div>
+              </div>
+              <div class="callout callout-warn text-xs text-slate-400"><strong class="text-amber-400">Warning:</strong> Don't set up templates with marketing language or promotional links. WhatsApp may suspend accounts that send bulk messages with advertising content. Templates should be genuine personal messages.</div>
             </div>
           </div>
         </details>
@@ -699,51 +912,59 @@
           <svg class="w-4 h-4 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-violet-400 uppercase tracking-widest">Secção 7</p>
-          <h2 class="text-xl font-bold text-white">Atualizações</h2>
+          <p class="text-[10px] font-bold text-violet-400 uppercase tracking-widest" data-pt="Secção 7" data-en="Section 7">Secção 7</p>
+          <h2 class="text-xl font-bold text-white" data-pt="Atualizações" data-en="Updates">Atualizações</h2>
         </div>
       </div>
       <div class="space-y-2">
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            Como funciona a atualização automática?
+            <span data-pt="Como funciona a atualização automática?" data-en="How does automatic update work?">Como funciona a atualização automática?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>O TrueContact usa um sistema de atualização <strong class="text-slate-200">OTA (Over-The-Air)</strong> — silencioso, automático e seguro. Não precisas de fazer nada.</p>
-            <ol class="space-y-2">
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">1</span>
-                <span>Quando a app inicia, <strong class="text-slate-200">verifica discretamente</strong> se existe uma versão mais recente</span>
-              </li>
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">2</span>
-                <span>Se encontrar uma versão nova, <strong class="text-slate-200">baixa em segundo plano</strong> sem interromper o teu trabalho</span>
-              </li>
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">3</span>
-                <span>Uma <strong class="text-slate-200">notificação discreta</strong> pergunta se queres instalar agora ou na próxima abertura</span>
-              </li>
-              <li class="flex gap-3 text-xs">
-                <span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">4</span>
-                <span>A atualização é instalada e a app <strong class="text-slate-200">reinicia automaticamente</strong></span>
-              </li>
-            </ol>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O TrueContact usa um sistema de atualização <strong class="text-slate-200">OTA (Over-The-Air)</strong> — silencioso, automático e seguro. Não precisas de fazer nada.</p>
+              <ol class="space-y-2">
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">1</span><span>Quando a app inicia, <strong class="text-slate-200">verifica discretamente</strong> se existe uma versão mais recente</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">2</span><span>Se encontrar uma versão nova, <strong class="text-slate-200">baixa em segundo plano</strong> sem interromper o teu trabalho</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">3</span><span>Uma <strong class="text-slate-200">notificação discreta</strong> pergunta se queres instalar agora ou na próxima abertura</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">4</span><span>A atualização é instalada e a app <strong class="text-slate-200">reinicia automaticamente</strong></span></li>
+              </ol>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>TrueContact uses an <strong class="text-slate-200">OTA (Over-The-Air)</strong> update system — silent, automatic and secure. You don't need to do anything.</p>
+              <ol class="space-y-2">
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">1</span><span>When the app starts, it <strong class="text-slate-200">quietly checks</strong> if a newer version exists</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">2</span><span>If a new version is found, it <strong class="text-slate-200">downloads in the background</strong> without interrupting your work</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">3</span><span>A <strong class="text-slate-200">discreet notification</strong> asks if you want to install now or on next launch</span></li>
+                <li class="flex gap-3 text-xs"><span class="w-5 h-5 bg-violet-950 rounded-full flex items-center justify-center text-[9px] font-black text-violet-400 shrink-0 mt-0.5">4</span><span>The update is installed and the app <strong class="text-slate-200">restarts automatically</strong></span></li>
+              </ol>
+            </div>
           </div>
         </details>
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
-            As atualizações são seguras?
+            <span data-pt="As atualizações são seguras?" data-en="Are updates safe?">As atualizações são seguras?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-            <p>Sim. Cada ficheiro de atualização é <strong class="text-slate-200">assinado criptograficamente</strong> antes de ser publicado. O TrueContact verifica esta assinatura antes de instalar qualquer atualização — se a assinatura não corresponder, a atualização é <strong class="text-red-400">rejeitada automaticamente</strong>. Isto protege-te contra ficheiros corrompidos ou adulterados.</p>
-            <div class="callout text-xs text-slate-400">
-              <strong class="text-indigo-300">Nota técnica:</strong> As atualizações são publicadas no repositório público <code>osnipassos/truecontact-releases</code>. O código-fonte nunca é publicado nesse repositório — apenas os binários compilados e assinados.
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Sim. Cada ficheiro de atualização é <strong class="text-slate-200">assinado criptograficamente</strong> antes de ser publicado. O TrueContact verifica esta assinatura antes de instalar qualquer atualização — se a assinatura não corresponder, a atualização é <strong class="text-red-400">rejeitada automaticamente</strong>. Isto protege-te contra ficheiros corrompidos ou adulterados.</p>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Nota técnica:</strong> As atualizações são publicadas no repositório público <code>osnipassos/truecontact-releases</code>. O código-fonte nunca é publicado nesse repositório — apenas os binários compilados e assinados.</div>
+              <p class="text-xs text-slate-500">Podes sempre ver a versão instalada em <strong class="text-slate-300">Configurações → Sobre o TrueContact</strong>, no fundo da página.</p>
             </div>
-            <p class="text-xs text-slate-500">Podes sempre ver a versão instalada em <strong class="text-slate-300">Configurações → Sobre o TrueContact</strong>, no fundo da página.</p>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Yes. Each update file is <strong class="text-slate-200">cryptographically signed</strong> before being published. TrueContact verifies this signature before installing any update — if the signature doesn't match, the update is <strong class="text-red-400">automatically rejected</strong>. This protects you against corrupted or tampered files.</p>
+              <div class="callout text-xs text-slate-400"><strong class="text-indigo-300">Technical note:</strong> Updates are published in the public repository <code>osnipassos/truecontact-releases</code>. Source code is never published in that repository — only compiled and signed binaries.</div>
+              <p class="text-xs text-slate-500">You can always see the installed version in <strong class="text-slate-300">Settings → About TrueContact</strong>, at the bottom of the page.</p>
+            </div>
           </div>
         </details>
 
@@ -752,12 +973,12 @@
 
     <!-- SUPORTE -->
     <div class="bg-indigo-950/40 border border-indigo-800/30 rounded-2xl p-6 text-center">
-      <p class="text-sm font-medium text-slate-300 mb-1">Não encontraste resposta?</p>
-      <p class="text-xs text-slate-500 mb-4">Abre um problema no GitHub e responderemos assim que possível.</p>
+      <p class="text-sm font-medium text-slate-300 mb-1" data-pt="Não encontraste resposta?" data-en="Didn't find an answer?">Não encontraste resposta?</p>
+      <p class="text-xs text-slate-500 mb-4" data-pt="Abre um problema no GitHub e responderemos assim que possível." data-en="Open an issue on GitHub and we'll respond as soon as possible.">Abre um problema no GitHub e responderemos assim que possível.</p>
       <a href="https://github.com/osnipassos/truecontact-releases/issues" target="_blank" rel="noopener"
         class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        Abrir Issue no GitHub
+        <span data-pt="Abrir Issue no GitHub" data-en="Open GitHub Issue">Abrir Issue no GitHub</span>
       </a>
     </div>
 
@@ -765,11 +986,35 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
-    <p>© <span id="ano"></span> TrueContact · <a href="https://osnipassos.github.io/truecontact-releases/" class="hover:text-slate-400 transition-colors">Início</a></p>
+    <p>© <span id="ano"></span> TrueContact · <a href="https://osnipassos.github.io/truecontact-releases/" class="hover:text-slate-400 transition-colors" data-pt="Início" data-en="Home">Início</a></p>
   </footer>
 
   <script>
     document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function() {
+      function applyLang(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('tc_lang', lang);
+        document.querySelectorAll('[data-pt]').forEach(el => {
+          el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+        });
+        document.querySelectorAll('.lpt').forEach(el => { el.style.display = lang === 'en' ? 'none' : ''; });
+        document.querySelectorAll('.len').forEach(el => { el.style.display = lang === 'en' ? '' : 'none'; });
+        const flag = document.getElementById('lang-flag');
+        const label = document.getElementById('lang-label');
+        if (flag) flag.textContent = lang === 'en' ? '🇺🇸' : '🇧🇷';
+        if (label) label.textContent = lang === 'en' ? 'EN' : 'PT';
+      }
+      window.toggleLang = function() {
+        const current = localStorage.getItem('tc_lang') || 'pt';
+        applyLang(current === 'pt' ? 'en' : 'pt');
+      };
+      const saved = localStorage.getItem('tc_lang');
+      const browser = navigator.language.startsWith('pt') ? 'pt' : 'en';
+      applyLang(saved || browser);
+    })();
   </script>
 
 </body>
