@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-pt="Termos de Serviço — TrueContact" data-en="Terms of Service — TrueContact">Termos de Serviço — TrueContact</title>
+  <meta name="description" content="Termos de Serviço do TrueContact — licença de uso, responsabilidades e integrações de terceiros." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    #lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 4px 10px; cursor: pointer; transition: background 0.2s; }
+    #lang-toggle:hover { background: rgba(255,255,255,0.1); }
+    .lpt, .len { }
+    .prose p { margin-bottom: 1rem; }
+    .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+    .prose li { margin-bottom: 0.25rem; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="https://truecontacts.app" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+        <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/50">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-base tracking-tight">TrueContact</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <button id="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+          <span id="lang-flag">🇧🇷</span>
+          <span id="lang-label" class="text-xs font-bold text-slate-300">PT</span>
+        </button>
+        <a href="https://truecontacts.app/help" class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+           data-pt="Ajuda" data-en="Help">Ajuda</a>
+        <a href="https://truecontacts.app#download" class="text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded-lg transition-colors">
+          Download ↓
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-20">
+
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-3">
+        <span class="gradient-text lpt">Termos de Serviço</span>
+        <span class="gradient-text len" style="display:none">Terms of Service</span>
+      </h1>
+      <p class="text-slate-400 text-sm">
+        <span class="lpt">Data de entrada em vigor: 27 de Maio de 2026</span>
+        <span class="len" style="display:none">Effective Date: May 27, 2026</span>
+      </p>
+    </div>
+
+    <!-- Sections -->
+    <div class="space-y-8 prose text-slate-300 leading-relaxed text-[15px]">
+
+      <!-- Section 1 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">1. Aceitação dos Termos</span>
+          <span class="len" style="display:none">1. Acceptance of Terms</span>
+        </h2>
+        <p class="lpt">
+          Ao descarregar, instalar e utilizar o TrueContact (<strong class="text-slate-100">"Aplicação"</strong>), o utilizador concorda em ficar vinculado a estes Termos de Serviço. Se não concordar com algum destes termos, está proibido de utilizar ou aceder a esta aplicação.
+        </p>
+        <p class="len" style="display:none">
+          By downloading, installing, and using TrueContact (<strong class="text-slate-100">"Application"</strong>), the user agrees to be bound by these Terms of Service. If you do not agree with any of these terms, you are prohibited from using or accessing this application.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">2. Licença de Uso</span>
+          <span class="len" style="display:none">2. License to Use</span>
+        </h2>
+        <p class="lpt">
+          O TrueContact concede-lhe uma licença pessoal, não exclusiva, intransferível e revogável para utilizar a Aplicação estritamente para fins de gestão de rede de contactos pessoais e profissionais, instalada no seu dispositivo local.
+        </p>
+        <p class="len" style="display:none">
+          TrueContact grants you a personal, non-exclusive, non-transferable, and revocable license to use the Application strictly for the purpose of managing your personal and professional contact network, installed on your local device.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">3. Integrações de Terceiros e Responsabilidade do Utilizador</span>
+          <span class="len" style="display:none">3. Third-Party Integrations and User Responsibility</span>
+        </h2>
+        <p class="lpt">
+          O TrueContact interage com serviços de terceiros, como o WhatsApp, LinkedIn e Google, automatizando processos que o utilizador faria manualmente.
+        </p>
+        <p class="len" style="display:none">
+          TrueContact interacts with third-party services, such as WhatsApp, LinkedIn, and Google, automating processes that the user would normally do manually.
+        </p>
+        <p class="lpt">
+          O utilizador compreende e aceita que o uso de automações (como o envio de mensagens programadas de aniversário no WhatsApp) deve respeitar os Termos de Serviço dessas respetivas plataformas.
+        </p>
+        <p class="len" style="display:none">
+          The user understands and accepts that the use of automations (such as sending scheduled birthday messages on WhatsApp) must comply with the Terms of Service of those respective platforms.
+        </p>
+        <p class="lpt">
+          O TrueContact não se responsabiliza por quaisquer bloqueios, suspensões de conta ou penalizações impostas pelo WhatsApp, LinkedIn, Google ou qualquer outra plataforma resultante da utilização abusiva da nossa Aplicação (ex: envio de spam).
+        </p>
+        <p class="len" style="display:none">
+          TrueContact is not responsible for any bans, account suspensions, or penalties imposed by WhatsApp, LinkedIn, Google, or any other platform resulting from abusive use of our Application (e.g., sending spam).
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">4. Isenção de Garantias (As-Is)</span>
+          <span class="len" style="display:none">4. Disclaimer of Warranties (As-Is)</span>
+        </h2>
+        <p class="lpt">
+          A Aplicação é fornecida <strong class="text-slate-100">"tal como está"</strong> (as-is). O TrueContact não oferece garantias, expressas ou implícitas, incluindo, mas não se limitando a, garantias implícitas de comercialização ou adequação a um fim específico.
+        </p>
+        <p class="len" style="display:none">
+          The Application is provided <strong class="text-slate-100">"as-is"</strong>. TrueContact makes no warranties, express or implied, including but not limited to implied warranties of merchantability or fitness for a particular purpose.
+        </p>
+        <p class="lpt">
+          Como os dados são guardados localmente na sua máquina, o TrueContact não se responsabiliza por perdas de dados resultantes de falhas no seu hardware, formatações de disco ou exclusões acidentais da base de dados SQLite. É da responsabilidade do utilizador fazer cópias de segurança (backups) da sua máquina.
+        </p>
+        <p class="len" style="display:none">
+          As data is stored locally on your machine, TrueContact is not responsible for data loss resulting from hardware failures, disk formatting, or accidental deletion of the SQLite database. It is the user's responsibility to back up their machine.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">5. Limitação de Responsabilidade</span>
+          <span class="len" style="display:none">5. Limitation of Liability</span>
+        </h2>
+        <p class="lpt">
+          Em nenhum caso o TrueContact ou os seus programadores serão responsáveis por quaisquer danos (incluindo, sem limitação, danos por perda de dados, lucros ou interrupção de negócios) decorrentes do uso ou da incapacidade de usar a Aplicação.
+        </p>
+        <p class="len" style="display:none">
+          In no event shall TrueContact or its developers be liable for any damages (including, without limitation, damages for loss of data, profits, or business interruption) arising from the use of or inability to use the Application.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- Back link -->
+    <div class="mt-12 pt-8 border-t border-white/5">
+      <a href="https://truecontacts.app" class="text-sm text-slate-400 hover:text-white transition-colors">
+        ← <span class="lpt">Voltar ao início</span><span class="len" style="display:none">Back to home</span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+    <p>
+      © <span id="ano"></span> TrueContact ·
+      <a href="https://truecontacts.app/help" class="hover:text-slate-400 transition-colors" data-pt="Ajuda" data-en="Help">Ajuda</a>
+      ·
+      <a href="https://truecontacts.app/privacy" class="hover:text-slate-400 transition-colors" data-pt="Privacidade" data-en="Privacy">Privacidade</a>
+      ·
+      <a href="https://truecontacts.app/terms" class="hover:text-slate-400 transition-colors" data-pt="Termos" data-en="Terms">Termos</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function() {
+      function applyLang(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('tc_lang', lang);
+        document.querySelectorAll('[data-pt]').forEach(el => {
+          el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+        });
+        document.querySelectorAll('.lpt').forEach(el => { el.style.display = lang === 'en' ? 'none' : ''; });
+        document.querySelectorAll('.len').forEach(el => { el.style.display = lang === 'en' ? '' : 'none'; });
+        const flag = document.getElementById('lang-flag');
+        const label = document.getElementById('lang-label');
+        if (flag) flag.textContent = lang === 'en' ? '🇺🇸' : '🇧🇷';
+        if (label) label.textContent = lang === 'en' ? 'EN' : 'PT';
+      }
+      window.toggleLang = function() {
+        const current = localStorage.getItem('tc_lang') || 'pt';
+        applyLang(current === 'pt' ? 'en' : 'pt');
+      };
+      const saved = localStorage.getItem('tc_lang');
+      const browser = navigator.language.startsWith('pt') ? 'pt' : 'en';
+      applyLang(saved || browser);
+    })();
+  </script>
+
+</body>
+</html>

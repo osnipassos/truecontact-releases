@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-pt="Política de Privacidade — TrueContact" data-en="Privacy Policy — TrueContact">Política de Privacidade — TrueContact</title>
+  <meta name="description" content="Política de Privacidade do TrueContact — aplicação local-first, seus dados ficam apenas no seu computador." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    #lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 4px 10px; cursor: pointer; transition: background 0.2s; }
+    #lang-toggle:hover { background: rgba(255,255,255,0.1); }
+    .lpt, .len { }
+    .prose p { margin-bottom: 1rem; }
+    .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+    .prose li { margin-bottom: 0.25rem; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="https://truecontacts.app" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+        <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/50">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-base tracking-tight">TrueContact</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <button id="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+          <span id="lang-flag">🇧🇷</span>
+          <span id="lang-label" class="text-xs font-bold text-slate-300">PT</span>
+        </button>
+        <a href="https://truecontacts.app/help" class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+           data-pt="Ajuda" data-en="Help">Ajuda</a>
+        <a href="https://truecontacts.app#download" class="text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded-lg transition-colors">
+          Download ↓
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-20">
+
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-3">
+        <span class="gradient-text lpt">Política de Privacidade</span>
+        <span class="gradient-text len" style="display:none">Privacy Policy</span>
+      </h1>
+      <p class="text-slate-400 text-sm">
+        <span class="lpt">Data de entrada em vigor: 27 de Maio de 2026</span>
+        <span class="len" style="display:none">Effective Date: May 27, 2026</span>
+      </p>
+    </div>
+
+    <!-- Google Limited Use disclosure banner -->
+    <div class="mb-8 bg-indigo-950/50 border border-indigo-700/40 rounded-xl px-5 py-4 flex gap-3">
+      <svg class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      <p class="text-sm text-indigo-200 leading-relaxed lpt">
+        O TrueContact cumpre a <strong>Política de Dados do Utilizador dos Serviços de API do Google</strong>, incluindo os requisitos de Uso Limitado. Os dados da sua conta Google nunca saem do seu computador.
+      </p>
+      <p class="text-sm text-indigo-200 leading-relaxed len" style="display:none">
+        TrueContact complies with the <strong>Google API Services User Data Policy</strong>, including the Limited Use requirements. Your Google account data never leaves your computer.
+      </p>
+    </div>
+
+    <!-- Sections -->
+    <div class="space-y-8 prose text-slate-300 leading-relaxed text-[15px]">
+
+      <!-- Section 1 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">1. A Nossa Filosofia Local-First (Privacidade em Primeiro Lugar)</span>
+          <span class="len" style="display:none">1. Our Local-First Philosophy (Privacy First)</span>
+        </h2>
+        <p class="lpt">
+          O TrueContact foi construído com base num princípio fundamental: <strong class="text-slate-100">os seus dados são seus</strong>. Somos uma aplicação "Local-First", o que significa que o TrueContact corre integralmente no seu computador pessoal (Windows ou Mac). Não possuímos, não operamos e não enviamos os seus dados para nenhum servidor na nuvem gerido por nós.
+        </p>
+        <p class="len" style="display:none">
+          TrueContact was built on a fundamental principle: <strong class="text-slate-100">your data is yours</strong>. We are a "Local-First" application, which means TrueContact runs entirely on your personal computer (Windows or Mac). We do not own, operate, or transmit your data to any cloud server managed by us.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">2. Recolha e Armazenamento de Dados</span>
+          <span class="len" style="display:none">2. Data Collection and Storage</span>
+        </h2>
+        <p class="lpt">
+          Todos os dados processados pelo TrueContact (incluindo contactos, mensagens, configurações e chaves de acesso) são armazenados localmente no seu próprio disco rígido, numa base de dados SQLite encriptada. Nós (os criadores do TrueContact) não temos qualquer acesso aos seus dados, não recolhemos métricas de utilização e não rastreamos o seu comportamento.
+        </p>
+        <p class="len" style="display:none">
+          All data processed by TrueContact (including contacts, messages, settings, and access keys) is stored locally on your own hard drive in an encrypted SQLite database. We (the creators of TrueContact) have no access to your data, do not collect usage metrics, and do not track your behavior.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">3. Uso dos Dados de Utilizador do Google</span>
+          <span class="len" style="display:none">3. Use of Google User Data</span>
+        </h2>
+        <p class="lpt">
+          Para permitir a sincronização dos seus contactos, o TrueContact oferece a opção de se ligar à sua conta Google.
+        </p>
+        <p class="len" style="display:none">
+          To enable contact synchronization, TrueContact offers the option to connect to your Google account.
+        </p>
+        <ul>
+          <li>
+            <strong class="text-slate-100 lpt">O que lemos:</strong>
+            <strong class="text-slate-100 len" style="display:none">What we read:</strong>
+            <span class="lpt"> O TrueContact solicita apenas acesso de leitura e escrita aos seus Contactos do Google.</span>
+            <span class="len" style="display:none"> TrueContact only requests read/write access to your Google Contacts.</span>
+          </li>
+          <li>
+            <strong class="text-slate-100 lpt">Como utilizamos:</strong>
+            <strong class="text-slate-100 len" style="display:none">How we use it:</strong>
+            <span class="lpt"> Estes dados são utilizados exclusivamente para popular a sua base de dados local do TrueContact, permitindo-lhe gerir a sua rede pessoal de forma unificada.</span>
+            <span class="len" style="display:none"> This data is used exclusively to populate your local TrueContact database, allowing you to manage your personal network in a unified way.</span>
+          </li>
+          <li>
+            <strong class="text-slate-100 lpt">Uso Limitado e Partilha:</strong>
+            <strong class="text-slate-100 len" style="display:none">Limited Use and Sharing:</strong>
+            <span class="lpt"> Os dados obtidos através das APIs do Google nunca são partilhados com terceiros, vendidos ou transmitidos para servidores externos. Ficam restritos ao seu computador.</span>
+            <span class="len" style="display:none"> Data obtained through the Google APIs is never shared with third parties, sold, or transmitted to external servers. It remains restricted to your computer.</span>
+          </li>
+        </ul>
+        <div class="mt-4 bg-slate-800/60 border border-white/5 rounded-lg px-4 py-3 text-sm">
+          <p class="lpt text-slate-300">
+            O uso e a transferência do TrueContact de informações recebidas das APIs do Google para qualquer outra aplicação cumprirão a <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 underline">Política de Dados do Utilizador dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado.
+          </p>
+          <p class="len text-slate-300" style="display:none">
+            TrueContact's use and transfer of information received from Google APIs to any other application will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">4. Interações com o WhatsApp e LinkedIn</span>
+          <span class="len" style="display:none">4. Interactions with WhatsApp and LinkedIn</span>
+        </h2>
+        <p class="lpt">
+          O TrueContact atua como um dispositivo vinculado localmente (no caso do WhatsApp) e processa informações públicas ou de sessão diretamente na sua máquina. Nenhuma mensagem ou credencial é enviada para os nossos servidores, pois eles não existem.
+        </p>
+        <p class="len" style="display:none">
+          TrueContact acts as a locally linked device (in the case of WhatsApp) and processes public or session information directly on your machine. No messages or credentials are sent to our servers, as they do not exist.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section>
+        <h2 class="text-lg font-bold text-white mb-3">
+          <span class="lpt">5. Alterações a esta Política</span>
+          <span class="len" style="display:none">5. Changes to This Policy</span>
+        </h2>
+        <p class="lpt">
+          Como não guardamos os seus dados, qualquer alteração futura a esta política será puramente para refletir novas funcionalidades locais da aplicação, sendo sempre comunicada nas notas de lançamento (release notes).
+        </p>
+        <p class="len" style="display:none">
+          As we do not store your data, any future changes to this policy will be purely to reflect new local features of the application, and will always be communicated in the release notes.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- Back link -->
+    <div class="mt-12 pt-8 border-t border-white/5">
+      <a href="https://truecontacts.app" class="text-sm text-slate-400 hover:text-white transition-colors">
+        ← <span class="lpt">Voltar ao início</span><span class="len" style="display:none">Back to home</span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+    <p>
+      © <span id="ano"></span> TrueContact ·
+      <a href="https://truecontacts.app/help" class="hover:text-slate-400 transition-colors" data-pt="Ajuda" data-en="Help">Ajuda</a>
+      ·
+      <a href="https://truecontacts.app/privacy" class="hover:text-slate-400 transition-colors" data-pt="Privacidade" data-en="Privacy">Privacidade</a>
+      ·
+      <a href="https://truecontacts.app/terms" class="hover:text-slate-400 transition-colors" data-pt="Termos" data-en="Terms">Termos</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function() {
+      function applyLang(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('tc_lang', lang);
+        document.querySelectorAll('[data-pt]').forEach(el => {
+          el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.pt;
+        });
+        document.querySelectorAll('.lpt').forEach(el => { el.style.display = lang === 'en' ? 'none' : ''; });
+        document.querySelectorAll('.len').forEach(el => { el.style.display = lang === 'en' ? '' : 'none'; });
+        const flag = document.getElementById('lang-flag');
+        const label = document.getElementById('lang-label');
+        if (flag) flag.textContent = lang === 'en' ? '🇺🇸' : '🇧🇷';
+        if (label) label.textContent = lang === 'en' ? 'EN' : 'PT';
+      }
+      window.toggleLang = function() {
+        const current = localStorage.getItem('tc_lang') || 'pt';
+        applyLang(current === 'pt' ? 'en' : 'pt');
+      };
+      const saved = localStorage.getItem('tc_lang');
+      const browser = navigator.language.startsWith('pt') ? 'pt' : 'en';
+      applyLang(saved || browser);
+    })();
+  </script>
+
+</body>
+</html>
