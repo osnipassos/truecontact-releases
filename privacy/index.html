@@ -20,7 +20,8 @@
     .lpt, .len { }
     .prose p { margin-bottom: 1rem; }
     .prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
-    .prose li { margin-bottom: 0.25rem; }
+    .prose li { margin-bottom: 0.5rem; }
+    code { background: rgba(99,102,241,0.15); color: #a5b4fc; padding: 1px 6px; border-radius: 4px; font-size: 0.82em; font-family: 'JetBrains Mono','Fira Code',monospace; word-break: break-all; }
   </style>
 </head>
 <body class="bg-slate-950 text-white antialiased">
@@ -110,41 +111,47 @@
       <!-- Section 3 -->
       <section>
         <h2 class="text-lg font-bold text-white mb-3">
-          <span class="lpt">3. Uso dos Dados de Utilizador do Google</span>
-          <span class="len" style="display:none">3. Use of Google User Data</span>
+          <span class="lpt">3. Acesso e Uso dos Dados de Utilizador do Google</span>
+          <span class="len" style="display:none">3. Google User Data Access and Usage</span>
         </h2>
         <p class="lpt">
-          Para permitir a sincronização dos seus contactos, o TrueContact oferece a opção de se ligar à sua conta Google.
+          Para proporcionar uma experiência fluida de sincronização e gestão de contatos, o TrueContact solicita acesso aos seus dados de utilizador do Google, sujeito às seguintes diretrizes rigorosas:
         </p>
         <p class="len" style="display:none">
-          To enable contact synchronization, TrueContact offers the option to connect to your Google account.
+          To provide a seamless contact synchronization and management experience, TrueContact requests access to your Google user data subject to the following strict guidelines:
         </p>
         <ul>
           <li>
-            <strong class="text-slate-100 lpt">O que lemos:</strong>
-            <strong class="text-slate-100 len" style="display:none">What we read:</strong>
-            <span class="lpt"> O TrueContact solicita apenas acesso de leitura e escrita aos seus Contactos do Google.</span>
-            <span class="len" style="display:none"> TrueContact only requests read/write access to your Google Contacts.</span>
+            <strong class="text-slate-100 lpt">Dados Acedidos:</strong>
+            <strong class="text-slate-100 len" style="display:none">Data Accessed:</strong>
+            <span class="lpt"> Solicitamos acesso de <strong class="text-slate-100">leitura e escrita</strong> aos seus Contatos do Google (<code>https://www.googleapis.com/auth/contacts</code>). Isso inclui nomes, números de telefone, endereços de e-mail e outros metadados de contatos.</span>
+            <span class="len" style="display:none"> We request <strong class="text-slate-100">read and write</strong> access to your Google Contacts (<code>https://www.googleapis.com/auth/contacts</code>). This includes names, phone numbers, email addresses, and other contact metadata.</span>
           </li>
           <li>
-            <strong class="text-slate-100 lpt">Como utilizamos:</strong>
-            <strong class="text-slate-100 len" style="display:none">How we use it:</strong>
-            <span class="lpt"> Estes dados são utilizados exclusivamente para popular a sua base de dados local do TrueContact, permitindo-lhe gerir a sua rede pessoal de forma unificada.</span>
-            <span class="len" style="display:none"> This data is used exclusively to populate your local TrueContact database, allowing you to manage your personal network in a unified way.</span>
+            <strong class="text-slate-100 lpt">Uso dos Dados:</strong>
+            <strong class="text-slate-100 len" style="display:none">Data Use:</strong>
+            <span class="lpt"> Esses dados são usados para importar os seus contatos para a aplicação local do TrueContact, e para sincronizar de volta quaisquer atualizações, criações ou edições que você fizer na interface do TrueContact para a sua conta do Google Contacts. Isso garante que a sua rede permaneça perfeitamente sincronizada em todos os seus dispositivos.</span>
+            <span class="len" style="display:none"> This data is used to import your contacts into the local TrueContact application, and to synchronize any updates, creations, or edits you make within the TrueContact interface back to your Google Contacts account. This ensures your network remains perfectly synced across your devices.</span>
           </li>
           <li>
-            <strong class="text-slate-100 lpt">Uso Limitado e Partilha:</strong>
-            <strong class="text-slate-100 len" style="display:none">Limited Use and Sharing:</strong>
-            <span class="lpt"> Os dados obtidos através das APIs do Google nunca são partilhados com terceiros, vendidos ou transmitidos para servidores externos. Ficam restritos ao seu computador.</span>
-            <span class="len" style="display:none"> Data obtained through the Google APIs is never shared with third parties, sold, or transmitted to external servers. It remains restricted to your computer.</span>
+            <strong class="text-slate-100 lpt">Armazenamento de Dados:</strong>
+            <strong class="text-slate-100 len" style="display:none">Data Storage:</strong>
+            <span class="lpt"> Todos os dados obtidos do Google são armazenados estritamente de forma local no seu dispositivo, numa base de dados SQLite. Não transmitimos, armazenamos nem processamos os seus dados de utilizador do Google em nenhum servidor externo ou na nuvem.</span>
+            <span class="len" style="display:none"> All data retrieved from Google is stored strictly locally on your device in an SQLite database. We do not transmit, store, or process your Google user data on any external or cloud servers.</span>
+          </li>
+          <li>
+            <strong class="text-slate-100 lpt">Partilha de Dados:</strong>
+            <strong class="text-slate-100 len" style="display:none">Data Sharing:</strong>
+            <span class="lpt"> O TrueContact não partilha, vende nem transfere os seus dados de utilizador do Google a terceiros, em nenhuma circunstância.</span>
+            <span class="len" style="display:none"> TrueContact does not share, sell, or transfer your Google user data to any third parties under any circumstances.</span>
           </li>
         </ul>
         <div class="mt-4 bg-slate-800/60 border border-white/5 rounded-lg px-4 py-3 text-sm">
           <p class="lpt text-slate-300">
-            O uso e a transferência do TrueContact de informações recebidas das APIs do Google para qualquer outra aplicação cumprirão a <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 underline">Política de Dados do Utilizador dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado.
+            O uso e a transferência pelo TrueContact de informações recebidas das APIs do Google para qualquer outra aplicação cumprirão a <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 underline">Política de Dados do Utilizador dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado.
           </p>
           <p class="len text-slate-300" style="display:none">
-            TrueContact's use and transfer of information received from Google APIs to any other application will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
+            TrueContact's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
           </p>
         </div>
       </section>
