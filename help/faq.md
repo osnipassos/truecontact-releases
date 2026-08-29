@@ -167,7 +167,7 @@ O TrueContact funciona como um **Hub central** (base de dados SQLite local), com
 **Fontes de enriquecimento** (apenas leitura, adicionam dados):
 - **LinkedIn** — cargo, empresa, foto de perfil, redes sociais, data de conexão
 - **Facebook** — foto de perfil, cidade, sites, telefone, e-mail, relacionamentos e data de amizade
-- **WhatsApp** — foto de perfil, nome de exibição e dados do perfil Business
+- **WhatsApp** — foto de perfil, nome de exibição e, nas contas comerciais, e-mail, endereço, site e perfis de Facebook e Instagram
 
 O processo de sincronização funciona assim:
 
@@ -175,7 +175,7 @@ O processo de sincronização funciona assim:
 2. **Pull do Google** — Lê alterações desde o último sync via SyncToken
 3. **Enriquecimento LinkedIn** — Para contatos com perfil LinkedIn, importa cargo, empresa, foto e redes sociais
 4. **Enriquecimento Facebook** — Para contatos com perfil do Facebook, importa foto, cidade, sites e o que estiver público no "Sobre"
-5. **Enriquecimento WhatsApp** — Para contatos com número de telefone, verifica a foto de perfil
+5. **Enriquecimento WhatsApp** — Para contatos com número de telefone, importa a foto de perfil em alta resolução e, quando o número pertence a uma **conta comercial**, também o e-mail, o endereço, o site e os perfis de Facebook e Instagram do negócio. Conversas com números que ainda não estavam na sua agenda viram contatos novos, já com o nome do perfil
 6. **Push para iCloud e Google** — Escreve as alterações de volta em ambos os provedores
 
 > **Regra fundamental:** O TrueContact **nunca apaga dados manuais**. Se adicionar uma nota ou um email a um contato no iPhone, essa informação é preservada mesmo que o LinkedIn devolva um campo vazio.
