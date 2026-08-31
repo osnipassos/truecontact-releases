@@ -1189,6 +1189,74 @@
           </div>
         </details>
 
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O que mostram os ícones de origem junto a cada campo?" data-en="What do the source icons next to each field show?">O que mostram os ícones de origem junto a cada campo?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Cada campo na ficha do contato e na tela de merge exibe um pequeno ícone colorido à direita do valor, indicando de onde aquela informação veio:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Apple (cinza)</strong> — campo importado ou sincronizado via iCloud</li>
+                <li><strong class="text-slate-300">Google (azul)</strong> — campo importado ou sincronizado via Google Contacts</li>
+                <li><strong class="text-slate-300">LinkedIn (azul escuro)</strong> — campo extraído automaticamente do perfil do LinkedIn</li>
+                <li><strong class="text-slate-300">Facebook (azul)</strong> — campo extraído automaticamente do perfil do Facebook</li>
+                <li><strong class="text-slate-300">WhatsApp (verde)</strong> — campo importado do perfil ou da conta comercial via WhatsApp</li>
+                <li><strong class="text-slate-300">Lápis (âmbar)</strong> — campo editado manualmente</li>
+                <li><strong class="text-slate-300">Merge (violeta)</strong> — campo resultado de uma fusão de contatos</li>
+              </ul>
+              <p>Passe o mouse sobre o ícone para ver o nome completo da fonte. Na tela de merge, esses ícones ajudam a decidir qual versão de cada campo preservar.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Each field in a contact's card and in the merge screen shows a small colored icon next to the value, indicating where that information came from:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Apple (grey)</strong> — field imported or synced via iCloud</li>
+                <li><strong class="text-slate-300">Google (blue)</strong> — field imported or synced via Google Contacts</li>
+                <li><strong class="text-slate-300">LinkedIn (dark blue)</strong> — field automatically extracted from the LinkedIn profile</li>
+                <li><strong class="text-slate-300">Facebook (blue)</strong> — field automatically extracted from the Facebook profile</li>
+                <li><strong class="text-slate-300">WhatsApp (green)</strong> — field imported from a profile or business account via WhatsApp</li>
+                <li><strong class="text-slate-300">Pencil (amber)</strong> — field edited manually</li>
+                <li><strong class="text-slate-300">Merge (violet)</strong> — field resulting from a contact merge</li>
+              </ul>
+              <p>Hover over the icon to see the full source name. In the merge screen, these icons help you decide which version of each field to keep.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O que faz o botão Reprocessar perfis nas Configurações?" data-en="What does the Reprocess profiles button in Settings do?">O que faz o botão Reprocessar perfis nas Configurações?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Em <strong class="text-slate-200">Configurações → Agendamento</strong>, o botão <strong class="text-slate-300">Reprocessar perfis não enriquecidos</strong> faz três coisas em sequência:</p>
+              <ol class="space-y-2 text-xs list-decimal list-inside text-slate-500">
+                <li>Zera a data de última verificação de todos os perfis do LinkedIn e Facebook que <strong class="text-slate-300">ainda não estão na fila de trabalho</strong></li>
+                <li>Zera a verificação de WhatsApp de todos os telefones nas mesmas condições</li>
+                <li>Re-enfileira imediatamente tudo para o próximo ciclo do agendador</li>
+              </ol>
+              <p>É útil quando você <strong class="text-slate-200">instala o TrueContact num computador novo</strong>, conecta o LinkedIn, o Facebook ou o WhatsApp e quer que o enriquecimento comece já — sem esperar o ciclo anual de rotação. Também serve para forçar uma segunda rodada de enriquecimento após uma sessão desconectada por muito tempo.</p>
+              <div class="bg-amber-950/30 border border-amber-800/40 rounded-lg p-3 text-xs text-amber-200/80">Dependendo do número de contatos, a fila pode demorar horas ou dias para ser processada completamente — o agendador trabalha em lotes pequenos para não acionar bloqueios. Acompanhe o progresso pelos badges coloridos no cabeçalho.</div>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>In <strong class="text-slate-200">Settings → Scheduling</strong>, the <strong class="text-slate-300">Reprocess unenriched profiles</strong> button does three things in sequence:</p>
+              <ol class="space-y-2 text-xs list-decimal list-inside text-slate-500">
+                <li>Resets the last-verified date of all LinkedIn and Facebook profiles that are <strong class="text-slate-300">not already in the work queue</strong></li>
+                <li>Resets the WhatsApp verification of all phone numbers in the same situation</li>
+                <li>Immediately re-enqueues everything for the next scheduler cycle</li>
+              </ol>
+              <p>This is useful when you <strong class="text-slate-200">install TrueContact on a new computer</strong>, connect LinkedIn, Facebook or WhatsApp and want enrichment to start right away — without waiting for the annual rotation cycle. It also works to force a second enrichment pass after a session that was disconnected for a long time.</p>
+              <div class="bg-amber-950/30 border border-amber-800/40 rounded-lg p-3 text-xs text-amber-200/80">Depending on the number of contacts, the queue may take hours or days to process completely — the scheduler works in small batches to avoid triggering blocks. Track progress via the colored badges in the header.</div>
+            </div>
+          </div>
+        </details>
+
       </div>
     </section>
 
