@@ -292,6 +292,19 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 As duas redes são **fontes de enriquecimento**: o TrueContact lê perfis públicos para preencher os seus contatos, mas nunca publica, comenta ou envia nada em seu nome.
 
+### Instalei em um servidor Linux sem tela (Raspberry Pi, Homebridge). Como conecto o LinkedIn e o Facebook?
+
+O botão **Conectar** precisa abrir uma janela de navegador para você fazer login — o que não existe em um servidor sem tela. A solução é fazer o login em um computador com tela e **importar a sessão** no servidor:
+
+1. No computador com tela (Mac com o app de desktop), conecte o LinkedIn e/ou o Facebook normalmente. Isso gera os arquivos de sessão `auth.json` (LinkedIn) e `auth_facebook.json` (Facebook) na pasta de dados do app
+2. Abra a interface web do servidor (ex.: `http://IP-DO-SERVIDOR:6969`) → **Configurações**
+3. Na seção **LinkedIn** ou **Facebook**, clique em **Importar sessão (arquivo)** e escolha o arquivo correspondente
+4. O bloco passa a **Conectado** na hora, sem reiniciar o serviço
+
+O servidor valida o arquivo antes de aceitar: precisa ser o JSON gerado pelo TrueContact, com o cookie de login da rede certa e ainda dentro da validade — caso contrário a tela explica o que está errado. O arquivo é gravado apenas no servidor, com permissão de leitura só para o serviço.
+
+**Importante:** não use a mesma conta do iCloud/Google no app do Mac e no servidor ao mesmo tempo — dois hubs sincronizando a mesma agenda geram conflitos. As sessões do LinkedIn e do Facebook, por outro lado, podem ser as mesmas nos dois lugares.
+
 ### Como conectar
 
 Para qualquer uma das duas, o processo é o mesmo:

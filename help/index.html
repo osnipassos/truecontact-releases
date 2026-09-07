@@ -701,6 +701,39 @@
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Instalei em um servidor Linux sem tela (Raspberry Pi). Como conecto o LinkedIn e o Facebook?" data-en="I installed on a headless Linux server (Raspberry Pi). How do I connect LinkedIn and Facebook?">Instalei em um servidor Linux sem tela (Raspberry Pi). Como conecto o LinkedIn e o Facebook?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>O botão <strong class="text-slate-200">Conectar</strong> precisa abrir uma janela de navegador para você fazer login — o que não existe em um servidor sem tela. A solução é fazer o login em um computador com tela e <strong class="text-slate-200">importar a sessão</strong> no servidor:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li>No computador com tela (Mac com o app de desktop), conecte o LinkedIn e/ou o Facebook normalmente. Isso gera os arquivos <code>auth.json</code> (LinkedIn) e <code>auth_facebook.json</code> (Facebook) na pasta de dados do app</li>
+                <li>Abra a interface web do servidor (ex.: <code>http://IP-DO-SERVIDOR:6969</code>) → <strong class="text-slate-300">Configurações</strong></li>
+                <li>Na seção <strong class="text-slate-300">LinkedIn</strong> ou <strong class="text-slate-300">Facebook</strong>, clique em <strong class="text-slate-300">Importar sessão (arquivo)</strong> e escolha o arquivo correspondente</li>
+                <li>O bloco passa a <strong class="text-slate-300">Conectado</strong> na hora, sem reiniciar o serviço</li>
+              </ul>
+              <p>O servidor valida o arquivo antes de aceitar: precisa ser o JSON gerado pelo TrueContact, com o cookie de login da rede certa e ainda dentro da validade — caso contrário a tela explica o que está errado. O arquivo é gravado apenas no servidor, com permissão de leitura só para o serviço.</p>
+              <p><strong class="text-slate-200">Importante:</strong> não use a mesma conta do iCloud/Google no app do Mac e no servidor ao mesmo tempo — dois hubs sincronizando a mesma agenda geram conflitos. As sessões do LinkedIn e do Facebook podem ser as mesmas nos dois lugares.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>The <strong class="text-slate-200">Connect</strong> button needs to open a browser window for you to log in — which doesn't exist on a headless server. The solution is to log in on a computer with a screen and <strong class="text-slate-200">import the session</strong> on the server:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li>On the computer with a screen (Mac with the desktop app), connect LinkedIn and/or Facebook as usual. This creates the files <code>auth.json</code> (LinkedIn) and <code>auth_facebook.json</code> (Facebook) in the app's data folder</li>
+                <li>Open the server's web interface (e.g. <code>http://SERVER-IP:6969</code>) → <strong class="text-slate-300">Settings</strong></li>
+                <li>In the <strong class="text-slate-300">LinkedIn</strong> or <strong class="text-slate-300">Facebook</strong> section, click <strong class="text-slate-300">Import session (file)</strong> and pick the matching file</li>
+                <li>The block switches to <strong class="text-slate-300">Connected</strong> right away, no service restart needed</li>
+              </ul>
+              <p>The server validates the file before accepting it: it must be the JSON created by TrueContact, with the login cookie for the right network and still valid — otherwise the screen tells you what's wrong. The file is stored only on the server, readable by the service alone.</p>
+              <p><strong class="text-slate-200">Important:</strong> don't use the same iCloud/Google account in the Mac app and on the server at the same time — two hubs syncing the same address book create conflicts. The LinkedIn and Facebook sessions, however, can be the same in both places.</p>
+            </div>
+          </div>
+        </details>
+
+<details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
             <span data-pt="Como conectar o LinkedIn ou o Facebook?" data-en="How do I connect LinkedIn or Facebook?">Como conectar o LinkedIn ou o Facebook?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
