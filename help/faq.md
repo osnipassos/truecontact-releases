@@ -308,17 +308,18 @@ As duas redes são **fontes de enriquecimento**: o TrueContact lê perfis públi
 
 ### Instalei em um servidor Linux sem tela (Raspberry Pi, Homebridge). Como conecto o LinkedIn e o Facebook?
 
-O botão **Conectar** precisa abrir uma janela de navegador para você fazer login — o que não existe em um servidor sem tela. A solução é exportar a sessão do seu navegador normal e **importá-la** no servidor:
+O botão **Conectar** precisa abrir uma janela de navegador para você fazer login — o que não existe em um servidor sem tela. A solução é copiar a sessão do seu navegador normal e colá-la no TrueContact:
 
-1. No Safari, Chrome ou Firefox, instale a extensão gratuita **Cookie-Editor** e faça login no LinkedIn e/ou no Facebook
-2. Com a aba da rede aberta, clique no Cookie-Editor → **Export** → escolha **JSON** (ou Netscape/cookies.txt ou Header String) e salve o conteúdo em um arquivo
-3. Abra a interface web do servidor (ex.: `http://IP-DO-SERVIDOR:6969`) → **Configurações**
-4. Na seção **LinkedIn** ou **Facebook**, clique em **Importar sessão (arquivo)** e escolha o arquivo exportado
-5. O bloco passa a **Conectado** na hora, sem reiniciar o serviço
+1. No **Chrome** ou no **Firefox**, instale a extensão gratuita **Cookie-Editor** e faça login no LinkedIn e/ou no Facebook. No Safari a extensão não enxerga os cookies de login
+2. No Chrome, deixe o acesso da extensão como **Em todos os sites** (ou libere linkedin.com e facebook.com) — com "Ao clicar", ela pode aparecer vazia
+3. Com a aba da rede aberta, clique no Cookie-Editor → **Export** → **JSON**. O conteúdo vai para a área de transferência
+4. Abra a interface web do servidor (ex.: `http://IP-DO-SERVIDOR:6969`) → **Configurações**
+5. Na seção **LinkedIn** ou **Facebook**, clique em **Colar exportação do Cookie-Editor** e cole (⌘V ou Ctrl+V). A importação começa sozinha
+6. O bloco passa a **Conectado** na hora, sem reiniciar o serviço
 
-O servidor valida o arquivo antes de aceitar: precisa conter o cookie de login da rede certa (`li_at` no LinkedIn, `c_user` no Facebook) e ainda dentro da validade — caso contrário a tela explica o que está errado. Só os cookies daquela rede são guardados, apenas no servidor, com permissão de leitura só para o serviço. O arquivo `auth.json` / `auth_facebook.json` gerado pelo app de desktop no Mac também é aceito.
+O servidor valida antes de aceitar: precisa haver o cookie de login da rede certa (`li_at` no LinkedIn; `c_user` e `xs` no Facebook), ainda dentro da validade — caso contrário a tela diz o que faltou. Só os cookies daquela rede são guardados, apenas no servidor, com permissão de leitura só para o serviço. Quem já tem o arquivo `auth.json` / `auth_facebook.json` gerado pelo app de desktop no Mac pode usar **ou enviar arquivo**, logo ao lado.
 
-**Importante:** não use a mesma conta do iCloud/Google no app do Mac e no servidor ao mesmo tempo — dois hubs sincronizando a mesma agenda geram conflitos. As sessões do LinkedIn e do Facebook, por outro lado, podem ser as mesmas nos dois lugares.
+**Importante:** não deixe o app do Mac e o servidor rodando ao mesmo tempo com as mesmas contas — dois hubs sincronizando a mesma agenda do iCloud/Google geram conflitos, e duas máquinas raspando o LinkedIn com a mesma sessão podem fazer a rede derrubá-la.
 
 ### Como conectar
 

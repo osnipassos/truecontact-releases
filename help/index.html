@@ -739,30 +739,32 @@
           </summary>
           <div class="lpt">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-              <p>O botão <strong class="text-slate-200">Conectar</strong> precisa abrir uma janela de navegador para você fazer login — o que não existe em um servidor sem tela. A solução é exportar a sessão do seu navegador normal e <strong class="text-slate-200">importá-la</strong> no servidor:</p>
+              <p>O botão <strong class="text-slate-200">Conectar</strong> precisa abrir uma janela de navegador para você fazer login — o que não existe em um servidor sem tela. A solução é copiar a sessão do seu navegador normal e <strong class="text-slate-200">colá-la</strong> no TrueContact:</p>
               <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
-                <li>No Safari, Chrome ou Firefox, instale a extensão gratuita <strong class="text-slate-300">Cookie-Editor</strong> e faça login no LinkedIn e/ou no Facebook</li>
-                <li>Com a aba da rede aberta, clique no Cookie-Editor → <strong class="text-slate-300">Export</strong> → <strong class="text-slate-300">JSON</strong> (ou Netscape/cookies.txt ou Header String) e salve o conteúdo em um arquivo</li>
+                <li>No <strong class="text-slate-300">Chrome</strong> ou no <strong class="text-slate-300">Firefox</strong>, instale a extensão gratuita <strong class="text-slate-300">Cookie-Editor</strong> e faça login no LinkedIn e/ou no Facebook. No Safari a extensão não enxerga os cookies de login</li>
+                <li>No Chrome, deixe o acesso da extensão como <strong class="text-slate-300">Em todos os sites</strong> (ou libere linkedin.com e facebook.com) — com “Ao clicar”, ela pode aparecer vazia</li>
+                <li>Com a aba da rede aberta, clique no Cookie-Editor → <strong class="text-slate-300">Export</strong> → <strong class="text-slate-300">JSON</strong>. O conteúdo vai para a área de transferência</li>
                 <li>Abra a interface web do servidor (ex.: <code>http://IP-DO-SERVIDOR:6969</code>) → <strong class="text-slate-300">Configurações</strong></li>
-                <li>Na seção <strong class="text-slate-300">LinkedIn</strong> ou <strong class="text-slate-300">Facebook</strong>, clique em <strong class="text-slate-300">Importar sessão (arquivo)</strong> e escolha o arquivo exportado</li>
+                <li>Na seção <strong class="text-slate-300">LinkedIn</strong> ou <strong class="text-slate-300">Facebook</strong>, clique em <strong class="text-slate-300">Colar exportação do Cookie-Editor</strong> e cole (⌘V ou Ctrl+V). A importação começa sozinha</li>
                 <li>O bloco passa a <strong class="text-slate-300">Conectado</strong> na hora, sem reiniciar o serviço</li>
               </ul>
-              <p>O servidor valida o arquivo antes de aceitar: precisa conter o cookie de login da rede certa e ainda dentro da validade — caso contrário a tela explica o que está errado. Só os cookies daquela rede são guardados, apenas no servidor, com permissão de leitura só para o serviço. O arquivo <code>auth.json</code> / <code>auth_facebook.json</code> gerado pelo app de desktop no Mac também é aceito.</p>
-              <p><strong class="text-slate-200">Importante:</strong> não use a mesma conta do iCloud/Google no app do Mac e no servidor ao mesmo tempo — dois hubs sincronizando a mesma agenda geram conflitos. As sessões do LinkedIn e do Facebook podem ser as mesmas nos dois lugares.</p>
+              <p>O servidor valida antes de aceitar: precisa haver o cookie de login da rede certa (<code>li_at</code> no LinkedIn; <code>c_user</code> e <code>xs</code> no Facebook), ainda dentro da validade — caso contrário a tela diz o que faltou. Só os cookies daquela rede são guardados, apenas no servidor, com permissão de leitura só para o serviço. Quem já tem o arquivo <code>auth.json</code> / <code>auth_facebook.json</code> gerado pelo app de desktop no Mac pode usar <strong class="text-slate-300">ou enviar arquivo</strong>, logo ao lado.</p>
+              <p><strong class="text-slate-200">Importante:</strong> não deixe o app do Mac e o servidor rodando ao mesmo tempo com as mesmas contas — dois hubs sincronizando a mesma agenda do iCloud/Google geram conflitos, e duas máquinas raspando o LinkedIn com a mesma sessão podem fazer a rede derrubá-la.</p>
             </div>
           </div>
           <div class="len" style="display:none">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-              <p>The <strong class="text-slate-200">Connect</strong> button needs to open a browser window for you to log in — which doesn't exist on a headless server. The solution is to export the session from your regular browser and <strong class="text-slate-200">import it</strong> on the server:</p>
+              <p>The <strong class="text-slate-200">Connect</strong> button needs to open a browser window for you to log in — which doesn’t exist on a headless server. The solution is to copy the session from your regular browser and <strong class="text-slate-200">paste it</strong> into TrueContact:</p>
               <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
-                <li>In Safari, Chrome or Firefox, install the free <strong class="text-slate-300">Cookie-Editor</strong> extension and log in to LinkedIn and/or Facebook</li>
-                <li>With the network's tab open, click Cookie-Editor → <strong class="text-slate-300">Export</strong> → <strong class="text-slate-300">JSON</strong> (or Netscape/cookies.txt or Header String) and save the content to a file</li>
-                <li>Open the server's web interface (e.g. <code>http://SERVER-IP:6969</code>) → <strong class="text-slate-300">Settings</strong></li>
-                <li>In the <strong class="text-slate-300">LinkedIn</strong> or <strong class="text-slate-300">Facebook</strong> section, click <strong class="text-slate-300">Import session (file)</strong> and pick the exported file</li>
+                <li>In <strong class="text-slate-300">Chrome</strong> or <strong class="text-slate-300">Firefox</strong>, install the free <strong class="text-slate-300">Cookie-Editor</strong> extension and log in to LinkedIn and/or Facebook. In Safari the extension can’t see the login cookies</li>
+                <li>In Chrome, set the extension’s site access to <strong class="text-slate-300">On all sites</strong> (or allow linkedin.com and facebook.com) — with “On click” it may show up empty</li>
+                <li>With the network’s tab open, click Cookie-Editor → <strong class="text-slate-300">Export</strong> → <strong class="text-slate-300">JSON</strong>. The content goes to the clipboard</li>
+                <li>Open the server’s web interface (e.g. <code>http://SERVER-IP:6969</code>) → <strong class="text-slate-300">Settings</strong></li>
+                <li>In the <strong class="text-slate-300">LinkedIn</strong> or <strong class="text-slate-300">Facebook</strong> section, click <strong class="text-slate-300">Paste Cookie-Editor export</strong> and paste (⌘V or Ctrl+V). The import starts by itself</li>
                 <li>The block switches to <strong class="text-slate-300">Connected</strong> right away, no service restart needed</li>
               </ul>
-              <p>The server validates the file before accepting it: it must contain the login cookie for the right network and still be valid — otherwise the screen tells you what's wrong. Only that network's cookies are kept, on the server alone, readable by the service only. The <code>auth.json</code> / <code>auth_facebook.json</code> created by the desktop app on the Mac is accepted too.</p>
-              <p><strong class="text-slate-200">Important:</strong> don't use the same iCloud/Google account in the Mac app and on the server at the same time — two hubs syncing the same address book create conflicts. The LinkedIn and Facebook sessions, however, can be the same in both places.</p>
+              <p>The server validates before accepting: the right network’s login cookie must be there (<code>li_at</code> for LinkedIn; <code>c_user</code> and <code>xs</code> for Facebook) and still valid — otherwise the screen tells you what’s missing. Only that network’s cookies are kept, on the server alone, readable by the service only. If you already have the <code>auth.json</code> / <code>auth_facebook.json</code> file created by the desktop app on the Mac, use <strong class="text-slate-300">or upload a file</strong>, right next to it.</p>
+              <p><strong class="text-slate-200">Important:</strong> don’t run the Mac app and the server at the same time with the same accounts — two hubs syncing the same iCloud/Google address book create conflicts, and two machines scraping LinkedIn with the same session can make the network drop it.</p>
             </div>
           </div>
         </details>
