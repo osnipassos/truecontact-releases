@@ -310,7 +310,7 @@ As duas redes são **fontes de enriquecimento**: o TrueContact lê perfis públi
 
 O botão **Conectar** precisa abrir uma janela de navegador para você fazer login — o que não existe em um servidor sem tela. A solução é copiar a sessão do seu navegador normal e colá-la no TrueContact:
 
-1. No **Chrome** ou no **Firefox**, instale a extensão gratuita **Cookie-Editor** e faça login no LinkedIn e/ou no Facebook. No Safari a extensão não enxerga os cookies de login
+1. No **Chrome** ou no **Firefox**, instale a extensão gratuita [**Cookie-Editor**](https://cookie-editor.com/) e faça login no LinkedIn e/ou no Facebook. No Safari a extensão não enxerga os cookies de login
 2. No Chrome, deixe o acesso da extensão como **Em todos os sites** (ou libere linkedin.com e facebook.com) — com "Ao clicar", ela pode aparecer vazia
 3. Com a aba da rede aberta, clique no Cookie-Editor → **Export** → **JSON**. O conteúdo vai para a área de transferência
 4. Abra a interface web do servidor (ex.: `http://IP-DO-SERVIDOR:6969`) → **Configurações**
