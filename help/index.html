@@ -304,6 +304,39 @@
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Como apagar todos os dados e começar do zero?" data-en="How do I delete all data and start from scratch?">Como apagar todos os dados e começar do zero?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Em <strong class="text-slate-300">Configurações → Configurações Gerais → Resetar banco de dados</strong>. O TrueContact volta ao estado de recém-instalado e o assistente de configuração reaparece:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">É apagado:</strong> todos os contatos, grupos, filas, histórico de alterações, histórico de mensagens e mensagens agendadas.</li>
+                <li><strong class="text-slate-300">É desconectado:</strong> iCloud, Google, WhatsApp, LinkedIn, Facebook e a chave do PeopleDataLabs.</li>
+                <li><strong class="text-slate-300">Continua como está:</strong> suas preferências (limites, listas de normalização, agenda, idioma) e os modelos de mensagem.</li>
+              </ul>
+              <p>Para evitar um clique acidental, é preciso digitar <strong class="text-slate-300">RESETAR</strong> para confirmar.</p>
+              <p><strong class="text-slate-200">Nada é apagado no iCloud nem no Google</strong> — só o banco local do TrueContact. Quando você reconectar as contas, os contatos voltam a ser importados de lá.</p>
+              <p>Antes de apagar, o TrueContact salva uma cópia completa do banco atual na mesma pasta, com o nome <code>truecontact.db.backup-antes-do-reset-&lt;data&gt;</code> — só a mais recente é mantida. Para voltar atrás: com o TrueContact fechado, apague <code>truecontact.db-wal</code> e <code>truecontact.db-shm</code> (se existirem) e renomeie a cópia para <code>truecontact.db</code>. No servidor Linux, o banco fica em <code>/var/lib/truecontact</code>.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Go to <strong class="text-slate-300">Settings → General Settings → Reset database</strong>. TrueContact goes back to a freshly installed state and the setup wizard reappears:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Deleted:</strong> all contacts, groups, queues, change history, message history and scheduled messages.</li>
+                <li><strong class="text-slate-300">Disconnected:</strong> iCloud, Google, WhatsApp, LinkedIn, Facebook and the PeopleDataLabs key.</li>
+                <li><strong class="text-slate-300">Kept as is:</strong> your preferences (limits, normalization lists, schedule, language) and message templates.</li>
+              </ul>
+              <p>To avoid an accidental click, you have to type <strong class="text-slate-300">RESET</strong> to confirm.</p>
+              <p><strong class="text-slate-200">Nothing is deleted in iCloud or Google</strong> — only TrueContact's local database. When you reconnect your accounts, the contacts are imported from them again.</p>
+              <p>Before deleting, TrueContact saves a full copy of the current database in the same folder, named <code>truecontact.db.backup-antes-do-reset-&lt;date&gt;</code> — only the most recent one is kept. To roll back: with TrueContact closed, delete <code>truecontact.db-wal</code> and <code>truecontact.db-shm</code> (if present) and rename the copy to <code>truecontact.db</code>. On the Linux server, the database lives in <code>/var/lib/truecontact</code>.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
             <span data-pt="Onde ficam armazenados os meus dados?" data-en="Where is my data stored?">Onde ficam armazenados os meus dados?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>

@@ -88,6 +88,20 @@ Se preferir configurar manualmente:
 
 ## 2. Segurança e Privacidade
 
+### Como apagar todos os dados e começar do zero?
+
+Em **Configurações → Configurações Gerais → Resetar banco de dados**. O TrueContact volta ao estado de recém-instalado e o assistente de configuração reaparece:
+
+- **É apagado:** todos os contatos, grupos, filas, histórico de alterações, histórico de mensagens e mensagens agendadas.
+- **É desconectado:** iCloud, Google, WhatsApp, LinkedIn, Facebook e a chave do PeopleDataLabs.
+- **Continua como está:** suas preferências (limites, listas de normalização, agenda, idioma) e os modelos de mensagem.
+
+Para evitar um clique acidental, é preciso digitar **RESETAR** para confirmar.
+
+**Nada é apagado no iCloud nem no Google** — só o banco local do TrueContact. Quando você reconectar as contas, os contatos voltam a ser importados de lá.
+
+Antes de apagar, o TrueContact salva uma cópia completa do banco atual na mesma pasta, com o nome `truecontact.db.backup-antes-do-reset-<data>` — só a mais recente é mantida. Para voltar atrás: com o TrueContact fechado, apague os arquivos `truecontact.db-wal` e `truecontact.db-shm` (se existirem) e renomeie a cópia para `truecontact.db`. No servidor Linux, o banco fica em `/var/lib/truecontact`.
+
 ### Os seus dados nunca saem do seu computador
 
 Esta é a promessa central do TrueContact: **os seus dados são seus e ficam no seu computador**.
