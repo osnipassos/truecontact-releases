@@ -310,15 +310,16 @@ As duas redes são **fontes de enriquecimento**: o TrueContact lê perfis públi
 
 O login acontece **no próprio servidor**, numa tela virtual que o instalador monta para isso — e você a acessa do seu computador como se estivesse controlando outro à distância:
 
-1. Na interface web do servidor (ex.: `http://IP-DO-SERVIDOR:6969`) → **Configurações** → seção **LinkedIn** ou **Facebook**, clique em **Reconectar** (ou **Conectar**). O navegador do servidor abre a página de login na tela virtual e espera até **10 minutos**
-2. No terminal do servidor, `truecontact vnc` mostra o endereço (`vnc://IP-DO-SERVIDOR:5900`) e a senha. A própria tela de Configurações também mostra o endereço logo abaixo do botão
-3. No Mac: Finder → **Ir → Conectar ao Servidor**, cole o endereço e informe a senha. Em Windows ou Linux, qualquer cliente VNC serve
-4. Faça o login normalmente — verificação em duas etapas, captcha, o que aparecer
-5. Assim que a rede confirmar a sessão, o TrueContact a salva, fecha o navegador e o bloco passa a **Conectado**
+1. Na interface web do servidor (ex.: `http://IP-DO-SERVIDOR:6969`) → **Configurações** → seção **LinkedIn** ou **Facebook**, clique em **Reconectar** (ou **Conectar**)
+2. A tela de login do servidor **aparece ali mesmo, embaixo do botão**, já conectada. Não é preciso terminal, senha nem outro aplicativo
+3. Faça o login normalmente — verificação em duas etapas, captcha, o que aparecer. Você tem **10 minutos**
+4. Assim que a rede confirmar a sessão, o TrueContact a salva, fecha o navegador e o bloco passa a **Conectado**
+
+Se preferir, a mesma tela pode ser aberta em outra aba (link ao lado do título) ou por qualquer cliente VNC no endereço mostrado abaixo dela.
 
 **Por que não copiar os cookies do meu navegador?** O LinkedIn e o Facebook amarram a sessão ao navegador e ao dispositivo em que o login foi feito. Uma sessão copiada — pela extensão Cookie-Editor ou pelo arquivo `auth.json` do app de desktop — é reconhecida como **sequestro de sessão**: a rede a revoga no servidor e derruba também o navegador de origem (você é deslogado no seu computador). Foi assim em testes reais. Por isso a sessão precisa **nascer** no navegador do servidor. Por isso a tela não oferece mais importação de sessão por arquivo ou colagem.
 
-A tela virtual fica sempre ligada: além do login, a própria raspagem passa a rodar com janela nela, o que reduz os sinais de automação que essas redes procuram. O acesso VNC tem senha e escuta só na porta 5900; em redes que não sejam totalmente confiáveis, restrinja com firewall ou use um túnel SSH.
+A tela virtual fica sempre ligada: além do login, a própria raspagem passa a rodar com janela nela, o que reduz os sinais de automação que essas redes procuram. O acesso à tela (VNC na porta 5900, noVNC na 6080) tem senha; em redes que não sejam totalmente confiáveis, restrinja com firewall ou use um túnel SSH.
 
 **Importante:** não deixe o app do Mac e o servidor rodando ao mesmo tempo com as mesmas contas — dois hubs sincronizando a mesma agenda do iCloud/Google geram conflitos, e duas máquinas raspando o LinkedIn com a mesma sessão podem fazer a rede derrubá-la.
 
