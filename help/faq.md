@@ -172,6 +172,17 @@ O TrueContact usa **OAuth 2.0** para acessar o Google Contacts — você autoriz
 
 ## 3. Sincronização de Contatos
 
+### O que dá para ajustar na aba Normalização?
+
+A aba **Configurações → Normalização** reúne tudo o que o TrueContact limpa e valida automaticamente:
+
+- **Nomes** — prefixos de tratamento, sufixos acadêmicos e familiares, e **palavras-fantasma**: termos que o cache do iCloud insiste em devolver grudados aos nomes e que você quer remover sempre.
+- **Deduplicação** — liga/desliga o merge automático de duplicados óbvios.
+- **Validação de dados** — liga/desliga a verificação em segundo plano de domínios de e-mail (MX) e sites (HTTP), e a lista de domínios considerados "pessoais" (gmail, uol…) na classificação casa × trabalho.
+- **Histórico e retenção** — por quantos dias os snapshots e as confirmações de envio ficam no histórico (0 desliga a limpeza).
+- **Avançado** — a exclusão por snapshot: desligada (padrão), apagar um dado no iPhone/Google **não** o apaga no Hub, apenas registra; ligada, a remoção propaga de verdade.
+
+
 ### Excluí, fundi ou restaurei um contato — isso fica registrado em algum lugar?
 
 Sim. A partir da versão seguinte à 1.0.129, o painel de **Histórico** de cada contato registra também os eventos de ciclo de vida, com ícone e origem próprios:
