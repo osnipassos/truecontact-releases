@@ -485,6 +485,33 @@
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Alterei um contato — por que todas as fontes dele foram atualizadas?" data-en="I changed a contact — why did all its sources get updated?">Alterei um contato — por que todas as fontes dele foram atualizadas?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Quando o TrueContact detecta uma <strong class="text-slate-200">alteração real</strong> em um contato — edição no iPhone/iCloud, no Google Contacts, no próprio painel, ou um dado novo trazido por uma das redes — ele agenda a atualização de <strong class="text-slate-200">todas as outras fontes vinculadas</strong> àquele contato: perfis sociais entram na fila de enriquecimento e telefones voltam para verificação no WhatsApp.</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Só alteração de verdade conta</strong> — o eco da própria sincronização é reconhecido e não dispara nada</li>
+                <li><strong class="text-slate-300">No máximo uma vez por dia</strong> — fonte já verificada hoje não volta para a fila</li>
+                <li><strong class="text-slate-300">Prioridade baixa</strong> — pedidos feitos por você no painel sempre passam na frente</li>
+              </ul>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>When TrueContact detects a <strong class="text-slate-200">real change</strong> on a contact — an edit on the iPhone/iCloud, in Google Contacts, in the panel itself, or new data brought in by one of the networks — it schedules an update of <strong class="text-slate-200">every other source linked</strong> to that contact: social profiles join the enrichment queue and phone numbers go back for WhatsApp verification.</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Only real changes count</strong> — the echo of our own sync is recognized and triggers nothing</li>
+                <li><strong class="text-slate-300">At most once a day</strong> — a source already verified today is not re-queued</li>
+                <li><strong class="text-slate-300">Low priority</strong> — requests you make in the panel always go first</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
             <span data-pt="Como o TrueContact une dados do iCloud, LinkedIn, Facebook e WhatsApp?" data-en="How does TrueContact combine data from iCloud, LinkedIn, Facebook and WhatsApp?">Como o TrueContact une dados do iCloud, LinkedIn, Facebook e WhatsApp?</span>
             <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
@@ -1210,7 +1237,7 @@
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
               <p>Contatos excluídos não somem na hora — vão para a <strong class="text-slate-200">Lixeira</strong>, no ícone de lixo do cabeçalho.</p>
               <p>A Lixeira tem o mesmo formato da tela principal: lista à esquerda, dados completos à direita. A diferença é que tudo fica em modo de leitura — não dá para editar campos, enviar mensagens nem enriquecer o perfil enquanto o contato estiver ali.</p>
-              <p>Para trazer alguém de volta, abra a Lixeira, localize o contato e clique em <strong class="text-slate-300">Restaurar</strong>. Ele volta à listagem principal e é reenfileirado para sincronização com todos os provedores conectados.</p>
+              <p>Para trazer alguém de volta, abra a Lixeira, localize o contato e clique em <strong class="text-slate-300">Restaurar</strong>. Ele volta à listagem principal e é reenfileirado para sincronização com todos os provedores conectados. Cada ida e volta fica registrada no histórico do contato — inclusive quando a exclusão veio de um merge ("Fundido em…") ou foi detectada pelos radares do iCloud/Google.</p>
               <p>Contatos que sumiram por causa de um merge aparecem com a marcação <em>"fundido em [nome]"</em>, indicando onde os dados foram consolidados.</p>
               <div class="bg-amber-950/30 border border-amber-800/40 rounded-lg p-3 text-xs text-amber-200/80">O botão <strong>Limpar lixeira</strong> apaga permanentemente tudo o que está lá e propaga a exclusão para os provedores. Essa ação não pode ser desfeita.</div>
             </div>
@@ -1219,7 +1246,7 @@
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
               <p>Deleted contacts don't disappear right away — they go to the <strong class="text-slate-200">Trash</strong>, via the bin icon in the header.</p>
               <p>The Trash has the same layout as the main screen: list on the left, full details on the right. The difference is that everything is read-only — you can't edit fields, send messages or enrich the profile while the contact is there.</p>
-              <p>To bring someone back, open the Trash, find the contact and click <strong class="text-slate-300">Restore</strong>. They return to the main list and are re-queued for syncing with every connected provider.</p>
+              <p>To bring someone back, open the Trash, find the contact and click <strong class="text-slate-300">Restore</strong>. They return to the main list and are re-queued for syncing with every connected provider. Each trip is recorded in the contact's history — including when the deletion came from a merge ("Merged into…") or was detected by the iCloud/Google radars.</p>
               <p>Contacts that disappeared because of a merge are marked <em>"merged into [name]"</em>, showing where their data was consolidated.</p>
               <div class="bg-amber-950/30 border border-amber-800/40 rounded-lg p-3 text-xs text-amber-200/80">The <strong>Empty trash</strong> button permanently deletes everything there and propagates the removal to the providers. This action cannot be undone.</div>
             </div>
@@ -1349,11 +1376,11 @@
           </summary>
           <div class="lpt">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-              <p>Todo contato tem uma aba de <strong class="text-slate-200">Histórico</strong> que registra tudo o que aconteceu com ele: sincronizações, enriquecimentos, edições manuais, merges, limpezas automáticas e mensagens enviadas pelo WhatsApp.</p>
+              <p>Todo contato tem uma aba de <strong class="text-slate-200">Histórico</strong> que registra tudo o que aconteceu com ele: sincronizações, enriquecimentos, edições manuais, merges, idas e voltas da lixeira, limpezas automáticas e mensagens enviadas pelo WhatsApp.</p>
               <p>Cada entrada mostra:</p>
               <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
                 <li><strong class="text-slate-300">Quando</strong> aconteceu, com data e hora</li>
-                <li><strong class="text-slate-300">De onde veio</strong> — ícone da fonte: Apple, Google, LinkedIn, Facebook, WhatsApp, edição manual, merge ou limpeza automática</li>
+                <li><strong class="text-slate-300">De onde veio</strong> — ícone da fonte: Apple, Google, LinkedIn, Facebook, WhatsApp, edição manual, merge, lixeira ou limpeza automática</li>
                 <li><strong class="text-slate-300">O que mudou</strong> — campos acrescentados em verde, removidos em vermelho e alterados com o valor antes e depois</li>
               </ul>
               <p>Entradas que não alteraram nada — uma sincronização que apenas confirmou o que já existia — ficam recolhidas por padrão. Um botão no topo da aba exibe todas.</p>
@@ -1361,11 +1388,11 @@
           </div>
           <div class="len" style="display:none">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-              <p>Every contact has a <strong class="text-slate-200">History</strong> tab recording everything that happened to it: syncs, enrichments, manual edits, merges, automatic cleanups and messages sent via WhatsApp.</p>
+              <p>Every contact has a <strong class="text-slate-200">History</strong> tab recording everything that happened to it: syncs, enrichments, manual edits, merges, trips to and from the trash, automatic cleanups and messages sent via WhatsApp.</p>
               <p>Each entry shows:</p>
               <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
                 <li><strong class="text-slate-300">When</strong> it happened, with date and time</li>
-                <li><strong class="text-slate-300">Where it came from</strong> — the source icon: Apple, Google, LinkedIn, Facebook, WhatsApp, manual edit, merge or automatic cleanup</li>
+                <li><strong class="text-slate-300">Where it came from</strong> — the source icon: Apple, Google, LinkedIn, Facebook, WhatsApp, manual edit, merge, trash or automatic cleanup</li>
                 <li><strong class="text-slate-300">What changed</strong> — fields added in green, removed in red, and changed ones with the before and after values</li>
               </ul>
               <p>Entries that changed nothing — a sync that merely confirmed what was already there — are collapsed by default. A button at the top of the tab reveals them all.</p>
@@ -1410,13 +1437,42 @@
           <div class="lpt">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
               <p>Merges têm um botão próprio: <strong class="text-slate-300">Desfazer merge</strong>. Além de devolver o contato vencedor ao estado anterior, ele restaura os contatos que tinham sido absorvidos, com os grupos e relacionamentos que existiam na época.</p>
-              <p>Isso vale tanto para merges manuais quanto para os feitos automaticamente pelo auto-merge.</p>
+              <p>Isso vale tanto para merges manuais quanto para os feitos automaticamente pelo auto-merge. Vencedor e restaurados são reenviados para todos os provedores conectados.</p>
             </div>
           </div>
           <div class="len" style="display:none">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
               <p>Merges have their own button: <strong class="text-slate-300">Undo merge</strong>. Besides returning the surviving contact to its previous state, it restores the contacts that had been absorbed, with the groups and relationships they had at the time.</p>
-              <p>This applies both to manual merges and to those performed automatically by auto-merge.</p>
+              <p>This applies both to manual merges and to those performed automatically by auto-merge. The winner and the restored contacts are re-sent to every connected provider.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Exclusões e restaurações ficam registradas?" data-en="Are deletions and restores recorded?">Exclusões e restaurações ficam registradas?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Sim. Toda ida e volta da <strong class="text-slate-200">Lixeira</strong> gera uma entrada no histórico do contato — <em>Enviado para a lixeira</em> ou <em>Restaurado da lixeira</em> — com a origem de quem fez:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Exclusão no painel</strong> — única ou em lote</li>
+                <li><strong class="text-slate-300">Merge</strong> — o duplicado absorvido recebe o registro "Fundido em…", apontando o contato vencedor</li>
+                <li><strong class="text-slate-300">Radares</strong> — contato apagado diretamente no iCloud ou no Google Contacts fica marcado como detectado pelo radar</li>
+              </ul>
+              <p>Como a exclusão preserva os dados, o registro sobrevive: se o contato for restaurado, a linha do tempo conta a história completa. A restauração reenvia o contato para <strong class="text-slate-200">todos os provedores conectados</strong>, não apenas o iCloud.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Yes. Every trip to and from the <strong class="text-slate-200">Trash</strong> creates an entry in the contact's history — <em>Sent to trash</em> or <em>Restored from trash</em> — stamped with who did it:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Deletion in the panel</strong> — single or in bulk</li>
+                <li><strong class="text-slate-300">Merge</strong> — the absorbed duplicate gets a "Merged into…" record pointing at the surviving contact</li>
+                <li><strong class="text-slate-300">Radars</strong> — a contact deleted directly in iCloud or Google Contacts is marked as detected by the radar</li>
+              </ul>
+              <p>Since deletion preserves the data, the record survives: if the contact is restored, the timeline tells the whole story. Restoring re-sends the contact to <strong class="text-slate-200">every connected provider</strong>, not just iCloud.</p>
             </div>
           </div>
         </details>
