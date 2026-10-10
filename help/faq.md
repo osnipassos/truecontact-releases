@@ -170,6 +170,19 @@ O TrueContact usa **OAuth 2.0** para acessar o Google Contacts — você autoriz
 
 ## 3. Sincronização de Contatos
 
+### Excluí, fundi ou restaurei um contato — isso fica registrado em algum lugar?
+
+Sim. A partir da versão seguinte à 1.0.129, o painel de **Histórico** de cada contato registra também os eventos de ciclo de vida, com ícone e origem próprios:
+
+- **Enviado para a lixeira** — seja pela exclusão no painel, por um merge (o contato duplicado que foi absorvido ganha o registro "Fundido em…") ou pelos radares, quando o contato é apagado diretamente no iCloud ou no Google Contacts.
+- **Restaurado da lixeira** — tanto pela restauração manual quanto ao desfazer um merge.
+
+Outras melhorias no mesmo pacote:
+
+- **Fundir contatos não exige mais o iCloud.** Antes, o contato vencedor precisava ter mapeamento Apple; agora o merge funciona com contatos que existem só no Google ou só no TrueContact.
+- **Restaurar e reverter atualizam todos os serviços.** Qualquer recuperação (restauração da lixeira, reversão de histórico, desfazer merge) reenvia o contato para **todos** os provedores conectados — iCloud e Google — e não apenas para o iCloud.
+- **Reverter é fiel.** O registro de uma reversão agora retrata exatamente o estado em que o contato ficou, incluindo o que foi removido — reversões futuras partem do retrato certo.
+
 ### Alterei um contato — por que todas as fontes dele foram atualizadas?
 
 Quando o TrueContact detecta uma **alteração real** em um contato — uma edição feita no iPhone/iCloud, no Google Contacts, no próprio painel do TrueContact, ou um dado novo trazido por uma das redes (LinkedIn, Facebook, Instagram, X ou WhatsApp) — ele aproveita o momento e agenda uma atualização de **todas as outras fontes vinculadas** àquele contato: os perfis sociais entram na fila de enriquecimento e os telefones voltam para verificação no WhatsApp.
