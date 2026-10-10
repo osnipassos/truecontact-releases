@@ -170,6 +170,18 @@ O TrueContact usa **OAuth 2.0** para acessar o Google Contacts — você autoriz
 
 ## 3. Sincronização de Contatos
 
+### Alterei um contato — por que todas as fontes dele foram atualizadas?
+
+Quando o TrueContact detecta uma **alteração real** em um contato — uma edição feita no iPhone/iCloud, no Google Contacts, no próprio painel do TrueContact, ou um dado novo trazido por uma das redes (LinkedIn, Facebook, Instagram, X ou WhatsApp) — ele aproveita o momento e agenda uma atualização de **todas as outras fontes vinculadas** àquele contato: os perfis sociais entram na fila de enriquecimento e os telefones voltam para verificação no WhatsApp.
+
+Isso mantém o contato inteiro em dia de uma vez só, com três proteções:
+
+- **Só alteração de verdade conta.** O eco da própria sincronização (por exemplo, o iCloud devolvendo um dado que o TrueContact acabou de enviar) é reconhecido e **não** dispara nada — o mesmo filtro que o painel de Histórico usa para não poluir a linha do tempo.
+- **No máximo uma vez por dia.** Uma fonte que já foi verificada hoje não volta para a fila, não importa quantas alterações aconteçam — sem laços infinitos entre as redes.
+- **Prioridade baixa.** Essas atualizações entram no fim da fila e respeitam os limites por ciclo de cada rede; um pedido seu feito diretamente no painel sempre passa na frente.
+
+No Histórico do contato, essas atualizações aparecem com a origem de quem as disparou (ex.: `cascata_apple` quando o gatilho foi uma edição no iCloud).
+
 ### Arquitetura Hub-and-Spoke
 
 O TrueContact funciona como um **Hub central** (base de dados SQLite local), com dois tipos de conectores:
