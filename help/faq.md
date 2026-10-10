@@ -145,6 +145,8 @@ O espaço é devolvido ao sistema imediatamente — o arquivo encolhe sozinho, s
 
 A interface mostra sempre os **últimos 30 snapshots** de cada contato, portanto a limpeza não afeta o que você vê no dia a dia.
 
+Há ainda um **cache de miniaturas de fotos** (`media_cache/thumbs/`), criado para a lista de contatos abrir rápido: cerca de 3 KB por contato com foto (~25 MB numa base de 8.000 fotos). Ele se mantém sozinho — miniaturas de contatos excluídos são removidas diariamente, e o cache inteiro é regenerável: pode ser apagado a qualquer momento sem perda alguma.
+
 > **Ajustar ou desligar:** as chaves `retencao_historico_dias` e `retencao_historico_ruido_dias` controlam os dois prazos. O valor `0` desliga a regra correspondente — o histórico passa a ser salvo indefinidamente e o arquivo cresce sem limite.
 
 ### Sessão do WhatsApp
