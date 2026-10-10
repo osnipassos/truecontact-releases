@@ -11,7 +11,7 @@
 2. [Segurança e Privacidade](#2-segurança-e-privacidade)
 3. [Sincronização de Contatos](#3-sincronização-de-contatos)
 4. [Conectar o Google Contacts](#4-conectar-o-google-contacts)
-5. [Conectar o LinkedIn e o Facebook](#5-conectar-o-linkedin-e-o-facebook)
+5. [Conectar LinkedIn, Facebook, Instagram e X](#5-conectar-linkedin-facebook-instagram-e-x)
 6. [Conectar o WhatsApp](#6-conectar-o-whatsapp)
 7. [Templates e Automações](#7-templates-e-automações)
 8. [Operações em Lote e Indicadores](#8-operações-em-lote-e-indicadores)
@@ -329,7 +329,22 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ---
 
-## 5. Conectar o LinkedIn e o Facebook
+## 5. Conectar LinkedIn, Facebook, Instagram e X
+
+### Como conectar o Instagram e o X (Twitter)
+
+O fluxo é o mesmo do LinkedIn e do Facebook: em **Configurações → Fontes**, clique em
+**Conectar Instagram** ou **Conectar X**, faça o login na janela do navegador que abre
+(no servidor sem tela, pela tela virtual embutida na própria página) e pronto — a sessão
+fica guardada localmente.
+
+- **Carência de 24 horas:** após um login novo, as leituras só começam no dia seguinte,
+  para a conta não levantar suspeita.
+- **Pausa automática:** ao menor sinal de bloqueio ou limitação, a rede entra em pausa e
+  tenta de novo mais tarde, sozinha.
+- **Adicionar como contato:** o Instagram pode criar contatos de *quem você segue*, dos
+  *mútuos* ou dos *Amigos Próximos*; o X, de quem você segue. Perfis sem nome completo
+  são ignorados e quem já é contato nunca é duplicado.
 
 As duas redes são **fontes de enriquecimento**: o TrueContact lê perfis públicos para preencher os seus contatos, mas nunca publica, comenta ou envia nada em seu nome.
 
