@@ -179,7 +179,7 @@ A aba **Configurações → Normalização** reúne tudo o que o TrueContact lim
 - **Nomes** — prefixos de tratamento, sufixos acadêmicos e familiares, e **palavras-fantasma**: termos que o cache do iCloud insiste em devolver grudados aos nomes e que você quer remover sempre.
 - **Deduplicação** — liga/desliga o merge automático de duplicados óbvios.
 - **Validação de dados** — liga/desliga a verificação em segundo plano de domínios de e-mail (MX) e sites (HTTP), e a lista de domínios considerados "pessoais" (gmail, uol…) na classificação casa × trabalho.
-- **Histórico e retenção** — por quantos dias os snapshots e as confirmações de envio ficam no histórico (0 desliga a limpeza).
+- **Histórico e retenção** — o horário em que a manutenção diária roda (03:30 por padrão), por quantos dias os snapshots e as confirmações de envio ficam no histórico (0 desliga a limpeza) e quanto um e-mail ou site marcado espera antes de ser re-testado.
 - **Revalidação automática** — na manutenção das 03:30, o TrueContact re-testa os e-mails e sites que estão marcados como "não responde" e **remove a marcação** dos que voltaram a funcionar. Nada é apagado: um e-mail com domínio fora do ar continua no contato, apenas tachado e com um aviso — apagar é sempre decisão sua, no painel. Perfis sociais que a rede responde como inexistentes (404) também são só marcados, nunca removidos. A única remoção da seção é a opção (desligada por padrão) de mover contatos completamente vazios para a lixeira, que é reversível.
 - **Avançado** — a exclusão por snapshot: desligada (padrão), apagar um dado no iPhone/Google **não** o apaga no Hub, apenas registra; ligada, a remoção propaga de verdade.
 
@@ -342,6 +342,22 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 ---
 
 ## 5. Conectar LinkedIn, Facebook, Instagram e X
+
+### De quantos em quantos dias cada fonte é reconferida?
+
+Cada fonte tem o seu próprio intervalo, ajustável na aba dela em **Configurações**:
+
+| Fonte | Padrão | Onde ajustar |
+|---|---|---|
+| LinkedIn | 365 dias | Fontes → LinkedIn |
+| Facebook | 7 dias | Fontes → Facebook |
+| Instagram | 180 dias | Fontes → Instagram |
+| X (Twitter) | 180 dias | Fontes → X |
+| WhatsApp | 30 dias | Fontes → WhatsApp |
+
+O contador reinicia a cada enriquecimento, manual ou automático — reduzir o intervalo deixa
+os dados mais frescos, mas aumenta o volume de visitas e, com ele, o risco de a rede limitar
+a conta. Os limites por ciclo de cada aba continuam valendo em cima disso.
 
 ### Como conectar o Instagram e o X (Twitter)
 
