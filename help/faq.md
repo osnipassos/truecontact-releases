@@ -355,6 +355,17 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads e TikTok)
 
+### Como conectar o Duolingo e o que ele traz
+
+Em **Configurações → Fontes → Duolingo**, clique em **Conectar Duolingo** e entre na
+janela que abre (e-mail/senha ou login social). De cada contato, o TrueContact traz
+**nome, o perfil** (`duolingo.com/profile/...`) e a **data de entrada** ("Por aqui
+desde"), que vira o evento "Duolingo". A **foto só é usada quando é um upload real E o
+contato ainda não tem nenhuma** — os avatares de desenho do Duolingo nunca substituem
+uma foto verdadeira. Com *Adicionar como contato* ligado, quem você segue (ou só os
+mútuos) vira contato novo — perfis sem nome completo são ignorados e ninguém é
+duplicado.
+
 ### Como conectar o TikTok e o que ele traz
 
 Em **Configurações → Fontes → TikTok**, clique em **Conectar TikTok** e faça o login na
@@ -403,6 +414,7 @@ Cada fonte tem o seu próprio intervalo, ajustável na aba dela em **Configuraç
 | X (Twitter) | 180 dias | Fontes → X |
 | Goodreads | 365 dias | Fontes → Goodreads |
 | TikTok | 180 dias | Fontes → TikTok |
+| Duolingo | 180 dias | Fontes → Duolingo |
 | WhatsApp | 30 dias | Fontes → WhatsApp |
 
 O contador reinicia a cada enriquecimento, manual ou automático — reduzir o intervalo deixa
