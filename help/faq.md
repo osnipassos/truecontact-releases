@@ -181,7 +181,6 @@ A aba **Configurações → Normalização** reúne tudo o que o TrueContact lim
 - **Validação de dados** — liga/desliga a verificação em segundo plano de domínios de e-mail (MX) e sites (HTTP), e a lista de domínios considerados "pessoais" (gmail, uol…) na classificação casa × trabalho.
 - **Histórico e retenção** — o horário em que a manutenção diária roda (03:30 por padrão), por quantos dias os snapshots e as confirmações de envio ficam no histórico (0 desliga a limpeza) e quanto um e-mail ou site marcado espera antes de ser re-testado.
 - **Revalidação automática** — na manutenção das 03:30, o TrueContact re-testa os e-mails e sites que estão marcados como "não responde" e **remove a marcação** dos que voltaram a funcionar. Nada é apagado: um e-mail com domínio fora do ar continua no contato, apenas tachado e com um aviso — apagar é sempre decisão sua, no painel. Perfis sociais que a rede responde como inexistentes (404) também são só marcados, nunca removidos. A única remoção da seção é a opção (desligada por padrão) de mover contatos completamente vazios para a lixeira, que é reversível.
-- **Avançado** — a exclusão por snapshot: desligada (padrão), apagar um dado no iPhone/Google **não** o apaga no Hub, apenas registra; ligada, a remoção propaga de verdade.
 
 
 ### Excluí, fundi ou restaurei um contato — isso fica registrado em algum lugar?
@@ -196,6 +195,19 @@ Outras melhorias no mesmo pacote:
 - **Fundir contatos não exige mais o iCloud.** Antes, o contato vencedor precisava ter mapeamento Apple; agora o merge funciona com contatos que existem só no Google ou só no TrueContact.
 - **Restaurar e reverter atualizam todos os serviços.** Qualquer recuperação (restauração da lixeira, reversão de histórico, desfazer merge) reenvia o contato para **todos** os provedores conectados — iCloud e Google — e não apenas para o iCloud.
 - **Reverter é fiel.** O registro de uma reversão agora retrata exatamente o estado em que o contato ficou, incluindo o que foi removido — reversões futuras partem do retrato certo.
+
+### Apaguei um telefone/e-mail no iPhone ou no Google — ele some de todos os lugares?
+
+Sim, automaticamente. Quando você apaga um dado em um provedor conectado, o TrueContact
+detecta a exclusão na próxima leitura e a propaga para o Hub e para os demais provedores —
+a exclusão "cola", sem o dado teimar em voltar. A remoção fica registrada no histórico do
+contato, de onde pode ser revertida dentro do período de retenção.
+
+Há uma proteção embutida: quando um provedor **descarta repetidamente** um dado que o
+TrueContact devolve (o iCloud faz isso com certos endereços e mensageiros antigos), o
+sistema reconhece o padrão e **não** trata como exclusão sua — o dado fica preservado no
+Hub, apenas marcado. Nenhuma falha de leitura apaga nada: a detecção só acontece em
+leituras completas do provedor.
 
 ### Alterei um contato — por que todas as fontes dele foram atualizadas?
 
