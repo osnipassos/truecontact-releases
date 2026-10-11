@@ -11,7 +11,7 @@
 2. [Segurança e Privacidade](#2-segurança-e-privacidade)
 3. [Sincronização de Contatos](#3-sincronização-de-contatos)
 4. [Conectar o Google Contacts](#4-conectar-o-google-contacts)
-5. [Conectar LinkedIn, Facebook, Instagram, X e Goodreads](#5-conectar-linkedin-facebook-instagram-x-e-goodreads)
+5. [Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads e TikTok)](#5-conectar-as-fontes-sociais-linkedin-facebook-instagram-x-goodreads-e-tiktok)
 6. [Conectar o WhatsApp](#6-conectar-o-whatsapp)
 7. [Templates e Automações](#7-templates-e-automações)
 8. [Operações em Lote e Indicadores](#8-operações-em-lote-e-indicadores)
@@ -353,7 +353,21 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ---
 
-## 5. Conectar LinkedIn, Facebook, Instagram, X e Goodreads
+## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads e TikTok)
+
+### Como conectar o TikTok e o que ele traz
+
+Em **Configurações → Fontes → TikTok**, clique em **Conectar TikTok** e faça o login na
+janela que abre (resolva o captcha, se aparecer). Do perfil de cada contato, o TrueContact
+traz **nome, foto e o link da bio** — o TikTok não expõe aniversário, cidade nem data de
+cadastro publicamente.
+
+- **Adicionar como contato:** pode criar contatos de *quem você segue* ou só dos *mútuos*
+  (quem você segue e te segue de volta). A primeira varredura lê a lista inteira; as
+  diárias param cedo assim que só encontram perfis já conhecidos.
+- Perfis **sem nome completo são ignorados** e quem já é contato nunca é duplicado.
+- Como o TikTok é agressivo contra automação, há **carência de 24 horas** após o login e
+  pausa automática ao menor sinal de captcha ou limitação.
 
 ### Como conectar o Goodreads e o que ele traz
 
@@ -385,6 +399,7 @@ Cada fonte tem o seu próprio intervalo, ajustável na aba dela em **Configuraç
 | Instagram | 180 dias | Fontes → Instagram |
 | X (Twitter) | 180 dias | Fontes → X |
 | Goodreads | 365 dias | Fontes → Goodreads |
+| TikTok | 180 dias | Fontes → TikTok |
 | WhatsApp | 30 dias | Fontes → WhatsApp |
 
 O contador reinicia a cada enriquecimento, manual ou automático — reduzir o intervalo deixa
