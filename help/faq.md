@@ -12,7 +12,7 @@
 3. [Sincronização de Contatos](#3-sincronização-de-contatos)
 4. [Conectar o Google Contacts](#4-conectar-o-google-contacts)
 5. [Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads e TikTok)](#5-conectar-as-fontes-sociais-linkedin-facebook-instagram-x-goodreads-e-tiktok)
-6. [Conectar o WhatsApp](#6-conectar-o-whatsapp)
+6. [Conectar o WhatsApp e o Telegram](#6-conectar-o-whatsapp-e-o-telegram)
 7. [Templates e Automações](#7-templates-e-automações)
 8. [Operações em Lote e Indicadores](#8-operações-em-lote-e-indicadores)
 9. [Histórico e Reversão](#9-histórico-e-reversão)
@@ -487,9 +487,26 @@ Não precisa esperar o ciclo automático. No painel do contato, o botão de enri
 
 ---
 
-## 6. Conectar o WhatsApp
+## 6. Conectar o WhatsApp e o Telegram
 
-### Passo a passo: leitura do QR Code
+### Como conectar o Telegram e o que ele traz
+
+O Telegram usa a API oficial de clientes (MTProto) — sem navegador. Antes de conectar,
+crie um app em **my.telegram.org → API development tools** e cole o `api_id` e o
+`api_hash` em **Configurações → Fontes → Telegram** (eles identificam o aplicativo, não
+a sua conta, e ficam salvos só no seu servidor). Depois clique em **Conectar Telegram**
+e escaneie o QR code com o app oficial (Configurações → Dispositivos → Conectar
+dispositivo). Contas com verificação em duas etapas digitam a senha na própria tela.
+
+Dos seus contatos do Telegram, o TrueContact traz **nome, foto, aniversário** (quando a
+pessoa o configurou e a privacidade permite), **e-mails da bio** e o **@username**, que
+entra na seção Mensageiros do contato. O casamento é por telefone, com as mesmas regras
+de sempre: procurar antes de criar, enriquecer sem sobrescrever, propagar ao
+iCloud/Google. Com a opção de verificação ligada, o TrueContact também confere em lotes
+pequenos **quais telefones da sua agenda têm Telegram** (a importação de teste é
+desfeita na hora, sem poluir sua agenda do Telegram).
+
+### Passo a passo: leitura do QR Code (WhatsApp)
 
 **No TrueContact:**
 
