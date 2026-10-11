@@ -618,7 +618,7 @@ O cabeçalho do TrueContact mostra badges coloridos indicando contatos aguardand
 | Ícone Google | Azul Google | Contatos aguardando sincronização com o Google Contacts |
 | Ícone Apple | Cinza | Contatos aguardando sincronização com o iCloud |
 
-Quando há itens em fila, o ícone da respectiva rede anima com um efeito pulsante. Os badges desaparecem quando a fila é processada.
+Quando há itens em fila, o ícone da respectiva rede anima com um efeito pulsante. Os badges desaparecem quando a fila é processada. Uma fonte **desconectada** aparece com ⚠️ ao lado do logo — a fila dela continua acumulando e será processada quando reconectar. **Clicar em qualquer badge** abre as Configurações direto na aba daquela fonte.
 
 ### Contatos Duplicados (Merge Inteligente)
 
