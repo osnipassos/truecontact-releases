@@ -380,10 +380,13 @@ aniversário** (quando o perfil o torna público) e a **data de entrada no Goodr
 aparece nos eventos do contato como "Goodreads" — do mesmo jeito que a data de conexão do
 LinkedIn.
 
-- **Amigos como contatos:** com a opção *Adicionar amigos como contatos* ligada (padrão),
-  a lista de amigos é varrida uma vez por dia e amigos que ainda não são contatos viram
-  contatos novos. Perfis **sem nome completo são ignorados** e quem já é contato nunca é
-  duplicado — contatos parecidos entram nas sugestões de merge normais.
+- **Amigos e quem sigo como contatos:** com as opções *Adicionar amigos como contatos* e
+  *Adicionar quem sigo como contatos* ligadas (padrão), a lista de amigos e a de leitores
+  que você segue ("People You're Following") são varridas uma vez por dia e quem ainda não
+  é contato vira contato novo. Autores seguidos ficam de fora; perfis **sem nome completo
+  são ignorados** e quem já é contato nunca é duplicado — contatos parecidos entram nas
+  sugestões de merge normais. Solicitações de amizade pendentes entram automaticamente
+  quando a pessoa aceita.
 - **Reverificação:** cada perfil é reconferido a cada 365 dias (ajustável), e o botão de
   enriquecimento no painel do contato visita o perfil na hora.
 - **Perfis privados** são respeitados: o TrueContact lê só o que o perfil mostra.
