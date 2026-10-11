@@ -11,7 +11,7 @@
 2. [Segurança e Privacidade](#2-segurança-e-privacidade)
 3. [Sincronização de Contatos](#3-sincronização-de-contatos)
 4. [Conectar o Google Contacts](#4-conectar-o-google-contacts)
-5. [Conectar LinkedIn, Facebook, Instagram e X](#5-conectar-linkedin-facebook-instagram-e-x)
+5. [Conectar LinkedIn, Facebook, Instagram, X e Goodreads](#5-conectar-linkedin-facebook-instagram-x-e-goodreads)
 6. [Conectar o WhatsApp](#6-conectar-o-whatsapp)
 7. [Templates e Automações](#7-templates-e-automações)
 8. [Operações em Lote e Indicadores](#8-operações-em-lote-e-indicadores)
@@ -353,7 +353,26 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ---
 
-## 5. Conectar LinkedIn, Facebook, Instagram e X
+## 5. Conectar LinkedIn, Facebook, Instagram, X e Goodreads
+
+### Como conectar o Goodreads e o que ele traz
+
+O Goodreads é a fonte mais recente. Em **Configurações → Fontes → Goodreads**, clique em
+**Conectar Goodreads** e faça o login na janela do navegador que abre (e-mail/senha ou via
+Amazon). A sessão fica guardada localmente, como nas outras fontes.
+
+Do perfil de cada contato, o TrueContact traz **nome, foto, site pessoal, cidade,
+aniversário** (quando o perfil o torna público) e a **data de entrada no Goodreads**, que
+aparece nos eventos do contato como "Goodreads" — do mesmo jeito que a data de conexão do
+LinkedIn.
+
+- **Amigos como contatos:** com a opção *Adicionar amigos como contatos* ligada (padrão),
+  a lista de amigos é varrida uma vez por dia e amigos que ainda não são contatos viram
+  contatos novos. Perfis **sem nome completo são ignorados** e quem já é contato nunca é
+  duplicado — contatos parecidos entram nas sugestões de merge normais.
+- **Reverificação:** cada perfil é reconferido a cada 365 dias (ajustável), e o botão de
+  enriquecimento no painel do contato visita o perfil na hora.
+- **Perfis privados** são respeitados: o TrueContact lê só o que o perfil mostra.
 
 ### De quantos em quantos dias cada fonte é reconferida?
 
@@ -365,6 +384,7 @@ Cada fonte tem o seu próprio intervalo, ajustável na aba dela em **Configuraç
 | Facebook | 7 dias | Fontes → Facebook |
 | Instagram | 180 dias | Fontes → Instagram |
 | X (Twitter) | 180 dias | Fontes → X |
+| Goodreads | 365 dias | Fontes → Goodreads |
 | WhatsApp | 30 dias | Fontes → WhatsApp |
 
 O contador reinicia a cada enriquecimento, manual ou automático — reduzir o intervalo deixa
