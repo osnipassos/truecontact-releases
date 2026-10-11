@@ -180,7 +180,7 @@ A aba **Configurações → Normalização** reúne tudo o que o TrueContact lim
 - **Deduplicação** — liga/desliga o merge automático de duplicados óbvios.
 - **Validação de dados** — liga/desliga a verificação em segundo plano de domínios de e-mail (MX) e sites (HTTP), e a lista de domínios considerados "pessoais" (gmail, uol…) na classificação casa × trabalho.
 - **Histórico e retenção** — por quantos dias os snapshots e as confirmações de envio ficam no histórico (0 desliga a limpeza).
-- **Limpeza automática** — quatro opções (desligadas por padrão) para a manutenção das 03:30: remover e-mails com domínio inválido e sites inacessíveis (quarentena de 7 dias + re-verificação na hora — só sai o que falhar de novo), remover perfis sociais inativos há 30+ dias (a quarentena longa protege contra falsos 404 das redes) e mover contatos vazios para a lixeira (reversível). Toda remoção fica no histórico do contato.
+- **Revalidação automática** — na manutenção das 03:30, o TrueContact re-testa os e-mails e sites que estão marcados como "não responde" e **remove a marcação** dos que voltaram a funcionar. Nada é apagado: um e-mail com domínio fora do ar continua no contato, apenas tachado e com um aviso — apagar é sempre decisão sua, no painel. Perfis sociais que a rede responde como inexistentes (404) também são só marcados, nunca removidos. A única remoção da seção é a opção (desligada por padrão) de mover contatos completamente vazios para a lixeira, que é reversível.
 - **Avançado** — a exclusão por snapshot: desligada (padrão), apagar um dado no iPhone/Google **não** o apaga no Hub, apenas registra; ligada, a remoção propaga de verdade.
 
 
