@@ -392,6 +392,17 @@ uma foto verdadeira. Com *Adicionar como contato* ligado, quem você segue (ou s
 mútuos) vira contato novo — **inclusive quem usa só o primeiro nome** (no Duolingo isso é
 comum; você decide depois se faz merge ou exclui) — e ninguém é duplicado.
 
+### O TikTok ficou "pausado" por captcha. O que fazer?
+
+O TikTok é a fonte mais desconfiada: de tempos em tempos ele mostra um quebra-cabeça
+("arraste a peça para encaixar") no seu próprio perfil, e enquanto ele não é resolvido
+nenhum clique funciona — a varredura de quem você segue nem chega a abrir a lista. Quando
+isso acontece, o TrueContact **pausa o TikTok** e mostra o motivo em **Configurações →
+Fontes → TikTok**, com o botão **Resolver captcha na tela virtual**. Clique nele: o
+navegador já logado abre no seu perfil na tela virtual (noVNC); resolva o quebra-cabeça
+e, assim que o modal some, a pausa é levantada sozinha e a varredura volta no próximo
+ciclo. Não é preciso desconectar nem fazer login de novo.
+
 ### Como conectar o TikTok e o que ele traz
 
 Em **Configurações → Fontes → TikTok**, clique em **Conectar TikTok** e faça o login na
