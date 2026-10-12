@@ -400,8 +400,10 @@ nenhum clique funciona — a varredura de quem você segue nem chega a abrir a l
 isso acontece, o TrueContact **pausa o TikTok** e mostra o motivo em **Configurações →
 Fontes → TikTok**, com o botão **Resolver captcha na tela virtual**. Clique nele: o
 navegador já logado abre no seu perfil na tela virtual (noVNC); resolva o quebra-cabeça
-e, assim que o modal some, a pausa é levantada sozinha e a varredura volta no próximo
-ciclo. Não é preciso desconectar nem fazer login de novo.
+e, assim que o modal some, a pausa é levantada e **a leitura de quem você segue acontece
+na hora, nessa mesma janela** (deixe-a aberta; leva alguns minutos). É de propósito: abrir
+outra sessão automatizada logo depois faz o TikTok pedir o captcha de novo. Não é preciso
+desconectar nem fazer login de novo.
 
 ### Como conectar o TikTok e o que ele traz
 
