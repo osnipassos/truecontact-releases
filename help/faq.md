@@ -11,7 +11,7 @@
 2. [Segurança e Privacidade](#2-segurança-e-privacidade)
 3. [Sincronização de Contatos](#3-sincronização-de-contatos)
 4. [Conectar o Google Contacts](#4-conectar-o-google-contacts)
-5. [Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads e TikTok)](#5-conectar-as-fontes-sociais-linkedin-facebook-instagram-x-goodreads-e-tiktok)
+5. [Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)](#5-conectar-as-fontes-sociais-linkedin-facebook-instagram-x-goodreads-tiktok-duolingo-e-pdl)
 6. [Conectar o WhatsApp e o Telegram](#6-conectar-o-whatsapp-e-o-telegram)
 7. [Templates e Automações](#7-templates-e-automações)
 8. [Operações em Lote e Indicadores](#8-operações-em-lote-e-indicadores)
@@ -299,6 +299,9 @@ O TrueContact normaliza e armazena perfis de:
 | YouTube | `youtube.com/@<handle>` |
 | Pinterest | `pinterest.com/<handle>` |
 | Gravatar | `gravatar.com/<handle>` |
+| Goodreads | `goodreads.com/<vanity>` ou `goodreads.com/user/show/<id>-<nome>` |
+| Duolingo | `duolingo.com/profile/<usuario>` |
+| Telegram | `t.me/<usuario>` ou, sem @usuário, `t.me/+<número>` |
 
 ### Normalização de números de telefone
 
@@ -353,7 +356,30 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ---
 
-## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads e TikTok)
+## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
+
+### Acabei de conectar uma fonte e a fila dela está enorme. É normal?
+
+É. Na primeira conexão, o TrueContact lê a lista inteira (amigos, quem você segue) e
+coloca na fila todo mundo que ainda não é contato — centenas de perfis de uma vez. Essa
+**carga inicial** acontece uma única vez por fonte. A fila anda um pouco a cada ciclo
+(as fontes se revezam e cada uma tem uma fatia de tempo, para nenhuma ficar parada) e,
+depois de esvaziar, só entram os perfis novos do dia. O mesmo vale para o envio ao
+iCloud e ao Google: quando muitos contatos mudam de uma vez, o envio é feito em lotes
+para respeitar os limites da Apple e do Google, e os números do cabeçalho caem ao longo
+de algumas horas.
+
+### O que é o People Data Labs (PDL) e para que serve?
+
+O PDL é um serviço que **descobre perfis** — principalmente o LinkedIn — a partir de um
+telefone ou e-mail. O TrueContact o usa só para contatos que **não têm nenhuma rede
+social**: todo dia consulta alguns deles (3 por padrão) e, quando encontra, grava o
+perfil e as outras fontes passam a enriquecer o contato normalmente. Cada contato é
+consultado uma vez só (e de novo apenas depois de meses), porque cada consulta gasta
+crédito. Para ativar, crie uma chave gratuita em
+[dashboard.peopledatalabs.com](https://dashboard.peopledatalabs.com/api-keys) (o plano
+gratuito dá cerca de 100 consultas por mês) e cole em **Configurações → Fontes → PDL**.
+No cartão de um contato, o botão **Descobrir via PDL** faz a consulta na hora.
 
 ### Como conectar o Duolingo e o que ele traz
 
@@ -363,8 +389,8 @@ janela que abre (e-mail/senha ou login social). De cada contato, o TrueContact t
 desde"), que vira o evento "Duolingo". A **foto só é usada quando é um upload real E o
 contato ainda não tem nenhuma** — os avatares de desenho do Duolingo nunca substituem
 uma foto verdadeira. Com *Adicionar como contato* ligado, quem você segue (ou só os
-mútuos) vira contato novo — perfis sem nome completo são ignorados e ninguém é
-duplicado.
+mútuos) vira contato novo — **inclusive quem usa só o primeiro nome** (no Duolingo isso é
+comum; você decide depois se faz merge ou exclui) — e ninguém é duplicado.
 
 ### Como conectar o TikTok e o que ele traz
 
@@ -511,8 +537,13 @@ e escaneie o QR code com o app oficial (Configurações → Dispositivos → Con
 dispositivo). Contas com verificação em duas etapas digitam a senha na própria tela.
 
 Dos seus contatos do Telegram, o TrueContact traz **nome, foto, aniversário** (quando a
-pessoa o configurou e a privacidade permite), **e-mails da bio** e o **@username**, que
-entra na seção Mensageiros do contato. O casamento é por telefone, com as mesmas regras
+pessoa o configurou e a privacidade permite), **e-mails da bio** e o **perfil do
+Telegram como rede social com link**: `t.me/<usuario>` quando a pessoa tem @usuário, ou
+o link oficial pelo número, `t.me/+<número>`, quando não tem. Esse link vai para o
+iPhone (perfil social "Telegram") e para o Google (site com rótulo "telegram"). A
+primeira sincronização começa sozinha logo depois de conectar; as seguintes rodam em todo
+ciclo. Quem está na sua agenda do Telegram e ainda não é contato vira contato novo,
+mesmo com nome de uma palavra só. O casamento é por telefone, com as mesmas regras
 de sempre: procurar antes de criar, enriquecer sem sobrescrever, propagar ao
 iCloud/Google. Com a opção de verificação ligada, o TrueContact também confere em lotes
 pequenos **quais telefones da sua agenda têm Telegram** (a importação de teste é
@@ -681,11 +712,22 @@ O cabeçalho do TrueContact mostra badges coloridos indicando contatos aguardand
 |---|---|---|
 | Ícone LinkedIn | Azul LinkedIn | Contatos na fila de enriquecimento LinkedIn |
 | Ícone Facebook | Azul Facebook | Contatos na fila de enriquecimento Facebook |
+| Ícone Instagram, X, Goodreads, TikTok e Duolingo | Cor de cada rede | Perfis na fila de cada uma dessas fontes |
 | Ícone WhatsApp | Verde | Números aguardando verificação no WhatsApp |
+| Ícone Telegram | Azul Telegram | Números aguardando verificação no Telegram (só aparece quando há fila) |
 | Ícone Google | Azul Google | Contatos aguardando sincronização com o Google Contacts |
 | Ícone Apple | Cinza | Contatos aguardando sincronização com o iCloud |
 
 Quando há itens em fila, o ícone da respectiva rede anima com um efeito pulsante. Os badges desaparecem quando a fila é processada. Uma fonte **desconectada** aparece com ⚠️ ao lado do logo — a fila dela continua acumulando e será processada quando reconectar. **Clicar em qualquer badge** abre as Configurações direto na aba daquela fonte.
+
+### Como fazer merge pelo celular?
+
+No celular, a tela de merge mostra **um cartão por campo** em vez da tabela: no topo
+fica a prévia do contato final (foto, nome, cargo), com a legenda de quem é **A** e quem
+é **B**. Toque na opção que quer manter — valores que os dois contatos têm aparecem uma
+vez só, com as duas letras. Telefones, e-mails e redes vêm todos marcados (o padrão é
+somar tudo); desmarque o que não quiser. Campos iguais nos dois ficam recolhidos em
+"N campos iguais". **Ignorar** e **Confirmar Merge** ficam sempre visíveis no rodapé.
 
 ### Contatos Duplicados (Merge Inteligente)
 
