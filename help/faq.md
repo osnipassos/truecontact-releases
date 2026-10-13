@@ -679,6 +679,9 @@ Cada sugestão da tela **Merge Inteligente** recebe uma **pontuação de 0 a 100
 - **nome completo idêntico**, **nome e sobrenome iguais**, **nome parcial** ("Vitor Celestino" dentro de "Vitor de Oliveira Celestino") ou só **mesmo primeiro nome**.
 - **@usuário em outra rede** — o mesmo nome de usuário em redes diferentes (ex.: `@espeiorin` no Duolingo e no LinkedIn). É a pista mais forte depois de e-mail e telefone.
 - **@usuário tem o sobrenome** ou **@usuário é o nome** (`@marlonmoser` para Marlon Moser).
+- **sobrenome raro** — "Renan Saad" com "Renan Cararo Saad" pesa muito mais que "Bruno Oliveira" com "Bruno Nascimento de Oliveira": a pontuação conta quantos contatos da sua base têm aquele sobrenome.
+- **nome do meio diferente** — pista negativa: "Felipe Augusto Gomes" e "Felipe Cohen Gomes" têm o mesmo primeiro e último nome, mas o meio contradiz. Iniciais contam como compatíveis ("Augusto C. Ligeiro" = "Augusto César Ligeiro").
+- **@usuário é o próprio nome** (`@renansaad`) — handle de nome real, não apelido: pequeno reforço.
 - **mesma empresa** e **mesmo aniversário**.
 - **1 de N candidatos** — pista negativa: um contato só com o primeiro nome ("Andre") que combina com dezenas de Andrés perde pontos; **único com pista entre N** é o contrário, quando só um dos candidatos tem alguma pista real.
 
