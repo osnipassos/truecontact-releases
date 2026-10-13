@@ -416,7 +416,7 @@ cadastro publicamente.
 - **Adicionar como contato:** pode criar contatos de *quem você segue* ou só dos *mútuos*
   (quem você segue e te segue de volta). A primeira varredura lê a lista inteira; as
   diárias param cedo assim que só encontram perfis já conhecidos.
-- Perfis **sem nome completo são ignorados** e quem já é contato nunca é duplicado.
+- Perfis **só com o primeiro nome ou apelido também entram** (você decide depois se faz merge ou exclui) e quem já é contato nunca é duplicado.
 - Como o TikTok é agressivo contra automação, há **carência de 24 horas** após o login e
   pausa automática ao menor sinal de captcha ou limitação.
 
@@ -434,8 +434,8 @@ LinkedIn.
 - **Amigos e quem sigo como contatos:** com as opções *Adicionar amigos como contatos* e
   *Adicionar quem sigo como contatos* ligadas (padrão), a lista de amigos e a de leitores
   que você segue ("People You're Following") são varridas uma vez por dia e quem ainda não
-  é contato vira contato novo. Autores seguidos ficam de fora; perfis **sem nome completo
-  são ignorados** e quem já é contato nunca é duplicado — contatos parecidos entram nas
+  é contato vira contato novo. Autores seguidos ficam de fora; perfis **só com o primeiro nome
+  também entram** (você decide depois no merge) e quem já é contato nunca é duplicado — contatos parecidos entram nas
   sugestões de merge normais. Solicitações de amizade pendentes entram automaticamente
   quando a pessoa aceita.
 - **Reverificação:** cada perfil é reconferido a cada 365 dias (ajustável), e o botão de
@@ -473,8 +473,8 @@ fica guardada localmente.
 - **Pausa automática:** ao menor sinal de bloqueio ou limitação, a rede entra em pausa e
   tenta de novo mais tarde, sozinha.
 - **Adicionar como contato:** o Instagram pode criar contatos de *quem você segue*, dos
-  *mútuos* ou dos *Amigos Próximos*; o X, de quem você segue. Perfis sem nome completo
-  são ignorados e quem já é contato nunca é duplicado.
+  *mútuos* ou dos *Amigos Próximos*; o X, de quem você segue. Perfis só com o primeiro nome
+  também entram (você decide depois no merge) e quem já é contato nunca é duplicado.
 
 As duas redes são **fontes de enriquecimento**: o TrueContact lê perfis públicos para preencher os seus contatos, mas nunca publica, comenta ou envia nada em seu nome.
 
