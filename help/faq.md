@@ -785,6 +785,12 @@ O contato volta exatamente àquele estado — inclusive campos que tinham sido a
 
 Merges têm um botão próprio: **"Desfazer merge"**. Além de devolver o contato vencedor ao estado anterior, ele **restaura os contatos que tinham sido absorvidos**, com os grupos e relacionamentos que existiam na época.
 
+Isso funciona mesmo quando o vencedor é um contato antigo sem histórico recente: o próprio
+registro do merge guarda como ele estava antes. A exceção são merges feitos antes dessa
+guarda existir (12/10/2026 ou antes) em contatos cujo histórico já expirou: nesses casos o
+desfazer é **parcial** — o duplicado volta da lixeira, o vencedor mantém o que absorveu e o
+painel avisa, para você remover à mão o que não quiser.
+
 ### Por quanto tempo o histórico é mantido?
 
 Os **últimos 30 snapshots** de cada contato ficam sempre visíveis na interface. No banco, os registros com mais de 30 dias são apagados na limpeza automática das madrugadas — veja [Quanto espaço o TrueContact ocupa no disco?](#quanto-espaço-o-truecontact-ocupa-no-disco).
