@@ -671,6 +671,23 @@ No painel inicial, o card **Aniversariantes de Hoje** mostra, ao lado de cada pe
 
 ## 8. Operações em Lote e Indicadores
 
+### Como o TrueContact decide a confiança de uma sugestão de merge?
+
+Cada sugestão da tela **Merge Inteligente** recebe uma **pontuação de 0 a 100** e uma faixa: **Alta** (75 ou mais), **Média** (40 a 74) ou **Baixa**. A pontuação soma as pistas encontradas, que aparecem como etiquetas abaixo do par:
+
+- **mesmo e-mail / mesmo telefone** — identificador forte, sempre 100.
+- **nome completo idêntico**, **nome e sobrenome iguais**, **nome parcial** ("Vitor Celestino" dentro de "Vitor de Oliveira Celestino") ou só **mesmo primeiro nome**.
+- **@usuário em outra rede** — o mesmo nome de usuário em redes diferentes (ex.: `@espeiorin` no Duolingo e no LinkedIn). É a pista mais forte depois de e-mail e telefone.
+- **@usuário tem o sobrenome** ou **@usuário é o nome** (`@marlonmoser` para Marlon Moser).
+- **mesma empresa** e **mesmo aniversário**.
+- **1 de N candidatos** — pista negativa: um contato só com o primeiro nome ("Andre") que combina com dezenas de Andrés perde pontos; **único com pista entre N** é o contrário, quando só um dos candidatos tem alguma pista real.
+
+Dois contatos com **@usuário diferente na mesma rede** nunca são sugeridos: são pessoas diferentes.
+
+Por padrão a lista mostra só as faixas Alta e Média, ordenadas pela pontuação. O link **Mostrar N de baixa confiança** revela o resto. Contatos de uma só palavra que combinam com vários candidatos aparecem **agrupados**: um cartão com o contato e a lista de candidatos ranqueados, e o botão **Ignorar todos os candidatos** descarta o grupo de uma vez. Confirmar o merge de um candidato remove automaticamente as outras sugestões que envolviam o contato fundido.
+
+O **auto-merge** continua restrito aos casos sem ambiguidade (ver abaixo); a pontuação só orienta a revisão manual.
+
 ### Lixeira: recuperar contatos excluídos
 
 Contatos excluídos não são apagados imediatamente — vão para a **Lixeira**, acessível pelo ícone de lixo no cabeçalho.
