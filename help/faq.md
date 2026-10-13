@@ -398,8 +398,9 @@ O TikTok é a fonte mais desconfiada: de tempos em tempos ele mostra um quebra-c
 ("arraste a peça para encaixar") no seu próprio perfil, e enquanto ele não é resolvido
 nenhum clique funciona — a varredura de quem você segue nem chega a abrir a lista. Quando
 isso acontece, o TrueContact **pausa o TikTok** e mostra o motivo em **Configurações →
-Fontes → TikTok**, com o botão **Resolver captcha na tela virtual**. Clique nele: o
-navegador já logado abre no seu perfil na tela virtual (noVNC); resolva o quebra-cabeça
+Fontes → TikTok**, com o botão **Resolver captcha na tela virtual**. Clique nele: a tela
+virtual aparece logo abaixo, na própria aba, com o navegador já logado no seu perfil;
+resolva o quebra-cabeça
 e, assim que o modal some, a pausa é levantada e **a leitura de quem você segue acontece
 na hora, nessa mesma janela** (deixe-a aberta; leva alguns minutos). É de propósito: abrir
 outra sessão automatizada logo depois faz o TikTok pedir o captcha de novo. Não é preciso
