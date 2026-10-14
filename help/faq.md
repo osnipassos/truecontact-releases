@@ -671,6 +671,10 @@ No painel inicial, o card **Aniversariantes de Hoje** mostra, ao lado de cada pe
 
 ## 8. Operações em Lote e Indicadores
 
+### O merge junta os nomes dos dois contatos?
+
+Sim, quando um nome acrescenta algo ao outro. No comparador do **Merge Inteligente**, logo abaixo da linha **Nome**, aparece a linha **Nome combinado** já marcada — por exemplo, "Andressa Maltaca" com "Andressa Gonçalves" vira **Andressa Gonçalves Maltaca**. A junção usa a mesma higienização de nomes do restante do app: não repete partes, ignora diminutivos ("Dan" dentro de "Daniel") e preserva conectivos quando um nome já contém o outro ("Priscilla Freitas" com "Priscilla Bilecki de Freitas" fica "Priscilla Bilecki de Freitas"). As partes novas entram antes do último sobrenome do nome que você escolheu na linha Nome, para o contato continuar sendo conhecido pelo mesmo sobrenome. Desmarque a caixa para gravar só o nome escolhido.
+
 ### Como o TrueContact decide a confiança de uma sugestão de merge?
 
 Cada sugestão da tela **Merge Inteligente** recebe uma **pontuação de 0 a 100** e uma faixa: **Alta** (75 ou mais), **Média** (40 a 74) ou **Baixa**. A pontuação soma as pistas encontradas, que aparecem como etiquetas abaixo do par:
