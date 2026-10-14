@@ -172,6 +172,10 @@ O TrueContact usa **OAuth 2.0** para acessar o Google Contacts — você autoriz
 
 ## 3. Sincronização de Contatos
 
+### Como filtrar os contatos por fonte (Instagram, Duolingo, WhatsApp…)?
+
+Abra **Filtros** na lista de contatos. No bloco **Fontes** há, para cada fonte, um par **Com** e **Sem**: Instagram, X (Twitter), Goodreads, TikTok, Duolingo, WhatsApp, Telegram e PDL (além de LinkedIn e Facebook no bloco Dados). Para as redes sociais vale ter o perfil daquela rede no contato; para o WhatsApp, ter um telefone confirmado no WhatsApp; para o PDL, o contato já ter sido consultado. Os filtros se combinam — por exemplo, **Com Duolingo** + **Sem LinkedIn** lista quem veio só do Duolingo.
+
 ### O que dá para ajustar na aba Normalização?
 
 A aba **Configurações → Normalização** reúne tudo o que o TrueContact limpa e valida automaticamente:
