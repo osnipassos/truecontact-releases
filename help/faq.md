@@ -685,7 +685,10 @@ Cada sugestão da tela **Merge Inteligente** recebe uma **pontuação de 0 a 100
 - **nome idêntico de uma palavra** — "Rodrigo" com "Rodrigo", sem sobrenome dos dois lados, vale quase nada (15) e fica na faixa Baixa, salvo outra pista.
 - **nome do meio diferente** — pista negativa: "Felipe Augusto Gomes" e "Felipe Cohen Gomes" têm o mesmo primeiro e último nome, mas o meio contradiz. Iniciais contam como compatíveis ("Augusto C. Ligeiro" = "Augusto César Ligeiro").
 - **@usuário é o próprio nome** (`@renansaad`) — handle de nome real, não apelido: pequeno reforço.
-- **mesma empresa** e **mesmo aniversário**.
+- **mesma empresa**, **mesmo aniversário**, **mesmo cargo** e **mesmo domínio** (site ou e-mail corporativo, ex.: `@roberthalf.com.br`).
+- **mesma cidade** — só pesa em cidades pouco comuns na sua base: em Curitiba ou São Paulo, onde está boa parte da rede, morar na mesma cidade não diz nada.
+- **pistas contra** — empresas diferentes, aniversários diferentes, cidades diferentes ou telefones de DDD diferente baixam a nota. Foram medidas com o seu próprio histórico: aparecem em boa parte dos pares que você ignorou e quase nunca nos que você fundiu.
+- **abrir o perfil** — no comparador, o nome de cada contato no topo é um link para o perfil social dele (Duolingo, Goodreads, LinkedIn…), para conferir antes de decidir.
 - **1 de N candidatos** — pista negativa: um contato só com o primeiro nome ("Andre") que combina com dezenas de Andrés perde pontos; **único com pista entre N** é o contrário, quando só um dos candidatos tem alguma pista real.
 
 Dois contatos com **@usuário diferente na mesma rede** nunca são sugeridos: são pessoas diferentes.
