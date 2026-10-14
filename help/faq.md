@@ -172,6 +172,10 @@ O TrueContact usa **OAuth 2.0** para acessar o Google Contacts — você autoriz
 
 ## 3. Sincronização de Contatos
 
+### Qual foto o TrueContact usa quando várias redes têm foto?
+
+A do **LinkedIn** é a preferencial. Se o contato tem perfil no LinkedIn e já tem foto, nenhuma outra fonte (Goodreads, Telegram, Duolingo, TikTok, X, WhatsApp…) troca essa foto — elas só preenchem quando o contato está sem foto. Uma foto escolhida por você (no iPhone, no Google, no painel ou no merge) continua sendo respeitada, e o botão de enriquecimento manual pode trocar a foto quando você pedir.
+
 ### Como filtrar os contatos por fonte (Instagram, Duolingo, WhatsApp…)?
 
 Abra **Filtros** na lista de contatos. No bloco **Fontes** há, para cada fonte, um par **Com** e **Sem**: Instagram, X (Twitter), Goodreads, TikTok, Duolingo, WhatsApp, Telegram e PDL (além de LinkedIn e Facebook no bloco Dados). Para as redes sociais vale ter o perfil daquela rede no contato; para o WhatsApp, ter um telefone confirmado no WhatsApp; para o PDL, o contato já ter sido consultado. Os filtros se combinam — por exemplo, **Com Duolingo** + **Sem LinkedIn** lista quem veio só do Duolingo.
