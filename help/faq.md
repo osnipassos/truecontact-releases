@@ -370,6 +370,11 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
 
+### Por que os contatos do TikTok vêm só com nome, @ e foto?
+
+O TikTok pede um captcha a cada um ou dois perfis abertos automaticamente — visitar os mais de dois mil perfis que você segue levaria meses. Por isso o TrueContact cria os contatos **direto da lista "Seguindo"**, que já traz o nome, o @usuário e a foto de cada pessoa, sem abrir perfil nenhum (e sem captcha). A bio e os links da bio, que só aparecem no perfil, podem ser buscados para um contato específico pelo botão **Enriquecer** no cartão do TikTok.
+
+
 ### O que significam o ⚠️ e o 🚨 nos selos de fila do topo?
 
 - **⚠️** — a fonte não está conectada: a fila acumula, mas nada é processado até você conectar a conta em **Configurações → Fontes**.
