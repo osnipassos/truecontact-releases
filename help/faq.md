@@ -681,6 +681,8 @@ Cada sugestão da tela **Merge Inteligente** recebe uma **pontuação de 0 a 100
 - **mesmo @usuário com nomes diferentes** — o par é sugerido mesmo quando os nomes não batem: "Alexandre" (Duolingo `@fracazo`) com "Alex Fracazo" (LinkedIn `@fracazo`), ou "Doug" com "Douglas Etges" (`@douglasetges`). Um primeiro nome compatível ("Alex" ≈ "Alexandre") soma; um primeiro nome sem relação pesa contra. Handles que são só o primeiro nome, só dígitos ou lixo de página não contam.
 - **@usuário tem o sobrenome** ou **@usuário é o nome** (`@marlonmoser` para Marlon Moser).
 - **sobrenome raro** — "Renan Saad" com "Renan Cararo Saad" pesa muito mais que "Bruno Oliveira" com "Bruno Nascimento de Oliveira": a pontuação conta quantos contatos da sua base têm aquele sobrenome.
+- **primeiro nome raro** — o mesmo vale para o primeiro nome: "Priscilla Freitas" com "Priscilla Bilecki de Freitas" sobe para Alta porque só há três Priscillas na base, enquanto "Rodrigo" não ajuda em nada.
+- **nome idêntico de uma palavra** — "Rodrigo" com "Rodrigo", sem sobrenome dos dois lados, vale quase nada (15) e fica na faixa Baixa, salvo outra pista.
 - **nome do meio diferente** — pista negativa: "Felipe Augusto Gomes" e "Felipe Cohen Gomes" têm o mesmo primeiro e último nome, mas o meio contradiz. Iniciais contam como compatíveis ("Augusto C. Ligeiro" = "Augusto César Ligeiro").
 - **@usuário é o próprio nome** (`@renansaad`) — handle de nome real, não apelido: pequeno reforço.
 - **mesma empresa** e **mesmo aniversário**.
