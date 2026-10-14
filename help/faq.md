@@ -682,6 +682,8 @@ Cada sugestão da tela **Merge Inteligente** recebe uma **pontuação de 0 a 100
 - **mesmo e-mail / mesmo telefone** — identificador forte, sempre 100.
 - **nome completo idêntico**, **nome e sobrenome iguais**, **nome parcial** ("Vitor Celestino" dentro de "Vitor de Oliveira Celestino") ou só **mesmo primeiro nome**.
 - **@usuário em outra rede** — o mesmo nome de usuário em redes diferentes (ex.: `@espeiorin` no Duolingo e no LinkedIn). É a pista mais forte depois de e-mail e telefone.
+- **e-mail de um é o @usuário do outro** — `abeloliveiraj@gmail.com` num contato e o Duolingo `@abeloliveiraj` em outro viram sugestão mesmo com nomes diferentes. E-mails genéricos (`contato@`, `info@`) e os que começam por um primeiro nome comum (`ricardo@`) não contam.
+- **Telegram do mesmo telefone** — quando o Telegram de um contato foi achado pelo número e esse número está no telefone de outro contato, é a mesma pessoa (nota 100).
 - **mesmo @usuário com nomes diferentes** — o par é sugerido mesmo quando os nomes não batem: "Alexandre" (Duolingo `@fracazo`) com "Alex Fracazo" (LinkedIn `@fracazo`), ou "Doug" com "Douglas Etges" (`@douglasetges`). Um primeiro nome compatível ("Alex" ≈ "Alexandre") soma; um primeiro nome sem relação pesa contra. Handles que são só o primeiro nome, só dígitos ou lixo de página não contam.
 - **@usuário tem o sobrenome** ou **@usuário é o nome** (`@marlonmoser` para Marlon Moser).
 - **sobrenome raro** — "Renan Saad" com "Renan Cararo Saad" pesa muito mais que "Bruno Oliveira" com "Bruno Nascimento de Oliveira": a pontuação conta quantos contatos da sua base têm aquele sobrenome.
