@@ -172,6 +172,10 @@ O TrueContact usa **OAuth 2.0** para acessar o Google Contacts — você autoriz
 
 ## 3. Sincronização de Contatos
 
+### Por que um site aparece riscado com ⚠️ no contato?
+
+O TrueContact testa os sites dos contatos e risca os que **comprovadamente não existem**: domínio que não existe mais ou página que responde "não encontrada" (404). Sites que só bloqueiam acesso automático (proteção anti-robô como a do Cloudflare), que estão fora do ar momentaneamente ou com certificado vencido **não** são riscados — o site existe, só não deixou o TrueContact ver. Sites riscados são testados de novo toda madrugada e voltam ao normal sozinhos se responderem. Nada é apagado.
+
 ### Qual foto o TrueContact usa quando várias redes têm foto?
 
 A do **LinkedIn** é a preferencial. Se o contato tem perfil no LinkedIn e já tem foto, nenhuma outra fonte (Goodreads, Telegram, Duolingo, TikTok, X, WhatsApp…) troca essa foto — elas só preenchem quando o contato está sem foto. Uma foto escolhida por você (no iPhone, no Google, no painel ou no merge) continua sendo respeitada, e o botão de enriquecimento manual pode trocar a foto quando você pedir.
