@@ -366,6 +366,11 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
 
+### O que significam o ⚠️ e o 🚨 nos selos de fila do topo?
+
+- **⚠️** — a fonte não está conectada: a fila acumula, mas nada é processado até você conectar a conta em **Configurações → Fontes**.
+- **🚨** — a fonte precisa de ação sua: a sessão foi perdida ou a rede pediu um **captcha** / bloqueou temporariamente e a fonte está pausada. Passe o mouse sobre o 🚨 para ver o motivo e até quando vai a pausa; clique no selo para abrir a aba da fonte e usar **Conectar** ou **Resolver captcha na tela virtual**. O selo aparece mesmo quando a fila está vazia.
+
 ### Acabei de conectar uma fonte e a fila dela está enorme. É normal?
 
 É. Na primeira conexão, o TrueContact lê a lista inteira (amigos, quem você segue) e
