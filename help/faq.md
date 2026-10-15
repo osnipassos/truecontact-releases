@@ -813,7 +813,7 @@ O TrueContact detecta automaticamente contatos duplicados comparando:
 
 Quando novos duplicados são detectados, uma **notificação nativa** é enviada com a contagem. Clique na notificação para abrir diretamente a tela de Merge.
 
-Casos sem qualquer ambiguidade — contatos com exatamente o mesmo nome e nenhum dado conflitante entre si — são fundidos automaticamente pelo **auto-merge de alta fidelidade**, que vem ligado por padrão e pode ser desligado em **Configurações → Alertas e Merge**. Todo merge automático fica registrado no histórico e pode ser desfeito.
+Casos sem qualquer ambiguidade — contatos com exatamente o mesmo nome e nenhum dado conflitante entre si — são fundidos automaticamente pelo **auto-merge de alta fidelidade**. Também entram nele contatos com o nome completo idêntico e o mesmo nome de usuário em outra rede (ex.: "Edward Konig" com LinkedIn @edwardkonig e "Edward Konig" com TikTok @edwardkonig), desde que não tenham usuários diferentes numa mesma rede. O auto-merge vem ligado por padrão e pode ser desligado em **Configurações → Alertas e Merge**. Todo merge automático fica registrado no histórico e pode ser desfeito.
 
 ---
 
