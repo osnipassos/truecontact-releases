@@ -453,6 +453,12 @@ aniversário** (quando o perfil o torna público) e a **data de entrada no Goodr
 aparece nos eventos do contato como "Goodreads" — do mesmo jeito que a data de conexão do
 LinkedIn.
 
+- **Endereço personalizado do perfil:** quando a pessoa criou um endereço próprio no Goodreads
+  (ex.: `goodreads.com/luanamasoni`), é ele que fica no contato, no lugar do endereço genérico
+  com número (`goodreads.com/user/show/132179255-lua`). Esse nome de usuário ajuda a achar
+  duplicados: um perfil "Lua" com o endereço `luanamasoni` aparece nas sugestões de merge
+  junto da "Luana Masoni" que você já tinha no iPhone. Os perfis já salvos são lidos de novo
+  aos poucos, a cada ciclo, para trocar o endereço.
 - **Amigos e quem sigo como contatos:** com as opções *Adicionar amigos como contatos* e
   *Adicionar quem sigo como contatos* ligadas (padrão), a lista de amigos e a de leitores
   que você segue ("People You're Following") são varridas uma vez por dia e quem ainda não
