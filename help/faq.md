@@ -442,6 +442,14 @@ cadastro publicamente.
 - Como o TikTok é agressivo contra automação, há **carência de 24 horas** após o login e
   pausa automática ao menor sinal de captcha ou limitação.
 
+### O TrueContact consulta o Gravatar dos meus contatos?
+
+Sim. Pelo e-mail de cada contato, o TrueContact verifica se existe um perfil público no
+**Gravatar**. Quando existe, acrescenta o nome de usuário do Gravatar, as redes que a pessoa
+verificou lá (X, LinkedIn, GitHub, YouTube…) e a foto — **a foto só entra em contatos que ainda
+não têm foto**. Cerca de 1 em cada 10 e-mails tem perfil. Ajuste em **Configurações → Fontes →
+Gravatar** (ligar/desligar, e-mails por ciclo e de quanto em quanto tempo consultar de novo).
+
 ### O que o TrueContact faz com Linktree, about.me e cartões digitais nos meus contatos?
 
 Quando um contato tem como site uma página de links — **Linktree, about.me, bio.site, taplink** ou
