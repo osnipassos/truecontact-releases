@@ -442,6 +442,16 @@ cadastro publicamente.
 - Como o TikTok é agressivo contra automação, há **carência de 24 horas** após o login e
   pausa automática ao menor sinal de captcha ou limitação.
 
+### O que o TrueContact faz com Linktree, about.me e cartões digitais nos meus contatos?
+
+Quando um contato tem como site uma página de links — **Linktree, about.me, bio.site, taplink** ou
+um cartão digital como **taggo.one** e **meucontato.io** — o TrueContact lê essa página pública e
+acrescenta ao contato as redes sociais, o WhatsApp e o e-mail que a pessoa colocou lá. Nada que
+você já tinha é substituído, e tudo fica no histórico como "Agregador de links". Ajuste em
+**Configurações → Fontes → Agregadores de links** (ligar/desligar, páginas por ciclo e de quanto em
+quanto tempo reler). Links do WhatsApp (wa.me) e do Telegram (t.me) gravados como site viram
+automaticamente telefone e perfil do Telegram.
+
 ### Como conectar o Goodreads e o que ele traz
 
 O Goodreads é a fonte mais recente. Em **Configurações → Fontes → Goodreads**, clique em
