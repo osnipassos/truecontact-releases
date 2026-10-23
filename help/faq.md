@@ -450,6 +450,10 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
 
+### Como funciona a fonte Discord?
+
+Desde a 1.0.261. Em Configurações → Fontes → Discord, clique em "Conectar Discord" e faça login na janela do navegador (e-mail e senha, QR pelo app do celular ou login social). Uma vez por dia o TrueContact lê a sua lista de amigos e cria um contato para cada amigo que ainda não existe (quem já é contato nunca é duplicado). Depois, perfil a perfil, com pausa de 20 a 45 segundos entre eles, lê o @, o nome de exibição, a foto, os links da bio e as **contas verificadas de outras redes** que a pessoa ligou ao Discord: GitHub, X, Instagram, TikTok, Facebook, YouTube, Twitch, Reddit, Spotify, Steam, Bluesky, Mastodon, Roblox, Xbox, eBay e PayPal viram perfis sociais do contato, com a URL do próprio serviço; PlayStation, Epic Games, Battle.net, Riot e afins, que não têm página pública, ficam registrados só com o @; um domínio próprio vira site e o Skype vira mensageiro. Essas contas também servem para reconhecer um contato que você já tinha por outra rede. "Amigos desde" entra como data do contato. O nome do Discord só é usado para criar o contato (costuma ser apelido), e a foto só preenche quem ainda não tem foto.
+
 ### O TikTok deixa de seguir automaticamente quem eu excluo?
 
 Sim, se você quiser. Ao excluir um contato **sem grupo** que **veio do TikTok** e que você segue, o TrueContact agenda o unfollow. Ele é feito **na sua própria lista "Seguindo"**, sem visitar o perfil de ninguém, porque visitar perfis é o que dispara o captcha. A lista é lida uma vez por sessão, e cada alvo encontrado recebe o clique, com pausa de 8 a 20 segundos entre um e outro.
