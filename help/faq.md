@@ -990,6 +990,10 @@ Casos sem qualquer ambiguidade — contatos com exatamente o mesmo nome e nenhum
 
 ## 9. Histórico e Reversão
 
+### O que é o selo "Novo" ou "Alterado" ao lado da fonte de um campo?
+
+Desde a 1.0.260, cada campo da ficha (e-mails, telefones, redes sociais, sites, endereços, datas, grupos, mensageiros, relacionados, nome, cargo, empresa, apelido, notas e foto) mostra, ao lado do ícone da fonte, um selo **Novo** quando o item foi acrescentado nos últimos 7 dias, ou **Alterado** quando o valor mudou nesse período. Exemplos: um e-mail que não existia e chegou pelo iCloud aparece como "Novo"; um cargo ou empresa que o LinkedIn atualizou aparece como "Alterado". Passe o mouse sobre o selo para ver a origem e a data da mudança. O selo vem do histórico do contato, então vale igual para qualquer fonte. A janela de 7 dias é a chave `novidades_dias` em Configurações.
+
 ### Existe uma auditoria do que os provedores removeram?
 
 Sim, desde a 1.0.255. Todo domingo às 04:10 o TrueContact varre o histórico dos últimos 7 dias e lista o que o iCloud ou o Google removeram e **ainda falta** no contato, marcando como suspeito o item que o outro provedor ainda tem. O resultado fica em `/api/diagnostico/perdas`, e cada item suspeito vai para o log do painel com um aviso. Para rodar fora de hora: `POST /api/auditoria/perdas` com `{ "dias": 7 }`. A auditoria roda num processo separado e não trava o painel.
