@@ -177,8 +177,7 @@
             </span>
           </a>
         </div>
-        <a id="btn-mac-x64" href="#" class="text-xs text-slate-500 hover:text-indigo-400 transition-colors underline underline-offset-2"
-           data-pt="Tem Mac Intel? Baixar aqui" data-en="Have Mac Intel? Download here">Tem Mac Intel? Baixar aqui</a>
+        <p class="text-xs text-slate-500" data-pt="macOS com Apple Silicon (M1 ou superior) · Windows 10/11 · Linux pelo instalador do servidor" data-en="macOS with Apple Silicon (M1 or later) · Windows 10/11 · Linux via the server installer">macOS com Apple Silicon (M1 ou superior) · Windows 10/11 · Linux pelo instalador do servidor</p>
       </div>
       <!-- Aviso quarentena macOS -->
       <div class="mt-4 mb-3 flex items-start gap-3 bg-amber-950/40 border border-amber-700/50 rounded-xl px-4 py-3 text-left max-w-xl mx-auto">
@@ -759,8 +758,8 @@
         </div>
         <h2 class="text-3xl font-extrabold mb-4"><span data-pt="Sem" data-en="No">Sem</span> <span class="gradient-text" data-pt="duplicados" data-en="duplicates">duplicados</span></h2>
         <p class="text-slate-400 leading-relaxed mb-6"
-           data-pt="O TrueContact detecta automaticamente contatos duplicados usando nome, email, telefone e perfis sociais. O merge preserva todos os dados, sem perder nada."
-           data-en="TrueContact automatically detects duplicate contacts using name, email, phone and social profiles. The merge preserves all data, without losing anything.">O TrueContact detecta automaticamente contatos duplicados usando nome, email, telefone e perfis sociais. O merge preserva todos os dados, sem perder nada.</p>
+           data-pt="O TrueContact detecta duplicados por nome, e-mail, telefone, perfis sociais e pelas pistas que uma pessoa usaria: o @ que é o nome abreviado, o e-mail que é o @, quem tem grupo e quem não tem. Cada par recebe uma nota de 0 a 100, e o merge preserva todos os dados sem misturar o nome."
+           data-en="TrueContact detects duplicates by name, e-mail, phone, social profiles and the clues a person would use: the handle that is the abbreviated name, the e-mail that is the handle, who has a group and who does not. Each pair gets a 0 to 100 score, and the merge keeps every piece of data without mixing names.">O TrueContact detecta automaticamente contatos duplicados usando nome, email, telefone e perfis sociais. O merge preserva todos os dados, sem perder nada.</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3 text-sm text-slate-300">
             <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
@@ -773,6 +772,18 @@
           <li class="flex items-start gap-3 text-sm text-slate-300">
             <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
             <span data-pt="Merge manual de múltiplos contatos" data-en="Manual merge of multiple contacts">Merge manual de múltiplos contatos</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Filtros Com / Sem por pista, com contagem" data-en="With / Without filters per clue, with counts">Filtros Com / Sem por pista, com contagem</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Regras do merge automático com interruptor próprio" data-en="Automatic merge rules, each with its own switch">Regras do merge automático com interruptor próprio</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="O nome do contato vencedor nunca é misturado com o do outro" data-en="The winning contact's name is never mixed with the other's">O nome do contato vencedor nunca é misturado com o do outro</span>
           </li>
         </ul>
       </div>
@@ -814,6 +825,14 @@
           <li class="flex items-start gap-3 text-sm text-slate-300">
             <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
             <span data-pt="Lixeira com rasto: exclusões e restaurações entram no histórico" data-en="Trash leaves a trail: deletions and restores enter the history">Lixeira com rasto: exclusões e restaurações entram no histórico</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Auditoria semanal do que iCloud e Google removeram e ainda falta" data-en="Weekly audit of what iCloud and Google removed and is still missing">Auditoria semanal do que iCloud e Google removeram e ainda falta</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="As últimas 10 entradas de cada contato nunca expiram" data-en="The last 10 entries of every contact never expire">As últimas 10 entradas de cada contato nunca expiram</span>
           </li>
         </ul>
       </div>
@@ -858,6 +877,70 @@
           </div>
 
         </div>
+      </div>
+    </div>
+
+  
+    <!-- Feature 6: Nada se perde -->
+    <div class="grid sm:grid-cols-2 gap-12 items-center">
+      <div class="order-2 sm:order-1 bg-slate-900/80 border border-white/10 rounded-2xl p-5 card-glow">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-xs font-bold text-white" data-pt="Uma alteração, três lugares" data-en="One change, three places">Uma alteração, três lugares</p>
+          <span class="text-[9px] text-slate-500" data-pt="medido na prática" data-en="measured in practice">medido na prática</span>
+        </div>
+        <div class="space-y-2.5">
+          <div class="bg-slate-800/50 rounded-lg px-3 py-2.5 border-l-2 border-indigo-500">
+            <p class="text-[10px] font-semibold text-slate-300" data-pt="14:02:03 · Painel — site adicionado" data-en="14:02:03 · Panel — website added">14:02:03 · Painel — site adicionado</p>
+            <p class="text-[10px] text-slate-500">beacons.ai/heitor.kuser</p>
+          </div>
+          <div class="bg-slate-800/50 rounded-lg px-3 py-2.5 border-l-2 border-slate-400">
+            <p class="text-[10px] font-semibold text-slate-300" data-pt="14:02:07 · iCloud — recebido e conferido" data-en="14:02:07 · iCloud — received and checked">14:02:07 · iCloud — recebido e conferido</p>
+            <p class="text-[10px] text-green-400" data-pt="✓ 4 s · cartão lido de volta, nada descartado" data-en="✓ 4 s · card read back, nothing dropped">✓ 4 s · cartão lido de volta, nada descartado</p>
+          </div>
+          <div class="bg-slate-800/50 rounded-lg px-3 py-2.5 border-l-2 border-[#4285F4]">
+            <p class="text-[10px] font-semibold text-slate-300" data-pt="14:02:07 · Google — recebido e conferido" data-en="14:02:07 · Google — received and checked">14:02:07 · Google — recebido e conferido</p>
+            <p class="text-[10px] text-green-400" data-pt="✓ 4 s · resposta comparada com o enviado" data-en="✓ 4 s · response compared with what was sent">✓ 4 s · resposta comparada com o enviado</p>
+          </div>
+          <div class="bg-slate-800/50 rounded-lg px-3 py-2.5 border-l-2 border-amber-500">
+            <p class="text-[10px] font-semibold text-slate-300" data-pt="Endereço recusado pelo Google" data-en="Address rejected by Google">Endereço recusado pelo Google</p>
+            <p class="text-[10px] text-amber-400" data-pt="mantido no TrueContact e no iCloud, marcado como não aceito lá" data-en="kept in TrueContact and iCloud, flagged as not accepted there">mantido no TrueContact e no iCloud, marcado como não aceito lá</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 sm:order-2">
+        <div class="inline-flex items-center gap-2 bg-emerald-950/50 border border-emerald-800/40 rounded-full px-3 py-1 text-xs font-semibold text-emerald-300 mb-5">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <span data-pt="Confiança" data-en="Trust">Confiança</span>
+          <span class="px-1.5 py-0.5 bg-indigo-600/30 border border-indigo-500/40 rounded-full text-[9px] text-indigo-200 uppercase tracking-wide" data-pt="Novo" data-en="New">Novo</span>
+        </div>
+        <h2 class="text-3xl font-extrabold mb-4"><span data-pt="Nada se perde" data-en="Nothing gets lost">Nada se perde</span> <span class="gradient-text" data-pt="no caminho" data-en="on the way">no caminho</span></h2>
+        <p class="text-slate-400 leading-relaxed mb-6"
+           data-pt="Toda alteração sai para o iCloud e o Google em segundos, e cada envio é lido de volta e conferido. Um provedor só pode apagar o que ele mesmo já tinha mostrado; uma rede social só acrescenta. Se o seu iPhone devolver um grupo com menos gente do que recebeu, ninguém some do TrueContact."
+           data-en="Every change leaves for iCloud and Google within seconds, and every push is read back and checked. A provider can only delete what it had itself shown before; a social network only adds. If your iPhone returns a group with fewer people than it received, nobody disappears from TrueContact.">
+          Toda alteração sai para o iCloud e o Google em segundos, e cada envio é lido de volta e conferido. Um provedor só pode apagar o que ele mesmo já tinha mostrado; uma rede social só acrescenta. Se o seu iPhone devolver um grupo com menos gente do que recebeu, ninguém some do TrueContact.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Envio imediato, com a fila como rede de segurança" data-en="Instant push, with the queue as a safety net">Envio imediato, com a fila como rede de segurança</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Verificação pós-envio: o que o provedor recusou fica marcado, nunca some" data-en="Post-push check: what the provider rejected is flagged, never lost">Verificação pós-envio: o que o provedor recusou fica marcado, nunca some</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Remoção só pelo provedor que já tinha mostrado o dado, numa leitura real" data-en="Removal only by the provider that had already shown the data, in a real read">Remoção só pelo provedor que já tinha mostrado o dado, numa leitura real</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Grupos: ninguém sai por um cartão incompleto do iPhone" data-en="Groups: nobody leaves because of an incomplete iPhone card">Grupos: ninguém sai por um cartão incompleto do iPhone</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-slate-300">
+            <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center shrink-0"><svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
+            <span data-pt="Endereços normalizados com 11 regras novas, cada correção no histórico" data-en="Addresses normalized with 11 new rules, every fix in the history">Endereços normalizados com 11 regras novas, cada correção no histórico</span>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -934,7 +1017,8 @@
             <p class="text-sm font-semibold text-white flex-1 min-w-0">TikTok</p>
             <span class="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300" data-pt="Nova" data-en="New">Nova</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed" data-pt="Nome, foto e o site da bio. Quem você segue vira contato." data-en="Name, photo and the bio link. People you follow become contacts.">Nome, foto e o site da bio. Quem você segue vira contato.</p>
+          <p class="text-xs text-slate-400 leading-relaxed" data-pt="Nome, foto e o site da bio. Quem você segue vira contato, e quem você exclui deixa de ser seguido, sem visitar perfil."
+               data-en="Name, photo and the bio link. Who you follow becomes a contact, and who you delete gets unfollowed, without visiting any profile.">Nome, foto e o site da bio. Quem você segue vira contato.</p>
         </div>
         <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
           <div class="flex items-center gap-3 mb-3">
@@ -992,7 +1076,39 @@
             <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
           <p class="text-sm font-semibold text-white mb-1" data-pt="Endereços" data-en="Addresses">Endereços</p>
-          <p class="text-xs text-slate-500" data-pt="Limpeza e normalização de endereços, com abertura no Maps" data-en="Address cleanup and normalization, with Maps opening">Limpeza e normalização de endereços, com abertura no Maps</p>
+          <p class="text-xs text-slate-500" data-pt="Cidade, estado, país e CEP no campo certo, UF de capital corrigida, duplicatas absorvidas; abre no Maps" data-en="City, state, country and postal code in the right field, capital state codes fixed, duplicates absorbed; opens in Maps">Limpeza e normalização de endereços, com abertura no Maps</p>
+        </div>
+
+        <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
+          <div class="w-9 h-9 bg-indigo-950 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-white mb-1" data-pt="Envio imediato" data-en="Instant push">Envio imediato</p>
+          <p class="text-xs text-slate-500" data-pt="Toda alteração chega ao iCloud e ao Google em segundos; o que falhar fica na fila" data-en="Every change reaches iCloud and Google in seconds; whatever fails stays queued">Toda alteração chega ao iCloud e ao Google em segundos; o que falhar fica na fila</p>
+        </div>
+
+        <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
+          <div class="w-9 h-9 bg-emerald-950 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-white mb-1" data-pt="Verificação pós-envio" data-en="Post-push check">Verificação pós-envio</p>
+          <p class="text-xs text-slate-500" data-pt="O contato é lido de volta após cada envio; o que o provedor recusou fica marcado, nunca some" data-en="The contact is read back after every push; what the provider rejected is flagged, never lost">O contato é lido de volta após cada envio; o que o provedor recusou fica marcado, nunca some</p>
+        </div>
+
+        <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
+          <div class="w-9 h-9 bg-amber-950 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-white mb-1" data-pt="Auditoria de perdas" data-en="Loss audit">Auditoria de perdas</p>
+          <p class="text-xs text-slate-500" data-pt="Toda semana, o que iCloud e Google removeram e ainda falta, com aviso quando o outro provedor ainda tem" data-en="Every week, what iCloud and Google removed and is still missing, with a warning when the other provider still has it">Toda semana, o que iCloud e Google removeram e ainda falta, com aviso quando o outro provedor ainda tem</p>
+        </div>
+
+        <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
+          <div class="w-9 h-9 bg-sky-950 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-white mb-1" data-pt="Busca por @" data-en="Search by handle">Busca por @</p>
+          <p class="text-xs text-slate-500" data-pt="Encontre qualquer contato pelo nome de usuário de uma rede, com ou sem o @" data-en="Find any contact by a network username, with or without the @">Encontre qualquer contato pelo nome de usuário de uma rede, com ou sem o @</p>
         </div>
 
         <div class="card-glow bg-slate-900/60 border border-white/5 rounded-2xl p-5 hover:border-indigo-800/40 transition-all">
@@ -1180,8 +1296,7 @@
             Windows 10/11 x64
           </a>
         </div>
-        <a id="btn-mac-x64-2" href="#" class="text-xs text-slate-500 hover:text-indigo-400 transition-colors underline underline-offset-2"
-           data-pt="Tem Mac Intel? Baixar aqui" data-en="Have Mac Intel? Download here">Tem Mac Intel? Baixar aqui</a>
+        <p class="text-xs text-slate-500" data-pt="macOS com Apple Silicon (M1 ou superior) · Windows 10/11 · Linux pelo instalador do servidor" data-en="macOS with Apple Silicon (M1 or later) · Windows 10/11 · Linux via the server installer">macOS com Apple Silicon (M1 ou superior) · Windows 10/11 · Linux pelo instalador do servidor</p>
       </div>
       <!-- Aviso quarentena macOS -->
       <div class="mt-6 flex items-start gap-3 bg-amber-950/40 border border-amber-700/50 rounded-xl px-4 py-3 text-left max-w-xl mx-auto">
@@ -1218,7 +1333,6 @@
     const setHref = (ids, url) => ids.forEach(id => { const el = document.getElementById(id); if (el) el.href = url; });
 
     setHref(['btn-mac-arm', 'btn-mac-arm-2'], `${BASE}/TrueContact_aarch64.dmg`);
-    setHref(['btn-mac-x64', 'btn-mac-x64-2'], `${BASE}/TrueContact_x86_64.dmg`);
     setHref(['btn-win', 'btn-win-2'], `${BASE}/TrueContact_x64-setup.exe`);
 
     // Versão dinâmica

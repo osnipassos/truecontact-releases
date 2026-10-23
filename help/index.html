@@ -482,6 +482,168 @@
         </div>
       </div>
       <div class="space-y-2">
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Quanto tempo uma alteração leva para chegar ao iCloud e ao Google?" data-en="How long does a change take to reach iCloud and Google?">Quanto tempo uma alteração leva para chegar ao iCloud e ao Google?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Segundos. Desde a 1.0.256, <strong class="text-slate-300">toda alteração sai para os provedores assim que entra no TrueContact</strong>: edição no painel, leitura do LinkedIn, dado do WhatsApp, merge, reversão. O app junta o que mudou em 1,5 segundo e envia um contato por vez, para cada provedor em que ele está. Medido: uma URL adicionada chegou ao iCloud e ao Google em 4 segundos. Antes, a alteração esperava o radar de 5 minutos ou o fim do ciclo, de até 25 minutos.</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Nada volta para a origem:</strong> uma alteração lida do Google só vai para o iCloud, e vice-versa.</li>
+                <li><strong class="text-slate-300">Se falhar, fica na fila:</strong> o que não sair na hora é retentado pelo radar, como sempre.</li>
+              </ul>
+              <p>Opção em <strong class="text-slate-300">Configurações → Agendamento → Enviar alterações em seguida</strong>, ligada por padrão.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Seconds. Since 1.0.256, <strong class="text-slate-300">every change leaves for the providers as soon as it enters TrueContact</strong>: a panel edit, a LinkedIn read, data from WhatsApp, a merge, a rollback. The app batches changes for 1.5 seconds and sends one contact at a time, to every provider it belongs to. Measured: a URL added reached iCloud and Google in 4 seconds. Before, a change waited for the 5-minute radar or the end of the cycle, up to 25 minutes.</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Nothing goes back to its origin:</strong> a change read from Google only goes to iCloud, and vice versa.</li>
+                <li><strong class="text-slate-300">If it fails, it stays in the queue:</strong> whatever cannot leave right away is retried by the radar, as always.</li>
+              </ul>
+              <p>Option under <strong class="text-slate-300">Settings → Scheduling → Push changes right away</strong>, on by default.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O TrueContact confere se o iCloud e o Google aceitaram o que foi enviado?" data-en="Does TrueContact check that iCloud and Google accepted what was sent?">O TrueContact confere se o iCloud e o Google aceitaram o que foi enviado?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Sim, desde a 1.0.255. Logo depois de cada envio, o TrueContact <strong class="text-slate-300">lê o contato de volta</strong> do provedor e compara com o que mandou. O que o provedor devolveu sem é tratado como <strong class="text-slate-300">recusa do provedor</strong>, não como exclusão sua: o item continua no TrueContact e nos outros provedores, e nenhuma leitura futura daquele provedor o apaga. Exemplo real: um endereço com a cidade grafada "maceioal" foi recusado pelo Google e permaneceu no TrueContact e no iCloud.</p>
+              <p>O retrato guardado de cada contato em cada provedor passou a ser sempre o <strong class="text-slate-300">real</strong>, lido do provedor. É ele que decide, nas leituras seguintes, o que foi uma exclusão feita por você.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Yes, since 1.0.255. Right after each push, TrueContact <strong class="text-slate-300">reads the contact back</strong> from the provider and compares it with what it sent. Whatever came back missing is treated as a <strong class="text-slate-300">provider rejection</strong>, not as a deletion by you: the item stays in TrueContact and in the other providers, and no future read from that provider removes it. Real example: an address with the city spelled "maceioal" was rejected by Google and remained in TrueContact and in iCloud.</p>
+              <p>The stored snapshot of each contact at each provider is now always the <strong class="text-slate-300">real one</strong>, read from the provider. That is what decides, on later reads, what was a deletion made by you.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Uma fonte pode apagar um dado meu só porque não o trouxe?" data-en="Can a source delete my data just because it did not bring it?">Uma fonte pode apagar um dado meu só porque não o trouxe?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Não. Depois de uma auditoria completa do histórico em outubro de 2026, as regras de remoção ficaram assim:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Só uma leitura completa do próprio provedor remove algo</strong>, e só o que aquele provedor tinha mostrado numa leitura real anterior.</li>
+                <li><strong class="text-slate-300">Leitura de rede social nunca esvazia campo.</strong> Uma leitura interrompida por lentidão fica fora do pacote, em vez de entrar como lista vazia.</li>
+                <li><strong class="text-slate-300">Empresa, cargo, aniversário, notas, apelido e foto</strong> só são esvaziados por um provedor que já os tinha mostrado. A primeira leitura de um provedor recém-conectado não apaga nada.</li>
+                <li><strong class="text-slate-300">Grupos seguem a mesma regra</strong> no Google e no iCloud: só sai do grupo quem o provedor já tinha listado. Se o iPhone regravar um grupo com menos membros, os que ele não devolveu ficam e o grupo é reenviado.</li>
+                <li><strong class="text-slate-300">Conflito de versão no iCloud</strong> adia o envio e lê o aparelho primeiro, em vez de sobrescrever a sua edição.</li>
+              </ul>
+              <p>Tudo o que uma leitura remove aparece no histórico do contato, em vermelho, com a origem. Uma auditoria semanal confere o que ainda falta (seção 9).</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>No. After a full audit of the history in October 2026, the removal rules are:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Only a full read from the provider itself removes anything</strong>, and only what that provider had shown in a previous real read.</li>
+                <li><strong class="text-slate-300">A social network read never empties a field.</strong> A read interrupted by slowness is left out of the package instead of entering as an empty list.</li>
+                <li><strong class="text-slate-300">Company, title, birthday, notes, nickname and photo</strong> are only cleared by a provider that had already shown them. The first read of a newly connected provider deletes nothing.</li>
+                <li><strong class="text-slate-300">Groups follow the same rule</strong> on Google and iCloud: only someone the provider had already listed can leave a group. If the iPhone rewrites a group with fewer members, the ones it did not return stay and the group is re-sent.</li>
+                <li><strong class="text-slate-300">A version conflict on iCloud</strong> defers the push and reads the device first, instead of overwriting your edit.</li>
+              </ul>
+              <p>Everything a read removes shows in the contact's history, in red, with its origin. A weekly audit checks what is still missing (section 9).</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Meus endereços foram corrigidos sozinhos. O que aconteceu?" data-en="My addresses were corrected on their own. What happened?">Meus endereços foram corrigidos sozinhos. O que aconteceu?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Na 1.0.258 o TrueContact ganhou regras novas de normalização de endereços, vindas da análise de 8 mil endereços de uma base real, e as aplicou uma vez em toda a base. Cada contato alterado recebeu no histórico uma entrada <strong class="text-slate-300">Sanitização → Normalização automática</strong> com o antes e o depois.</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li>País no campo cidade ("Brasil") vai para país; nome de estado no campo cidade ("Paraná") vira a UF. São Paulo e Rio de Janeiro ficam: também são cidades.</li>
+                <li>Capital com UF errada ("Curitiba, SP", "Porto Alegre, PR") recebe a UF certa.</li>
+                <li>Estado ou cidade com sobras ("Sp | Brazil", "Sp.", "Capital", "Curitiba e Região", um site) são limpos; "Alphaville-sp" vira cidade e estado.</li>
+                <li>Localidade no campo de rua com o estado no campo cidade ("Jundiaí | São Paulo") vira Jundiaí/SP; rua que só repete a cidade é esvaziada.</li>
+                <li>CEP de 7 dígitos em São Paulo recebe o zero perdido; "Complemento: …" dentro da rua vai para complemento.</li>
+                <li>Linhas vazias somem e um endereço contido em outro ("SP, Brasil" ao lado de "Osasco, SP, Brasil") é absorvido pelo mais completo.</li>
+              </ul>
+              <p>O que <strong class="text-slate-300">não</strong> muda, de propósito: duas ruas na mesma cidade (casa e trabalho), duas cidades diferentes, estados estrangeiros e contradições reais, como "Itália" na cidade com "Brasil" no país. As mesmas regras valem para todo endereço que entra daqui em diante.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>In 1.0.258 TrueContact gained new address normalization rules, drawn from analyzing 8,000 addresses in a real database, and applied them once across the whole base. Every changed contact got a <strong class="text-slate-300">Sanitization → Automatic normalization</strong> entry in its history with the before and after.</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li>A country in the city field ("Brasil") moves to country; a state name in the city field ("Paraná") becomes the state code. São Paulo and Rio de Janeiro stay: they are cities too.</li>
+                <li>A capital with the wrong state ("Curitiba, SP", "Porto Alegre, PR") gets the right one.</li>
+                <li>State or city with leftovers ("Sp | Brazil", "Sp.", "Capital", "Curitiba e Região", a website) are cleaned; "Alphaville-sp" becomes city and state.</li>
+                <li>A locality in the street field with the state in the city field ("Jundiaí | São Paulo") becomes Jundiaí/SP; a street that only repeats the city is emptied.</li>
+                <li>A 7-digit São Paulo postal code gets its lost leading zero; "Complemento: …" inside the street moves to the complement field.</li>
+                <li>Empty rows disappear and an address contained in another ("SP, Brasil" next to "Osasco, SP, Brasil") is absorbed by the fuller one.</li>
+              </ul>
+              <p>What does <strong class="text-slate-300">not</strong> change, on purpose: two streets in the same city (home and work), two different cities, foreign states and real contradictions, such as "Itália" in the city with "Brasil" in the country. The same rules apply to every address that comes in from now on.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Como os grupos ficam iguais no iPhone, no Google e no TrueContact?" data-en="How do groups stay identical on iPhone, Google and TrueContact?">Como os grupos ficam iguais no iPhone, no Google e no TrueContact?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Um grupo é um só, com uma etiqueta no Google e um grupo no iCloud. O que mudou em outubro de 2026:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Grupo novo no iPhone vira etiqueta nova no Google.</strong> O TrueContact não tenta mais adivinhar se é um grupo antigo renomeado, o que podia renomear a etiqueta errada. Renomear de verdade continua sendo reconhecido.</li>
+                <li><strong class="text-slate-300">Só sai de um grupo quem o provedor já tinha listado</strong> numa leitura anterior. Membros recém-adicionados que o iPhone ainda não devolveu ficam, e o grupo é reenviado. Logo após a 1.0.257, a primeira remoção feita no iPhone em cada grupo é desfeita uma vez; da segunda leitura em diante, vale.</li>
+                <li>Um grupo do iCloud que o TrueContact não conhece é importado com os membros do aparelho, em vez de ser ignorado.</li>
+                <li>Na ficha do contato, <strong class="text-slate-300">+ Grupo</strong> oferece "Criar grupo e adicionar" quando o nome não existe. O grupo nasce já com cartão no iCloud e etiqueta no Google.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>A group is one thing, with a label on Google and a group on iCloud. What changed in October 2026:</p>
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">A new group on the iPhone becomes a new label on Google.</strong> TrueContact no longer guesses whether it is an old group renamed, which could rename the wrong label. Real renames are still recognized.</li>
+                <li><strong class="text-slate-300">Only someone the provider had already listed</strong> in a previous read can leave a group. Newly added members the iPhone has not returned yet stay, and the group is re-sent. Right after 1.0.257, the first removal made on the iPhone in each group is undone once; from the second read on, it holds.</li>
+                <li>An iCloud group TrueContact does not know is imported with the members on the device, instead of being ignored.</li>
+                <li>On the contact page, <strong class="text-slate-300">+ Group</strong> offers "Create group and add" when the name does not exist. The group is born with its iCloud card and Google label.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O nome de um contato pode ser trocado por uma rede social ou por um merge?" data-en="Can a contact's name be changed by a social network or by a merge?">O nome de um contato pode ser trocado por uma rede social ou por um merge?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Trocam o nome: <strong class="text-slate-300">LinkedIn</strong>, <strong class="text-slate-300">iCloud</strong> e <strong class="text-slate-300">Google</strong>. O Facebook troca só quando o contato não tem LinkedIn. <strong class="text-slate-300">X, Instagram, TikTok, Goodreads, Duolingo, Telegram e WhatsApp só dão nome ao contato que criam</strong>: o nome de exibição dessas redes costuma ser apelido ou marca.</p>
+              <p><strong class="text-slate-300">O merge nunca mistura nomes.</strong> Primeiro nome, nome do meio e sobrenome do vencedor vêm do mesmo contato. Até a 1.0.258 o merge automático pegava campo a campo, e um nome do meio vazio podia receber o do outro contato. Redes sociais também não marcam nem desmarcam um contato existente como empresa.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Names are changed by <strong class="text-slate-300">LinkedIn</strong>, <strong class="text-slate-300">iCloud</strong> and <strong class="text-slate-300">Google</strong>. Facebook only when the contact has no LinkedIn. <strong class="text-slate-300">X, Instagram, TikTok, Goodreads, Duolingo, Telegram and WhatsApp only name the contacts they create</strong>: display names on those networks are often nicknames or brands.</p>
+              <p><strong class="text-slate-300">A merge never mixes names.</strong> The winner's first, middle and last names come from the same contact. Until 1.0.258 the automatic merge took each field separately, and an empty middle name could receive the other contact's. Social networks also never mark or unmark an existing contact as a company.</p>
+            </div>
+          </div>
+        </details>
+
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
@@ -760,6 +922,93 @@
         </div>
       </div>
       <div class="space-y-2">
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O TikTok deixa de seguir automaticamente quem eu excluo?" data-en="Does TikTok automatically unfollow who I delete?">O TikTok deixa de seguir automaticamente quem eu excluo?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Sim. Ao excluir um contato <strong class="text-slate-300">sem grupo</strong> que <strong class="text-slate-300">veio do TikTok</strong> e que você segue, o TrueContact agenda o unfollow. Ele é feito <strong class="text-slate-300">na sua própria lista "Seguindo"</strong>, sem visitar o perfil de ninguém, porque visitar perfis é o que dispara o captcha. Pausa de 8 a 20 segundos entre um e outro; limites "por ciclo" (10) e "por dia" (100) em Configurações → Fontes → TikTok. Uma sessão que parou no meio da lista retoma de onde ficou. Restaurar o contato da lixeira cancela o unfollow, e quem passou por ele nunca mais é recriado pela lista.</p>
+              <p>A sessão do botão <strong class="text-slate-300">Resolver captcha na tela virtual</strong> também faz os unfollows pendentes, com você presente.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Yes. When you delete a contact <strong class="text-slate-300">without a group</strong> that <strong class="text-slate-300">came from TikTok</strong> and that you follow, TrueContact schedules the unfollow. It is done <strong class="text-slate-300">on your own "Following" list</strong>, without visiting anyone's profile, because profile visits are what trigger the captcha. An 8 to 20 second pause between each; "per cycle" (10) and "per day" (100) limits under Settings → Sources → TikTok. A session that stopped mid-list resumes where it left off. Restoring the contact from the trash cancels the unfollow, and anyone unfollowed this way is never recreated from the list.</p>
+              <p>The <strong class="text-slate-300">Solve captcha on the virtual screen</strong> session also performs pending unfollows, with you present.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Por que o TikTok abre o navegador só duas vezes por dia?" data-en="Why does TikTok open the browser only twice a day?">Por que o TikTok abre o navegador só duas vezes por dia?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Cada abertura do navegador automatizado é exposição ao anti-robô do TikTok. O limite fica em <strong class="text-slate-300">Configurações → Fontes → TikTok → Sessões por dia</strong> (padrão 2); esgotado, o ciclo espera a meia-noite. O botão Resolver captcha e o Enriquecer manual não contam. Depois de um bloqueio, a pausa cresce: 24 horas no primeiro em 7 dias, 72 no segundo, 7 dias do terceiro em diante; o Resolver captcha libera na hora. A recomendação é manter <strong class="text-slate-300">Visitar perfis automaticamente</strong> desligado: todos os captchas registrados vieram de visitas a perfil, nenhum da leitura da lista, e a lista "Seguindo" já cria os contatos sem navegador.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Every launch of the automated browser is exposure to TikTok's anti-bot. The limit lives under <strong class="text-slate-300">Settings → Sources → TikTok → Sessions per day</strong> (default 2); once used up, the cycle waits for midnight. The Solve captcha button and manual Enrich do not count. After a block, the pause grows: 24 hours for the first in 7 days, 72 for the second, 7 days from the third on; Solve captcha releases it immediately. The recommendation is to keep <strong class="text-slate-300">Visit profiles automatically</strong> off: every captcha on record came from a profile visit, none from reading the list, and the "Following" list already creates contacts without a browser.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O X estava criando contatos de perfis que eu não sigo. Foi corrigido?" data-en="X was creating contacts from profiles I do not follow. Was it fixed?">O X estava criando contatos de perfis que eu não sigo. Foi corrigido?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Sim, na 1.0.248. A página "Seguindo" do X também devolve as sugestões "Quem seguir", e o TrueContact aceitava todo perfil que a página trazia. Agora só entra quem o X confirma como seguido (ou seguidor). Contatos criados antes a partir de sugestões podem ser excluídos normalmente.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Yes, in 1.0.248. X's "Following" page also returns the "Who to follow" suggestions, and TrueContact accepted every profile the page brought. Now only profiles X confirms as followed (or follower) come in. Contacts created earlier from suggestions can be deleted normally.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Amigos Próximos do Instagram: como o TrueContact sabe quem está na lista?" data-en="Instagram Close Friends: how does TrueContact know who is on the list?">Amigos Próximos do Instagram: como o TrueContact sabe quem está na lista?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Lendo a lista como ela aparece na tela de Amigos Próximos do próprio Instagram, linha a linha: o controle marcado tem um ícone diferente do vazio. Os dados brutos da página não servem, porque misturam a folha de compartilhar e a bandeja de stories; até a 1.0.249 isso fazia contas como Netflix Brasil entrarem como amigos próximos. Se a tela mudar e nenhum marcador for reconhecido, o TrueContact não enfileira ninguém e salva o HTML para diagnóstico.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>By reading the list as it appears on Instagram's own Close Friends screen, row by row: the checked control has a different icon from the empty one. The page's raw data is useless, because it mixes the share sheet and the stories tray; until 1.0.249 that made accounts like Netflix Brasil enter as close friends. If the screen changes and no marker is recognized, TrueContact queues nobody and saves the HTML for diagnosis.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O LinkedIn leu o perfil pela metade. Perco os dados?" data-en="LinkedIn read the profile halfway. Do I lose data?">O LinkedIn leu o perfil pela metade. Perco os dados?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Não. Se empresa e cargo, a foto ou uma das listas não foi lida por lentidão, o perfil é salvo com o que foi lido, <strong class="text-slate-300">nada do que já existia é apagado</strong>, e o item volta para a fila. O próximo ciclo tenta completar, e na terceira vez aceita o que tiver. O LinkedIn mudou o layout em outubro de 2026 e o nome passou a ser lido pelo título da aba; se o mesmo campo deixar de ser lido em três perfis seguidos, o log avisa que o layout provavelmente mudou de novo.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>No. If company and title, the photo or one of the lists was not read because the page was slow, the profile is saved with what was read, <strong class="text-slate-300">nothing that already existed is deleted</strong>, and the item goes back to the queue. The next cycle tries to complete it, and on the third attempt accepts what it has. LinkedIn changed its layout in October 2026 and the name is now read from the tab title; if the same field fails on three profiles in a row, the log warns that the layout probably changed again.</p>
+            </div>
+          </div>
+        </details>
+
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
@@ -1204,6 +1453,69 @@
         </div>
       </div>
       <div class="space-y-2">
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Que pistas novas a tela de sugestões de merge usa?" data-en="Which new clues does the merge suggestions screen use?">Que pistas novas a tela de sugestões de merge usa?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Só um tem grupo</strong> (+20): o contato sem grupo costuma ser a cópia que uma rede criou depois. <strong class="text-slate-300">Os dois têm grupo</strong> (−15) é pista contra.</li>
+                <li><strong class="text-slate-300">@ é o nome abreviado em ordem</strong> ("Cristiane" @crisluzsa = Cristiane Luz Salustiano) e <strong class="text-slate-300">@ é a inicial + um sobrenome raro</strong> ("Dan" @dfamano = Daniel Famano).</li>
+                <li><strong class="text-slate-300">@ é o nome sem a letra acentuada</strong> (Tércio Gaspar × @trciogaspar).</li>
+                <li><strong class="text-slate-300">E-mail sem o sufixo curto é o @</strong> ("fabriciovmartins.sp" × @fabriciovmartins), primeiro nome + iniciais + sobrenome ("julioaoliveira") e nome invertido ("santosigor").</li>
+              </ul>
+              <p>Essas pistas só alimentam a sugestão manual. O merge automático continua restrito aos casos de <strong class="text-slate-300">Configurações → Normalização → Deduplicação e Merge</strong>, cada um com interruptor. Filtros <strong class="text-slate-300">Com / Sem</strong> por pista, com contagem, ficam no topo da lista, e valem sobre todos os pares calculados. Fundir, excluir ou ignorar tira o par da lista na hora.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <ul class="space-y-1 text-slate-500 text-xs list-disc list-inside">
+                <li><strong class="text-slate-300">Only one has a group</strong> (+20): the contact without a group is usually the copy a network created later. <strong class="text-slate-300">Both have groups</strong> (−15) is a clue against.</li>
+                <li><strong class="text-slate-300">@ is the name abbreviated in order</strong> ("Cristiane" @crisluzsa = Cristiane Luz Salustiano) and <strong class="text-slate-300">@ is the initial + a rare surname</strong> ("Dan" @dfamano = Daniel Famano).</li>
+                <li><strong class="text-slate-300">@ is the name without its accented letter</strong> (Tércio Gaspar × @trciogaspar).</li>
+                <li><strong class="text-slate-300">E-mail without its short suffix is the @</strong> ("fabriciovmartins.sp" × @fabriciovmartins), first name + initials + surname ("julioaoliveira") and inverted name ("santosigor").</li>
+              </ul>
+              <p>These clues only feed manual suggestions. The automatic merge stays limited to the cases under <strong class="text-slate-300">Settings → Normalization → Deduplication and Merge</strong>, each with its own switch. <strong class="text-slate-300">With / Without</strong> filters per clue, with counts, sit at the top of the list and apply to every calculated pair. Merging, deleting or ignoring removes the pair from the list immediately.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="O merge pode misturar o nome de dois contatos?" data-en="Can a merge mix the names of two contacts?">O merge pode misturar o nome de dois contatos?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Não mais. O nome do vencedor é mantido como um bloco: primeiro nome, nome do meio e sobrenome do mesmo contato. Até a 1.0.258 o merge automático pegava cada campo do primeiro contato que o tinha, e "Heitor Kuser" virou "Heitor Kuser Mercado Imobiliário Kuser" ao absorver um contato criado pelo Instagram. O vencedor é o contato que está no iCloud e, entre dois, o mais antigo; um "User" nunca vence.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Not anymore. The winner's name is kept as one block: first, middle and last name from the same contact. Until 1.0.258 the automatic merge took each field from the first contact that had it, and "Heitor Kuser" became "Heitor Kuser Mercado Imobiliário Kuser" after absorbing a contact created by Instagram. The winner is the contact on iCloud and, between two, the older one; a "User" never wins.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Como funciona o cartão &quot;Sem grupo&quot; da tela inicial?" data-en="How does the &quot;No group&quot; card on the home screen work?">Como funciona o cartão "Sem grupo" da tela inicial?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Ele abre em <strong class="text-slate-300">Outras</strong>, escondendo os contatos criados pelas listas do TikTok, Duolingo e Goodreads. O filtro por origem mostra cada rede com a contagem, inclusive o Telegram. Cada linha traz o chip da rede de onde o contato veio, o botão de grupo e um botão de excluir; atribuir um grupo tira o contato da lista na hora. No celular, aniversariantes, sem grupo e convites do LinkedIn ficam numa faixa no topo da lista, e cada um abre o cartão em tela cheia.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>It opens on <strong class="text-slate-300">Others</strong>, hiding the contacts created from the TikTok, Duolingo and Goodreads lists. The origin filter shows each network with its count, Telegram included. Each row carries the chip of the network the contact came from, the group button and a delete button; assigning a group removes the contact from the list immediately. On mobile, birthdays, no-group contacts and LinkedIn invitations sit in a strip at the top of the list, each opening its card full screen.</p>
+            </div>
+          </div>
+        </details>
+
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
@@ -1397,6 +1709,40 @@
         </div>
       </div>
       <div class="space-y-2">
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Existe uma auditoria do que os provedores removeram?" data-en="Is there an audit of what the providers removed?">Existe uma auditoria do que os provedores removeram?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Sim, desde a 1.0.255. Todo domingo às 04:10 o TrueContact varre o histórico dos últimos 7 dias e lista o que o iCloud ou o Google removeram e <strong class="text-slate-300">ainda falta</strong> no contato, marcando como suspeito o item que o outro provedor ainda tem. O resultado fica em <code>/api/diagnostico/perdas</code> e cada item suspeito vai para o log do painel. Para rodar fora de hora: <code>POST /api/auditoria/perdas</code> com <code>{ "dias": 7 }</code>. Roda num processo separado e não trava o painel.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Yes, since 1.0.255. Every Sunday at 04:10 TrueContact scans the last 7 days of history and lists what iCloud or Google removed that is <strong class="text-slate-300">still missing</strong> from the contact, flagging as suspicious any item the other provider still has. The result lives at <code>/api/diagnostico/perdas</code> and each suspicious item goes to the panel log. To run it off schedule: <code>POST /api/auditoria/perdas</code> with <code>{ "dias": 7 }</code>. It runs in a separate process and never freezes the panel.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
+            <span data-pt="Por que &quot;Desfazer merge&quot; às vezes é recusado?" data-en="Why is &quot;Undo merge&quot; sometimes refused?">Por que "Desfazer merge" às vezes é recusado?</span>
+            <svg class="chevron w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="lpt">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Porque o contato absorvido já não está na lixeira: foi excluído em definitivo ou a lixeira foi esvaziada. Sem ele não há o que restaurar, e o botão avisa em vez de refazer um merge pela metade. Desfazer merge também passou a remover do vencedor <strong class="text-slate-300">só o que o merge acrescentou</strong>, comparando o retrato de antes com o de depois.</p>
+            </div>
+          </div>
+          <div class="len" style="display:none">
+            <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
+              <p>Because the absorbed contact is no longer in the trash: it was permanently deleted or the trash was emptied. Without it there is nothing to restore, and the button says so instead of half-undoing a merge. Undo merge also now removes from the winner <strong class="text-slate-300">only what the merge added</strong>, by comparing the before and after snapshots.</p>
+            </div>
+          </div>
+        </details>
+
 
         <details class="bg-slate-900/60 border border-white/5 rounded-xl overflow-hidden">
           <summary class="flex items-center justify-between px-5 py-4 text-sm font-medium text-slate-200 hover:text-white transition-colors">
@@ -1513,14 +1859,14 @@
           </summary>
           <div class="lpt">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-              <p>A interface mostra sempre os <strong class="text-slate-200">últimos 30 estados</strong> de cada contato.</p>
+              <p>A interface mostra as <strong class="text-slate-200">últimas 100 entradas</strong> de cada contato. Desde a 1.0.255, as <strong class="text-slate-200">últimas 10 entradas de cada contato ficam sempre</strong>, por mais antigas que sejam, e o registro de um merge é mantido enquanto o contato absorvido existir. Cada registro guarda só uma referência à foto, que fica uma única vez numa tabela própria.</p>
               <p>No banco de dados, registros com mais de 30 dias são apagados numa limpeza automática que roda todas as madrugadas, às 03:30. Confirmações de envio, que não servem para desfazer nada, são apagadas após 2 dias. O espaço é devolvido ao sistema imediatamente.</p>
               <p>Numa base ativa o histórico cresce cerca de 30 MB por dia, porque cada estado guarda também a foto do contato — por isso a limpeza existe.</p>
             </div>
           </div>
           <div class="len" style="display:none">
             <div class="answer px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4 space-y-3">
-              <p>The interface always shows the <strong class="text-slate-200">last 30 states</strong> of each contact.</p>
+              <p>The interface shows the <strong class="text-slate-200">last 100 entries</strong> of each contact. Since 1.0.255, the <strong class="text-slate-200">last 10 entries of each contact are always kept</strong>, however old, and a merge record is kept for as long as the absorbed contact exists. Each record stores only a reference to the photo, which is kept once in its own table.</p>
               <p>In the database, records older than 30 days are deleted by an automatic cleanup that runs every night at 03:30. Delivery confirmations, which can't be used to undo anything, are deleted after 2 days. The space is returned to the system immediately.</p>
               <p>On an active database the history grows about 30 MB per day, because each state also stores the contact's photo — which is why the cleanup exists.</p>
             </div>

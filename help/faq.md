@@ -1,6 +1,6 @@
 # TrueContact — Manual do Usuário
 
-> **Versão do documento:** Agosto 2026  
+> **Versão do documento:** Outubro 2026 (1.0.259)  
 > Encontrou um erro ou tem uma pergunta não respondida? [Abra uma issue](https://github.com/osnipassos/truecontact-releases/issues).
 
 ---
@@ -171,6 +171,86 @@ O TrueContact usa **OAuth 2.0** para acessar o Google Contacts — você autoriz
 ---
 
 ## 3. Sincronização de Contatos
+
+### Quanto tempo uma alteração leva para chegar ao iCloud e ao Google?
+
+Segundos. Desde a versão 1.0.256, **toda alteração sai para os provedores assim que entra no TrueContact**: uma edição no painel, uma leitura do LinkedIn, um dado trazido pelo WhatsApp, um merge, uma reversão. O app junta o que mudou em 1,5 segundo e envia um contato por vez, para cada provedor em que ele está. Medido na prática: uma URL adicionada chegou ao iCloud e ao Google em 4 segundos.
+
+Antes, a alteração esperava o radar de 5 minutos ou o fim do ciclo de leitura das redes, que pode levar 25 minutos.
+
+Duas garantias:
+
+- **Nada volta para a origem.** Uma alteração lida do Google não é reenviada ao Google por esse caminho; só vai para o iCloud, e vice-versa.
+- **Se falhar, fica na fila.** O envio imediato é a primeira tentativa. O que não puder sair na hora (provedor fora, conflito de versão) continua na fila e é retentado pelo radar, como sempre.
+
+A opção fica em **Configurações → Agendamento → Enviar alterações em seguida**, ligada por padrão. Desligada, tudo volta a esperar o radar.
+
+### O TrueContact confere se o iCloud e o Google aceitaram o que foi enviado?
+
+Sim, desde a 1.0.255. Logo depois de cada envio, o TrueContact **lê o contato de volta** do provedor (no iCloud, baixa o cartão; no Google, usa a resposta da própria gravação) e compara com o que mandou.
+
+O que o provedor devolveu sem é tratado como **recusa do provedor**, não como exclusão sua. Esse item fica marcado como "teimoso" para aquele provedor: continua no TrueContact, continua indo para os outros provedores, e nenhuma leitura futura daquele provedor o apaga. Exemplo real: um endereço com a cidade grafada "maceioal" foi recusado pelo Google e permaneceu no TrueContact e no iCloud.
+
+O retrato que o TrueContact guarda de cada contato em cada provedor passou a ser sempre o **real**, lido do provedor, e não mais o que foi enviado. É esse retrato que decide, nas leituras seguintes, o que foi uma exclusão feita por você.
+
+### Uma fonte pode apagar um dado meu só porque não o trouxe?
+
+Não. Depois de uma auditoria completa do histórico em outubro de 2026, as regras de remoção ficaram assim:
+
+- **Só uma leitura completa do próprio provedor remove algo**, e só o que aquele provedor tinha mostrado numa leitura real anterior. O retrato guardado por um envio nosso não conta. Se o Google nunca mostrou um telefone, a ausência dele numa leitura do Google não apaga nada.
+- **Leitura de rede social nunca esvazia campo.** LinkedIn, Facebook, Instagram e as demais só acrescentam. Uma leitura interrompida por lentidão fica fora do pacote em vez de entrar como lista vazia.
+- **Empresa, cargo, aniversário, notas, apelido e foto** só são esvaziados por um provedor que já os tinha mostrado antes. A primeira leitura de um provedor recém-conectado não apaga nada.
+- **Grupos seguem a mesma regra**, no Google e no iCloud: só sai do grupo quem o provedor já tinha listado numa leitura anterior. Se o seu iPhone regravar um grupo com menos membros do que o TrueContact enviou, os membros que o telefone não devolveu ficam no TrueContact e o grupo é reenviado.
+- **Conflito de versão no iCloud** (o cartão mudou no aparelho depois da última leitura) adia o envio e lê o aparelho primeiro, em vez de sobrescrever a sua edição.
+
+Tudo o que uma leitura remove continua aparecendo no histórico do contato, em vermelho, com a origem. Uma auditoria semanal confere se algo removido por iCloud ou Google ainda falta e se o outro provedor ainda o tem (veja a seção 9).
+
+### Meus endereços foram corrigidos sozinhos. O que aconteceu?
+
+Na 1.0.258 o TrueContact ganhou um conjunto de regras novas de normalização de endereços, resultado da análise dos 8 mil endereços de uma base real, e aplicou essas regras uma vez em toda a base. Cada contato alterado recebeu no histórico uma entrada **Sanitização → Normalização automática** com o antes e o depois, campo a campo.
+
+O que as regras corrigem:
+
+- **País no lugar da cidade** ("Brasil" no campo cidade) vai para o campo país. Com países diferentes nos dois campos ("Itália" na cidade e "Brasil" no país), nada é tocado: é contradição, não erro de campo.
+- **Nome de estado no lugar da cidade** ("Paraná", "Santa Catarina", "Distrito Federal") vira a sigla no campo estado. São Paulo e Rio de Janeiro ficam, porque também são cidades.
+- **Capital com UF errada** ("Curitiba, SP", "Porto Alegre, PR") recebe a UF correta da capital.
+- **Estado com sobras** ("Sp | Brazil", "Sp.", "Capital", "Curitiba e Região", um site) é limpo. "Capital" com estado SP vira São Paulo.
+- **Cidade com UF colada** ("Alphaville-sp", "Curitiba/pr") é separada em cidade e estado.
+- **Localidade no campo de rua** com o estado no campo cidade ("Jundiaí | São Paulo") vira cidade Jundiaí, estado SP.
+- **Rua que repete a cidade** ("São Luís e Região" numa linha cuja cidade já é São Luís) é esvaziada.
+- **CEP de 7 dígitos em São Paulo** recebe o zero à esquerda que perdeu. "Complemento: Apartamento 71" dentro da rua vai para o campo complemento. Sites e e-mails dentro de campos de endereço saem.
+- **Linhas vazias** somem, e um endereço cujos campos preenchidos são todos iguais aos de outro ("SP, Brasil" ao lado de "Osasco, SP, Brasil") é absorvido pelo mais completo, que herda o que só o descartado tinha.
+
+O que as regras **não** fazem, de propósito: juntar duas ruas diferentes na mesma cidade (casa e trabalho), juntar duas cidades diferentes, mexer em estados estrangeiros ou decidir contradições reais, como "Florianópolis" na rua com "Curitiba" na cidade. Nesses casos a decisão é sua.
+
+As mesmas regras valem para todo endereço que entra daqui em diante, de qualquer fonte.
+
+### Como os grupos ficam iguais no iPhone, no Google e no TrueContact?
+
+Um grupo é um só, com uma etiqueta correspondente no Google e um grupo no iCloud. Adicionar ou tirar um contato no TrueContact atualiza os dois provedores na hora. O que mudou em outubro de 2026:
+
+- **Grupo novo no iPhone vira etiqueta nova no Google.** Até a 1.0.256, o TrueContact tentava adivinhar se o grupo novo era um grupo antigo renomeado e podia renomear a etiqueta errada no Google. Essa adivinhação foi removida. Renomear um grupo no iPhone ou no Google continua sendo reconhecido como renomeação.
+- **O TrueContact só tira alguém de um grupo se o provedor já tinha listado essa pessoa** numa leitura anterior. Membros que você acabou de adicionar e o iPhone ainda não devolveu ficam, e o grupo é reenviado. Consequência: logo após instalar a 1.0.257, a primeira remoção feita no iPhone em cada grupo é desfeita uma vez; a partir da segunda leitura, vale.
+- **Um grupo do iCloud que o TrueContact não conhece** (por exemplo, uma cópia que sobrou de grupos duplicados) é importado com os membros que estão no aparelho, em vez de ser ignorado para sempre.
+- Se o Google recusar adicionar alguém a uma etiqueta, o motivo vai para o log do painel.
+
+### Posso criar um grupo novo direto na ficha do contato?
+
+Sim, desde a 1.0.257. No botão **+ Grupo** da ficha, digite o nome. Se não existir grupo com esse nome, a primeira linha da lista oferece **Criar grupo "Nome" e adicionar**. Enter também cria quando a busca não tem resultados. O grupo nasce no TrueContact, ganha o cartão no iCloud e a etiqueta no Google, e o contato já entra nele. Maiúsculas e espaços duplicados são ignorados na comparação, então "clientes vip" reaproveita um "Clientes VIP" existente.
+
+### Dá para buscar um contato pelo @ da rede social?
+
+Sim. A busca do topo encontra contatos pelo nome de usuário de qualquer rede, com ou sem o @. Também aceita nome do meio, palavras em qualquer ordem e sem acento.
+
+### O nome de um contato pode ser trocado por uma rede social?
+
+Não, com uma exceção. A regra vigente:
+
+- **Trocam o nome:** LinkedIn (fonte oficial do nome profissional), iCloud e Google (as suas agendas). O LinkedIn junta o nome atual com o dele e, quando o nome do LinkedIn já contém todas as palavras do atual, vale o do LinkedIn inteiro, na ordem dele.
+- **Facebook** troca o nome só quando o contato não tem LinkedIn.
+- **Todo o resto só dá nome ao contato que cria:** X, Instagram, TikTok, Goodreads, Duolingo, Telegram e WhatsApp. O nome de exibição dessas redes costuma ser apelido ou marca ("Eltonminetto.dev", "Heitor Kuser Mercado Imobiliário Global").
+- **O merge nunca mistura nomes.** O nome do contato que vence o merge é mantido inteiro: primeiro nome, nome do meio e sobrenome vêm do mesmo contato. Até a 1.0.258 o merge automático pegava campo a campo, e um nome do meio vazio podia receber o do outro contato.
+- Redes sociais também **não marcam nem desmarcam um contato existente como empresa**; só o contato que elas mesmas criam. Uma conta de empresa no X ou uma página comercial no Facebook não transformam a sua agenda.
 
 ### Por que um site aparece riscado com ⚠️ no contato?
 
@@ -369,6 +449,51 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 ---
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
+
+### O TikTok deixa de seguir automaticamente quem eu excluo?
+
+Sim, se você quiser. Ao excluir um contato **sem grupo** que **veio do TikTok** e que você segue, o TrueContact agenda o unfollow. Ele é feito **na sua própria lista "Seguindo"**, sem visitar o perfil de ninguém, porque visitar perfis é o que dispara o captcha. A lista é lida uma vez por sessão, e cada alvo encontrado recebe o clique, com pausa de 8 a 20 segundos entre um e outro.
+
+Limites, os dois em **Configurações → Fontes → TikTok**: "Unfollows por ciclo" (padrão 10) e "Unfollows por dia" (padrão 100). Quem não coube hoje fica para amanhã, e uma sessão que terminou no meio da lista retoma de onde parou. Restaurar o contato da lixeira cancela o unfollow pendente. Quem passou por esse processo nunca mais é recriado pela lista "Seguindo".
+
+A sessão do botão **Resolver captcha na tela virtual** também faz os unfollows pendentes, com você presente para resolver um captcha se ele aparecer.
+
+### Por que o TikTok abre o navegador só duas vezes por dia?
+
+Porque cada abertura do navegador automatizado é exposição ao anti-robô do TikTok. O limite fica em **Configurações → Fontes → TikTok → Sessões por dia** (padrão 2). Esgotado, o selo do TikTok no topo continua mostrando a fila, mas o ciclo registra "2 of 2 browser session(s) used today" e espera a meia-noite. O botão Resolver captcha e o Enriquecer manual não contam.
+
+Outras proteções: pausa crescente depois de um bloqueio (24 horas no primeiro em 7 dias, 72 no segundo, 7 dias do terceiro em diante; o Resolver captcha libera na hora); captcha só conta quando o desafio está visível de verdade, porque o TikTok monta um contêiner vazio depois de cada clique; e o ciclo não abre o TikTok enquanto a sessão do Resolver captcha estiver usando o mesmo navegador.
+
+A recomendação continua sendo manter **Visitar perfis automaticamente** desligado: todos os captchas registrados vieram de visitas a perfil, nenhum da leitura da lista, e a lista "Seguindo" já cria os contatos sem navegador.
+
+### O X estava criando contatos de perfis que eu não sigo. Foi corrigido?
+
+Sim, na 1.0.248. A página "Seguindo" do X também devolve as sugestões "Quem seguir", e o TrueContact aceitava todo perfil que a página trazia. Agora só entra quem o X confirma como seguido (ou seguidor, na lista de seguidores). Perfis criados antes dessa correção a partir de sugestões podem ser excluídos normalmente.
+
+### Amigos Próximos do Instagram: como o TrueContact sabe quem está na lista?
+
+Lendo a lista como ela aparece na tela de Amigos Próximos do próprio Instagram, linha a linha: o controle marcado tem um ícone diferente do vazio, e é por ele que o TrueContact decide. Os dados brutos da página não servem: eles misturam a folha de compartilhar e a bandeja de stories, e por isso, até a 1.0.249, contatos como Netflix Brasil ou ClickBus entravam como amigos próximos sem estar na lista. Se a tela mudar e nenhum marcador for reconhecido, o TrueContact não enfileira ninguém e salva o HTML para diagnóstico, em vez de adivinhar.
+
+### O LinkedIn leu o perfil pela metade. Perco os dados?
+
+Não. Se empresa e cargo, a foto ou uma das listas (telefones, e-mails, sites, endereço) não foi lida por lentidão da página, o perfil é salvo com o que foi lido, **nada do que já existia é apagado**, e o item volta para a fila. O próximo ciclo tenta completar, e na terceira vez aceita o que tiver. O histórico mostra a leitura como "Partial read, retrying next cycle" em vez de erro.
+
+O LinkedIn mudou o layout em outubro de 2026 (o nome saiu do título da página), e o TrueContact passou a ler o nome pelo título da aba. Se o mesmo campo deixar de ser lido em três perfis seguidos, o log avisa que o layout provavelmente mudou de novo.
+
+### Uma página comercial pode transformar meu contato em empresa?
+
+Não mais. X, Facebook e Instagram só marcam como empresa o contato que **eles mesmos criaram**, e nunca desmarcam. A marca de empresa de um contato existente é sua (botão Empresa/Pessoa na ficha), do iCloud ou de uma URL de empresa do LinkedIn, e um perfil pessoal do LinkedIn (`/in/`) sempre prevalece: a pessoa continua pessoa mesmo com a página da empresa junto. A empresa de uma página vai para o campo organização, nunca para o nome. Um contato marcado como empresa fica só com a organização, sem nome de pessoa.
+
+### Quais ajustes de desempenho existem para um servidor Linux (Raspberry Pi)?
+
+Em **Configurações → Geral → Desempenho no servidor Linux**, todos desligados por padrão e sem efeito no Mac e no Windows:
+
+- **Um processo por aba no navegador das redes**: uma aba do LinkedIn chegava a 9 processos por causa de anúncios; com a chave, um só. Há uma chave separada para o LinkedIn.
+- **Páginas leves**: vídeo bloqueado no próprio navegador, com cache ligado. O TikTok fica fora, porque um site de vídeo sem vídeo denuncia o robô.
+- **Página parada nas pausas entre perfis**: os scripts da página ficam parados durante as pausas de 30 a 90 segundos. O LinkedIn fica fora.
+- **Semáforo entre aplicações** ao abrir o navegador, para não disputar CPU com outros bots da mesma máquina.
+
+O resumo de consumo fica em `/api/diagnostico/consumo` (CPU e memória por categoria, duração de cada etapa do ciclo, lançamentos do navegador), e a memória da API é protegida dentro do serviço: o painel não trava mais quando o ciclo encosta no teto de memória.
 
 ### Por que os contatos do TikTok vêm só com nome, @ e foto?
 
@@ -717,6 +842,34 @@ No painel inicial, o card **Aniversariantes de Hoje** mostra, ao lado de cada pe
 
 ## 8. Operações em Lote e Indicadores
 
+### Que pistas novas a tela de sugestões de merge usa?
+
+A tela pontua cada par de 0 a 100 e mostra as pistas que encontrou. Pistas acrescentadas em outubro de 2026:
+
+- **Só um tem grupo** (+20): você agrupa quem conhece, e o contato sem grupo costuma ser a cópia que uma rede criou depois. O contrário, **os dois têm grupo** (−15), é pista contra.
+- **@ é o nome abreviado em ordem** ("Cristiane" @crisluzsa = Cristiane Luz Salustiano) e **@ é a inicial do nome + um sobrenome raro** ("Dan" @dfamano = Daniel Famano).
+- **@ é o nome sem a letra acentuada** (Tércio Gaspar × @trciogaspar).
+- **E-mail sem o sufixo curto é o @** ("fabriciovmartins.sp" × @fabriciovmartins), **primeiro nome + iniciais + sobrenome** ("julioaoliveira") e **nome invertido** ("santosigor").
+- **Nome ou @ colado** com o início do primeiro nome e um sobrenome raro ("Gusjahnz" × Gustavo Jahnz).
+
+Essas pistas só alimentam a sugestão manual. O merge automático continua restrito aos casos da seção **Configurações → Normalização → Deduplicação e Merge**, cada um com o seu interruptor. Um contato cujo nome é só "User" ou o próprio @ não gera sugestão por nome.
+
+### Como filtrar as sugestões por pista?
+
+No topo da lista de sugestões há filtros **Com / Sem** para cada pista, com a contagem de pares, no mesmo estilo dos filtros de fonte da lista de contatos. O filtro vale sobre a lista inteira de pares calculados, não só sobre os primeiros mil exibidos. O botão de merge na ficha do contato é um link: Command ou Ctrl + clique abre a comparação em outra aba.
+
+### Fiz merge e o par continuou na lista. Foi corrigido?
+
+Sim. O recálculo das sugestões roda em segundo plano e pode esperar o ciclo de leitura terminar. Até a 1.0.253, nesse intervalo o par recém-fundido continuava na tela e um segundo clique dava erro. Agora fundir, excluir ou ignorar tira o par da lista na hora, e a lista é podada a cada 15 segundos de pares com contato na lixeira.
+
+### O merge pode misturar o nome de dois contatos?
+
+Não mais. O nome do contato vencedor é mantido como um bloco: primeiro nome, nome do meio e sobrenome vêm do mesmo contato. Até a 1.0.258 o merge automático pegava cada campo do primeiro contato que o tinha preenchido, e "Heitor Kuser" virou "Heitor Kuser Mercado Imobiliário Kuser" ao absorver um contato criado pelo Instagram. O vencedor é o contato que está no iCloud e, entre dois, o mais antigo; um contato com nome genérico ("User") nunca vence.
+
+### Como funciona o cartão "Sem grupo" da tela inicial?
+
+Ele abre em **Outras**, escondendo os contatos criados pelas listas do TikTok, Duolingo e Goodreads, que costumam ser muitos. O filtro por origem mostra cada rede com a contagem, e inclui o Telegram. Cada linha traz o chip da rede de onde o contato veio, o botão de grupo e um botão de excluir. Atribuir um grupo tira o contato da lista na hora. No celular, aniversariantes, contatos sem grupo e convites do LinkedIn ficam numa faixa no topo da lista, e cada um abre o cartão em tela cheia.
+
 ### O merge junta os nomes dos dois contatos?
 
 Sim, quando um nome acrescenta algo ao outro. No comparador do **Merge Inteligente**, logo abaixo da linha **Nome**, aparece a linha **Nome combinado** já marcada — por exemplo, "Andressa Maltaca" com "Andressa Gonçalves" vira **Andressa Gonçalves Maltaca**. A junção usa a mesma higienização de nomes do restante do app: não repete partes, ignora diminutivos ("Dan" dentro de "Daniel") e preserva conectivos quando um nome já contém o outro ("Priscilla Freitas" com "Priscilla Bilecki de Freitas" fica "Priscilla Bilecki de Freitas"). As partes novas entram antes do último sobrenome do nome que você escolheu na linha Nome, para o contato continuar sendo conhecido pelo mesmo sobrenome. Desmarque a caixa para gravar só o nome escolhido.
@@ -837,6 +990,18 @@ Casos sem qualquer ambiguidade — contatos com exatamente o mesmo nome e nenhum
 
 ## 9. Histórico e Reversão
 
+### Existe uma auditoria do que os provedores removeram?
+
+Sim, desde a 1.0.255. Todo domingo às 04:10 o TrueContact varre o histórico dos últimos 7 dias e lista o que o iCloud ou o Google removeram e **ainda falta** no contato, marcando como suspeito o item que o outro provedor ainda tem. O resultado fica em `/api/diagnostico/perdas`, e cada item suspeito vai para o log do painel com um aviso. Para rodar fora de hora: `POST /api/auditoria/perdas` com `{ "dias": 7 }`. A auditoria roda num processo separado e não trava o painel.
+
+### Por que "Desfazer merge" às vezes é recusado?
+
+Porque o contato absorvido já não está na lixeira: foi excluído em definitivo ou a lixeira foi esvaziada. Sem ele, não há o que restaurar, e o botão responde com o erro "contatos fundidos não estão mais na lixeira" em vez de refazer um merge pela metade. Desfazer merge também passou a remover do vencedor **só o que o merge acrescentou**, comparando o retrato de antes com o de depois.
+
+### As fotos no histórico ocupam muito espaço?
+
+Não mais. Cada registro do histórico guarda só uma referência à foto, e a foto fica uma única vez numa tabela própria. Antes, a foto inteira era copiada em texto dentro de cada registro, em cerca de 3,6 vezes o tamanho original, e o histórico chegou a ocupar metade do banco. Os registros antigos são convertidos aos poucos pelo radar, e as fotos órfãs saem na manutenção das 03:30.
+
 ### A linha do tempo de cada contato
 
 Todo contato tem uma aba de **Histórico** que registra tudo o que aconteceu com ele: sincronizações, enriquecimentos, edições manuais, merges, limpezas automáticas e mensagens enviadas pelo WhatsApp.
@@ -871,7 +1036,7 @@ painel avisa, para você remover à mão o que não quiser.
 
 ### Por quanto tempo o histórico é mantido?
 
-Os **últimos 30 snapshots** de cada contato ficam sempre visíveis na interface. No banco, os registros com mais de 30 dias são apagados na limpeza automática das madrugadas — veja [Quanto espaço o TrueContact ocupa no disco?](#quanto-espaço-o-truecontact-ocupa-no-disco).
+A interface mostra as **últimas 100 entradas** de cada contato. No banco, a limpeza das madrugadas apaga os registros com mais de 30 dias, com duas exceções desde a 1.0.255: as **últimas 10 entradas de cada contato ficam sempre**, por mais antigas que sejam, e o **registro de um merge é mantido enquanto o contato absorvido existir**, para que o botão Desfazer merge continue funcionando. Veja também [Quanto espaço o TrueContact ocupa no disco?](#quanto-espaço-o-truecontact-ocupa-no-disco).
 
 ---
 
@@ -899,5 +1064,5 @@ Consulte a versão instalada em **Configurações → Sobre o TrueContact**, no 
 
 ---
 
-*Última atualização: Agosto 2026*  
+*Última atualização: 23 de outubro de 2026 — versão 1.0.259*  
 *[Reportar um problema](https://github.com/osnipassos/truecontact-releases/issues) · [Início](https://osnipassos.github.io/truecontact-releases/)*
