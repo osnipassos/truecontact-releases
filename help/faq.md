@@ -450,6 +450,10 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
 
+### Como funciona a fonte Snapchat?
+
+Em Configurações → Fontes → Snapchat, clique em "Conectar Snapchat" e faça login no Snapchat Web na janela do navegador (usuário, senha e o código que o Snapchat manda para o celular). Uma vez por dia o TrueContact lê a sua lista de amigos e os pedidos de amizade que você enviou e cria um contato para cada um que ainda não existe — o objetivo é limpar a lista e ter o @ de todos. O perfil de cada pessoa é lido pela página pública do Snapchat, sem abrir o navegador: nome de exibição e, em perfis públicos, foto, bio e site. O Bitmoji nunca vira foto, o nome só cria o contato e a foto só preenche quem ainda não tem.
+
 ### Como funciona a fonte Chess.com?
 
 Em Configurações → Fontes → Chess.com, clique em "Conectar Chess.com" e faça login na janela do navegador. Uma vez por dia o TrueContact lê as suas listas — amigos e os pedidos de amizade que você enviou — e cria um contato para cada pessoa que ainda não existe (quem já é contato nunca é duplicado; em "Adicionar como contato" dá para escolher só amigos). Cada perfil é lido pela API pública do Chess.com, sem abrir o navegador: nome, foto, cidade e país (como endereço, só para quem ainda não tem), a data de cadastro no Chess.com, o título de xadrez, a Twitch de quem é streamer, a bio e os links de outras redes da página do perfil. O nome do Chess.com só cria o contato, a foto só preenche quem não tem. Da bio entram só os links; as notas do contato nunca são alteradas.
