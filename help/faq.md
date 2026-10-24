@@ -450,6 +450,10 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
 
+### Como funciona a fonte GitHub?
+
+Em Configurações → Fontes → GitHub, clique em "Conectar GitHub" e faça login no GitHub na janela do navegador (senha, código do aplicativo ou passkey). Uma vez por dia o TrueContact lê quem você segue (e, se você escolher, quem segue você) e cria um contato para cada pessoa que ainda não existe. Cada perfil é lido pela página do GitHub com a sua sessão: nome, foto, e-mail público (o GitHub só o mostra para quem está logado), empresa, local, site, os links sociais do perfil e os links pessoais do README, como LinkedIn, X, YouTube, Medium e dev.to, além da data de criação da conta. Logos de tecnologias, selos, repositórios e páginas de empresas citadas no README ficam de fora, assim como as organizações que você segue e o avatar padrão do GitHub. O nome só cria o contato, a foto, a empresa e o endereço só preenchem o que está vazio, e nada vai para as notas. Quem já é seu contato é achado pelo @ do GitHub, pelo e-mail ou por outro perfil social, nunca pelo nome; o resto vira contato próprio e o merge decide.
+
 ### Como funciona a fonte Slack?
 
 Em Configurações → Fontes → Slack, clique em "Conectar Slack" e faça login no Slack Web na janela do navegador (código por e-mail, senha ou SSO). Não é preciso criar app nem token. A cada ciclo, todos os membros do workspace viram contatos e ficam atualizados: nome, @, e-mail, telefone, cargo, foto e os campos personalizados do perfil (links, local, aniversário). Quem já é contato é achado pelo e-mail ou pelo telefone e nunca é duplicado. Cargo, empresa (o nome do workspace) e foto só são trocados quando vieram do próprio Slack; o que veio de outra fonte ou foi digitado por você fica. Dá para escolher o workspace, incluir ou não os convidados e escolher um dos seus grupos para todos os membros ativos. Contas desativadas também viram contato, sem empresa, cargo e grupo. Bots e apps ficam de fora.
@@ -1084,5 +1088,5 @@ Consulte a versão instalada em **Configurações → Sobre o TrueContact**, no 
 
 ---
 
-*Última atualização: 23 de outubro de 2026 — versão 1.0.259*  
+*Última atualização: 24 de outubro de 2026 — versão 1.0.259*  
 *[Reportar um problema](https://github.com/osnipassos/truecontact-releases/issues) · [Início](https://osnipassos.github.io/truecontact-releases/)*
