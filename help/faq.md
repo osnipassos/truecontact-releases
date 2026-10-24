@@ -452,7 +452,7 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ### Como funciona a fonte Slack?
 
-Em Configurações → Fontes → Slack, clique em "Conectar Slack" e faça login no Slack Web na janela do navegador (código por e-mail, senha ou SSO). Não é preciso criar app nem token. A cada ciclo, todos os membros do workspace viram contatos e ficam atualizados: nome, @, e-mail, telefone, cargo, foto e os campos personalizados do perfil (links, local, aniversário). Quem já é contato é achado pelo e-mail ou pelo telefone e nunca é duplicado. Cargo, empresa (o nome do workspace) e foto só são trocados quando vieram do próprio Slack; o que veio de outra fonte ou foi digitado por você fica. Dá para escolher o workspace, incluir ou não os convidados e pôr todos os membros num grupo (por exemplo, "Mell.ro Team"). Bots, apps e contas desativadas ficam de fora.
+Em Configurações → Fontes → Slack, clique em "Conectar Slack" e faça login no Slack Web na janela do navegador (código por e-mail, senha ou SSO). Não é preciso criar app nem token. A cada ciclo, todos os membros do workspace viram contatos e ficam atualizados: nome, @, e-mail, telefone, cargo, foto e os campos personalizados do perfil (links, local, aniversário). Quem já é contato é achado pelo e-mail ou pelo telefone e nunca é duplicado. Cargo, empresa (o nome do workspace) e foto só são trocados quando vieram do próprio Slack; o que veio de outra fonte ou foi digitado por você fica. Dá para escolher o workspace, incluir ou não os convidados e escolher um dos seus grupos para todos os membros ativos. Contas desativadas também viram contato, sem empresa, cargo e grupo. Bots e apps ficam de fora.
 
 ### Como funciona a fonte Snapchat?
 
