@@ -450,6 +450,10 @@ Isso não apaga os contatos do seu Google Contacts — apenas interrompe a sincr
 
 ## 5. Conectar as fontes sociais (LinkedIn, Facebook, Instagram, X, Goodreads, TikTok, Duolingo e PDL)
 
+### Como funciona a fonte Slack?
+
+Em Configurações → Fontes → Slack, clique em "Conectar Slack" e faça login no Slack Web na janela do navegador (código por e-mail, senha ou SSO). Não é preciso criar app nem token. A cada ciclo, todos os membros do workspace viram contatos e ficam atualizados: nome, @, e-mail, telefone, cargo, foto e os campos personalizados do perfil (links, local, aniversário). Quem já é contato é achado pelo e-mail ou pelo telefone e nunca é duplicado. Cargo, empresa (o nome do workspace) e foto só são trocados quando vieram do próprio Slack; o que veio de outra fonte ou foi digitado por você fica. Dá para escolher o workspace, incluir ou não os convidados e pôr todos os membros num grupo (por exemplo, "Mell.ro Team"). Bots, apps e contas desativadas ficam de fora.
+
 ### Como funciona a fonte Snapchat?
 
 Em Configurações → Fontes → Snapchat, clique em "Conectar Snapchat" e faça login no Snapchat Web na janela do navegador (usuário, senha e o código que o Snapchat manda para o celular). Uma vez por dia o TrueContact lê a sua lista de amigos e os pedidos de amizade que você enviou e cria um contato para cada um que ainda não existe — o objetivo é limpar a lista e ter o @ de todos. O perfil de cada pessoa é lido pela página pública do Snapchat, sem abrir o navegador: nome de exibição e, em perfis públicos, foto, bio e site. O Bitmoji nunca vira foto, o nome só cria o contato e a foto só preenche quem ainda não tem.
