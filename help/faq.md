@@ -1,6 +1,6 @@
 # TrueContact — Manual do Usuário
 
-> **Versão do documento:** Outubro 2026 (1.0.259)  
+> **Versão do documento:** Novembro 2026 (1.0.259)  
 > Encontrou um erro ou tem uma pergunta não respondida? [Abra uma issue](https://github.com/osnipassos/truecontact-releases/issues).
 
 ---
@@ -476,7 +476,7 @@ Sim, se você quiser. Ao excluir um contato **sem grupo** que **veio do TikTok**
 
 Limites, os dois em **Configurações → Fontes → TikTok**: "Unfollows por ciclo" (padrão 10) e "Unfollows por dia" (padrão 100). Quem não coube hoje fica para amanhã, e uma sessão que terminou no meio da lista retoma de onde parou. Restaurar o contato da lixeira cancela o unfollow pendente. Quem passou por esse processo nunca mais é recriado pela lista "Seguindo".
 
-A sessão do botão **Resolver captcha na tela virtual** também faz os unfollows pendentes, com você presente para resolver um captcha se ele aparecer.
+A sessão do botão **Resolver captcha na tela virtual** também faz os unfollows pendentes, com você presente para resolver um captcha se ele aparecer. Ela visita ainda os perfis do TikTok que estão na fila (o número ao lado do ícone do TikTok): depois de um captcha, o ciclo automático deixa de abrir perfis por alguns dias, e é nessa sessão que eles são lidos.
 
 ### Por que o TikTok abre o navegador só duas vezes por dia?
 
@@ -1088,5 +1088,5 @@ Consulte a versão instalada em **Configurações → Sobre o TrueContact**, no 
 
 ---
 
-*Última atualização: 24 de outubro de 2026 — versão 1.0.259*  
+*Última atualização: 9 de novembro de 2026 — versão 1.0.259*  
 *[Reportar um problema](https://github.com/osnipassos/truecontact-releases/issues) · [Início](https://osnipassos.github.io/truecontact-releases/)*
